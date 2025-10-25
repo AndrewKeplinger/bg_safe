@@ -1,0 +1,577 @@
+@charset "UTF-8";
+#pieces {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 644px;
+  height: 1120px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 64;
+}
+#AlarmMeter {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 644px;
+  height: 1120px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 63;
+}
+#alarmOn {
+  background-image: url("../Media/safe/alarmOn.png");
+  position: absolute;
+  left: 409px;
+  top: 0px;
+  width: 123px;
+  height: 106px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 62;
+}
+#alarmOff {
+  background-image: url("../Media/safe/alarmOff.png");
+  position: absolute;
+  left: 422px;
+  top: 19px;
+  width: 98px;
+  height: 80px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 61;
+}
+#meterFill {
+  background-image: url("../Media/safe/meterFill.png");
+  position: absolute;
+  left: 127px;
+  top: 73px;
+  width: 300px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 60;
+}
+#meterBacking {
+  background-image: url("../Media/safe/meterBacking.png");
+  position: absolute;
+  left: 122px;
+  top: 68px;
+  width: 310px;
+  height: 30px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 59;
+}
+#GameLoss_Lasers {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 644px;
+  height: 1120px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 57;
+}
+#laser_04 {
+  background-image: url("../Media/safe/laser_04.png");
+  position: absolute;
+  left: 0px;
+  top: 158px;
+  width: 644px;
+  height: 950px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 56;
+}
+#laser_03 {
+  background-image: url("../Media/safe/laser_03.png");
+  position: absolute;
+  left: 0px;
+  top: 248px;
+  width: 644px;
+  height: 460px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 55;
+}
+#laser_02 {
+  background-image: url("../Media/safe/laser_02.png");
+  position: absolute;
+  left: 143px;
+  top: 0px;
+  width: 479px;
+  height: 1120px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 54;
+}
+#laser_01 {
+  background-image: url("../Media/safe/laser_01.png");
+  position: absolute;
+  left: 0px;
+  top: 715px;
+  width: 644px;
+  height: 243px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 53;
+}
+#laser_darker {
+  background-image: url("../Media/safe/laser_darker.png");
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 644px;
+  height: 1120px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 52;
+}
+#snake {
+  background-image: url("../Media/safe/snake.png");
+  position: absolute;
+  left: 300px;
+  top: 617px;
+  width: 340px;
+  height: 495px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 50;
+}
+#wolf {
+  background-image: url("../Media/safe/wolf.png");
+  position: absolute;
+  left: -1px;
+  top: 80px;
+  width: 314px;
+  height: 469px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 49;
+}
+#loot {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 644px;
+  height: 1120px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 48;
+}
+#loot_01 {
+  background-image: url("../Media/safe/loot_01.png");
+  position: absolute;
+  left: 187px;
+  top: 426px;
+  width: 271px;
+  height: 302px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 47;
+}
+#loot_02 {
+  background-image: url("../Media/safe/loot_02.png");
+  position: absolute;
+  left: 219px;
+  top: 450px;
+  width: 207px;
+  height: 254px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 46;
+}
+#loot_03 {
+  background-image: url("../Media/safe/loot_03.png");
+  position: absolute;
+  left: 223px;
+  top: 447px;
+  width: 198px;
+  height: 261px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 45;
+}
+#loot_rays_01 {
+  background-image: url("../Media/safe/loot_rays_01.png");
+  position: absolute;
+  left: 102px;
+  top: 354px;
+  width: 441px;
+  height: 444px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 44;
+}
+#loot_rays_02 {
+  background-image: url("../Media/safe/loot_rays_02.png");
+  position: absolute;
+  left: 130px;
+  top: 384px;
+  width: 386px;
+  height: 386px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 43;
+}
+#turners {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 644px;
+  height: 1120px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 41;
+}
+#turnmarkers {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 644px;
+  height: 1120px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 40;
+}
+#turnmarker_fill_copy_2 {
+  background-image: url("../Media/safe/turnmarker_fill.png");
+  position: absolute;
+  left: 349px;
+  top: 559px;
+  width: 22px;
+  height: 22px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 39;
+}
+#turnmarker_3 {
+  background-image: url("../Media/safe/turnmarker_backing.png");
+  position: absolute;
+  left: 346px;
+  top: 556px;
+  width: 29px;
+  height: 29px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 38;
+}
+#turnmarker_fill_copy {
+  background-image: url("../Media/safe/turnmarker_fill.png");
+  position: absolute;
+  left: 316px;
+  top: 559px;
+  width: 22px;
+  height: 22px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 37;
+}
+#turnmarker_1 {
+  background-image: url("../Media/safe/turnmarker_backing.png");
+  position: absolute;
+  left: 313px;
+  top: 556px;
+  width: 29px;
+  height: 29px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 36;
+}
+#turnmarker_fill {
+  background-image: url("../Media/safe/turnmarker_fill.png");
+  position: absolute;
+  left: 283px;
+  top: 559px;
+  width: 22px;
+  height: 22px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 35;
+}
+#turnmarker_1 {
+  background-image: url("../Media/safe/turnmarker_backing.png");
+  position: absolute;
+  left: 280px;
+  top: 556px;
+  width: 29px;
+  height: 29px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 34;
+}
+#numberMark {
+  background-image: url("../Media/safe/numberMark.png");
+  position: absolute;
+  left: 302px;
+  top: 438px;
+  width: 48px;
+  height: 49px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 32;
+}
+#safecarrot_on {
+  background-image: url("../Media/safe/safecarrot_on.png");
+  position: absolute;
+  left: 310px;
+  top: 390px;
+  width: 33px;
+  height: 29px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 31;
+}
+#turner_01 {
+  background-image: url("../Media/safe/turner_01.png");
+  position: absolute;
+  left: 182px;
+  top: 426px;
+  width: 290px;
+  height: 290px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 30;
+}
+#turner_02 {
+  background-image: url("../Media/safe/turner_02.png");
+  position: absolute;
+  left: 182px;
+  top: 426px;
+  width: 290px;
+  height: 290px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 29;
+}
+#turner_03 {
+  background-image: url("../Media/safe/turner_03.png");
+  position: absolute;
+  left: 182px;
+  top: 426px;
+  width: 290px;
+  height: 290px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 28;
+}
+#turner_iced {
+  background-image: url("../Media/safe/turner_iced.png");
+  position: absolute;
+  left: 182px;
+  top: 426px;
+  width: 290px;
+  height: 290px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 27;
+}
+#iceRing {
+  background-image: url("../Media/safe/iceRing.png");
+  position: absolute;
+  left: 143px;
+  top: 395px;
+  width: 358px;
+  height: 351px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 26;
+}
+#safe1 {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 644px;
+  height: 1120px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 24;
+}
+#safe1_open_03 {
+  background-image: url("../Media/safe/safe1_open_03.png");
+  position: absolute;
+  left: 3px;
+  top: 186px;
+  width: 49px;
+  height: 740px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 23;
+}
+#safe1_open_02 {
+  background-image: url("../Media/safe/safe1_open_02.png");
+  position: absolute;
+  left: -2px;
+  top: 111px;
+  width: 540px;
+  height: 828px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 22;
+}
+#safe1_open_01 {
+  background-image: url("../Media/safe/safe1_open_01.png");
+  position: absolute;
+  left: -1px;
+  top: 111px;
+  width: 644px;
+  height: 854px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 21;
+}
+#safe1_door {
+  background-image: url("../Media/safe/safe1_door.png");
+  position: absolute;
+  left: 0px;
+  top: 227px;
+  width: 644px;
+  height: 696px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 20;
+}
+#Safe1_case {
+  background-image: url("../Media/safe/Safe1_case.png");
+  position: absolute;
+  left: 0px;
+  top: 98px;
+  width: 644px;
+  height: 915px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 19;
+}
+#safe2 {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 644px;
+  height: 1120px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 17;
+}
+#safe2_open_03 {
+  background-image: url("../Media/safe/safe2_open_03.png");
+  position: absolute;
+  left: 524px;
+  top: 304px;
+  width: 120px;
+  height: 622px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 16;
+}
+#safe2_open_02 {
+  background-image: url("../Media/safe/safe2_open_02.png");
+  position: absolute;
+  left: 89px;
+  top: 278px;
+  width: 509px;
+  height: 590px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 15;
+}
+#safe2_open_01 {
+  background-image: url("../Media/safe/safe2_open_01.png");
+  position: absolute;
+  left: 59px;
+  top: 282px;
+  width: 536px;
+  height: 583px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 14;
+}
+#safe2_door {
+  background-image: url("../Media/safe/safe2_door.png");
+  position: absolute;
+  left: 64px;
+  top: 307px;
+  width: 533px;
+  height: 525px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 13;
+}
+#Safe2_case {
+  background-image: url("../Media/safe/Safe2_case.png");
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 644px;
+  height: 1070px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 12;
+}
+#safe3 {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 644px;
+  height: 1120px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 10;
+}
+#safe3_open_03 {
+  background-image: url("../Media/safe/safe3_open_03.png");
+  position: absolute;
+  left: 48px;
+  top: 335px;
+  width: 100px;
+  height: 468px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 9;
+}
+#safe3_open_02 {
+  background-image: url("../Media/safe/safe3_open_02.png");
+  position: absolute;
+  left: 114px;
+  top: 316px;
+  width: 370px;
+  height: 522px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 8;
+}
+#safe3_open_01 {
+  background-image: url("../Media/safe/safe3_open_01.png");
+  position: absolute;
+  left: 113px;
+  top: 332px;
+  width: 411px;
+  height: 484px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 7;
+}
+#safe3_door {
+  background-image: url("../Media/safe/safe3_door.png");
+  position: absolute;
+  left: 114px;
+  top: 374px;
+  width: 410px;
+  height: 409px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 6;
+}
+
+#game_BG {
+  background-image: url("../Media/safe/game_BG.jpg");
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 644px;
+  height: 1120px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 4;
+}
+

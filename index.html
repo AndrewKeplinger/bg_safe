@@ -33,6 +33,7 @@
 <link type="text/css" rel="stylesheet" href="data/title.css" />
 <link type="text/css" rel="stylesheet" href="data/legal.css" />
 <link type="text/css" rel="stylesheet" href="css/style.css" />
+<link type="text/css" rel="stylesheet" href="css/safe.css" />
 </head>
 <body>
 
@@ -52,6 +53,12 @@
 		<div id="recap_date" class="recap_date" style="font-family: bebas-neue; line-height: 33.6px; font-size: 28px; ">EXCLUSIVELY ON NETFLIX</div>
 		<div id="Title_copy" class="Title_copy" style=""></div>
 		<!--<div id="recap_top_rect" class="recap_top_rect"></div>-->
+		<div id="loot">
+			<div id="loot_01"></div>
+			<div id="loot_03"></div>
+			<div id="loot_rays_01"></div>
+			<div id="loot_rays_02"></div>
+		</div>
 		<div id="recap_RUSS" class="recap_RUSS" style=""></div>
 		<div id="recap_HANK" class="recap_HANK" style=""></div>
 		<div id="recap_background" class="recap_background"></div>
@@ -118,21 +125,74 @@
 		</div>
 	</div>
 	<div id="gameUI">
-		<div class="gameUIText" id="gameScore">0</div>
-		<div class="gameUIText" id="gameDistance">0</div>
-		<!--<div id="gameExitButton"></div>-->
-		<div id="gamePowerupUI" >
-			<div class="gamePowerupClass" id="gamePowerup0"></div>
-			<div class="gamePowerupClass" id="gamePowerup1"></div>
-			<div class="gamePowerupClass" id="gamePowerup2"></div>
+		<div id="pieces">
+			<div id="AlarmMeter">
+				<div id="alarmOn"></div>
+				<div id="alarmOff"></div>
+				<div id="meterFill"></div>
+				<div id="meterBacking"></div>
+			</div>
+			<div id="GameLoss_Lasers">
+				<div id="laser_04"></div>
+				<div id="laser_03"></div>
+				<div id="laser_01"></div>
+				<div id="laser_darker"></div>
+			</div>
+			<div id="snake"></div>
+			<div id="wolf"></div>
+			<!--<div id="loot">
+				<div id="loot_01"></div>
+				<div id="loot_02"></div>
+				<div id="loot_03"></div>
+				<div id="loot_rays_01"></div>
+				<div id="loot_rays_02"></div>
+			</div>-->
+			<div id="turners">
+				<div id="turnmarkers">
+					<div id="turnmarker_fill_copy_2"></div>
+					<div id="turnmarker_3"></div>
+					<div id="turnmarker_fill_copy"></div>
+					<div id="turnmarker_1"></div>
+					<div id="turnmarker_fill"></div>
+					<div id="turnmarker_1"></div>
+				</div>
+				<div id="numberMark"></div>
+				<div id="safecarrot_on"></div>
+				<div id="turner_01"></div>
+				<div id="turner_02"></div>
+				<div id="turner_03"></div>
+				<div id="turner_iced"></div>
+				<div id="iceRing"></div>
+			</div>
+			<div id="safe_cases">
+				<div id="Safe1_case"></div>
+				<div id="Safe2_case"></div>
+			</div>
+			<div id="safe3">
+				<div id="safe3_open_03"></div>
+				<div id="safe3_open_02"></div>
+				<div id="safe3_open_01"></div>
+				<div id="safe3_door"></div>
+			</div>
+			<div id="safe2">
+				<div id="safe2_open_03"></div>
+				<div id="safe2_open_02"></div>
+				<div id="safe2_open_01"></div>
+				<div id="safe2_door"></div>
+			</div>
+			<div id="safe1">
+				<div id="safe1_open_03"></div>
+				<div id="safe1_open_02"></div>
+				<div id="safe1_open_01"></div>
+				<div id="safe1_door"></div>
+			</div>
+			<div id="game_BG"></div>
 		</div>
-		<!--<div id="ninjagoLogo3">
-			<div class="ninjagoLogoDate3" id="ninjaLogoText3">IN THEATERS SEPTEMBER 22</div>
-		</div>-->
 		<div id="soundButton3" onclick="muteToggle();"></div>
 		<div id="soundButton3off" onclick="muteToggle();"></div>
 		<div id="pauseButton" onclick="pauseButtonAction(-1);"></div>
 	</div>
+	
 	<div id="blocker" ></div>
 	<div class="mask" id="topMask"></div>
 	<div class="mask" id="bottomMask"></div>
@@ -146,19 +206,19 @@
 <script src="prefs.js"></script> 
 <script src="js/prep.js"></script> 
 <script src="js/lib/three.js"></script> 
-<script src="js/lib/FBXLoader.js"></script> 
+<!--<script src="js/lib/FBXLoader.js"></script> -->
 <script src="js/lib/TweenLite.min.js"></script> 
 <script src="js/lib/CSSPlugin.min.js"></script> 
 <script src="js/lib/EasePack.min.js"></script> 
 <script src="js/loader.js"></script> 
-<script src="js/lib/THREE.MeshLine.js"></script> 
+<!--<script src="js/lib/THREE.MeshLine.js"></script> 
 <script src="js/lib/GPUParticleSystem.js"></script> 
 <script src="js/lib/NURBSCurve.js"></script> 
-<script src="js/lib/NURBSUtils.js"></script> 
+<script src="js/lib/NURBSUtils.js"></script> -->
 <script src="js/gameParams.js"></script> 
 <script src="js/legal.js"></script> 
 <script src="js/jsondata.js"></script> 
-<script src="js/nyaEnemy.js"></script> 
+<!--<script src="js/nyaEnemy.js"></script> -->
 <script src="js/interface.js"></script> 
 <script src="js/touch.js"></script> 
 <script src="js/main.js"></script>

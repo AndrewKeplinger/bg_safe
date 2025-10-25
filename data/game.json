@@ -92,22 +92,6 @@
 	"type": "plane",
 	"value": "Media/Background/FG_Grass.png"
 },{
-	"id": "BG_Boat",
-	"type": "plane",
-	"value": "Media/Background/BG_Boat.png"
-},{
-	"id": "BG_Enemy_01",
-	"type": "plane",
-	"value": "Media/Background/BG_Enemy_01.png"
-},{
-	"id": "BG_Enemy_02",
-	"type": "plane",
-	"value": "Media/Background/BG_Enemy_02.png"
-},{
-	"id": "BG_Puffer",
-	"type": "plane",
-	"value": "Media/Background/BG_Puffer.png"
-},{
 	"id": "FG_Bush",
 	"type": "plane",
 	"value": "Media/Background/FG_Bush.png"

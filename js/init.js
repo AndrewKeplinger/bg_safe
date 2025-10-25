@@ -360,18 +360,5 @@ function doWindowResize() {
 	div_screens.style.width = Math.ceil(oSTAGE.wrapper_width) + "px";
 	div_screens.style.height = Math.ceil(oSTAGE.wrapper_height) + "px";
 
-
-
-	//update queue
-	for (var i = window.update_queue.length - 1; i >= 0; i--) {
-		if (window.update_queue[i].forget) {
-			window.update_queue.splice(i, 1);
-		} else if (window.update_queue[i].doResizeUpdate) {
-			window.update_queue[i].doResizeUpdate();
-		} else {
-			window.update_queue.splice(i, 1);
-		}
-	}
-
 }
 export {doInit,doInitResizer,doWindowResize,doFrameLoop,doLoseFocus,doGetFocus,doPreloadAssets,doStart,loader,LOADER,oSTAGE,oVARS};

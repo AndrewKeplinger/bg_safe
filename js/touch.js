@@ -1,5 +1,4 @@
 // JavaScript Document
-var raycaster = new THREE.Raycaster();
 var mouse = new THREE.Vector2();
 
 //function keyDownEventHandler(event) {
@@ -146,28 +145,14 @@ function F_event_Touch_onDocument_handle(evt) {
 			reaction_type = "mouseup";
 			break;
 	}
-
-	if (slingShotSeat===undefined) return;
 	
 	mouse.x = (touch.clientX / window.innerWidth) * 2 - 1;
 	mouse.y = -(touch.clientY / window.innerHeight) * 2 + 1;
-	raycaster.setFromCamera(mouse.clone(), camera);
-	var objects = raycaster.intersectObject(slingShotSeat);
 	
 	if (reaction_type === "mouseup") {
 		if (thisTouch.x > -100) {
 			if (flyState == 0) {
 				
-				moveVelocity = new THREE.Vector3(mouse.x / 1.5, -mouse.y / 1.5, 0);
-				
-				console.log(moveVelocity.length());
-				if (moveVelocity.length()<0.1) {
-					flyState = 0;
-				} else {
-					flyState = 1;
-					moveVelocity = new THREE.Vector3(moveVelocity.x*1.5,moveVelocity.y*2.5,0);
-					console.log(moveVelocity);
-				}
 			}
 			thisTouch.x = -100;
 		}
@@ -180,22 +165,6 @@ function F_event_Touch_onDocument_handle(evt) {
 				//trace("pu blocked");
 				return;
 			}
-			if (mouse.y>-.8 && moveVelocity.y<0.5) {
-				if (heartBar.targetPowerups > 0) {
-					
-					startAnim("leap", playerObj.obj, playerAnim, "fly");
-					playSound("Jay_HitPowerup"+(1+rnd(3)));
-					heartBar.usePowerup();
-					particleSystem.makeBIGParticle(playerObj.obj.position, new THREE.Vector3());
-					//console.log("Boost:"+playerPos.y+"  "+moveVelocity.y);
-					var tVel = moveVelocity.length();
-					var tAng = Math.atan2(mouse.y+1,-1.5);
-					moveVelocity = new THREE.Vector3(Math.cos(tAng)*tVel,0.1+Math.sin(tAng)*tVel,0);
-					//console.log(moveVelocity);
-					//moveVelocity.y = Math.max(0.3,Math.abs(moveVelocity.y)) ;
-					return false;
-				}
-			}
 		} else {
 
 			var tVel = .8;//moveVelocity.length();
@@ -203,16 +172,6 @@ function F_event_Touch_onDocument_handle(evt) {
 			//console.log(new THREE.Vector3(Math.cos(tAng)*tVel,Math.sin(tAng)*tVel));
 			
 			if (gameState==2 && flyState == 0) {
-				for (var idx = 0; idx < objects.length; idx++) {
-
-					if (objects[idx].object.name === "SlingShotSeat") {
-
-						playSound("Jay_RubberBand");
-						thisTouch.x = mouse.x;
-						thisTouch.y = mouse.y;
-
-					}
-				}
 			}
 		}
 

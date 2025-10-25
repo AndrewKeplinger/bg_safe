@@ -28,20 +28,9 @@ var fggroup;
 var powerupRechargeRate = 10;  // number of game seconds for powerup meter to fully recharge.  
 
 //Game Vars
-var cameraPos = new THREE.Vector3(5,5,-40);
-var playerPos = new THREE.Vector3(0,0,0);
-var minVelocity = 0.6;
-var maxVelocity = 0.75;
-var minAngle = 40 /* Convert */ * Math.PI/180.0;
-var maxAngle = 50 /* Convett */ * Math.PI/180.0;
-var moveVelocity = new THREE.Vector3(0,0,0);//rndVelocity();//new THREE.Vector3(-0.65,0.20,0); // Movement is in negative direction
+
 var flyState = 0; // Start in wait for Drag Mode
-var gravity = new THREE.Vector3(0,-0.005,0); // (0,-0.002,0); 
 var animationsTiming = 0;
-var camLookPos = new THREE.Vector3(0,0,0);
-var slingShotBase;
-var slingShotSeat;
-var groundLevel = -10.2;
 
 var gameState = 0; // Round not started
 var gameStarted = false;
@@ -62,8 +51,6 @@ var preroll;
 var gameScoreField = document.getElementById("gameScore");
 var gameDistField = document.getElementById("gameDistance");
 
-
-var heartBar;
 var powerupObj;
 var levelMeterObj;
 var levelObjectNum = 0;
@@ -83,73 +70,11 @@ function loadLevel(tLevelNum) {
 	
 }
 
-function rndVelocity() {
-	var rndAngle = minAngle + Math.random()*(maxAngle-minAngle);
-	var rndVelocity = minVelocity + Math.random()*(maxVelocity-minVelocity);
-	return new THREE.Vector3(-Math.sin(rndAngle)*rndVelocity,Math.cos(rndAngle)*rndVelocity,0);
-}
-
 function rnd(mult){
 	return Math.floor(mult * Math.random());
 }
 
-var fxParams = {
-				position: new THREE.Vector3(),
-				positionRandomness: .001,
-				velocity: new THREE.Vector3(),
-				velocityRandomness: 1.5,
-				color: 0x00ffec,
-				colorRandomness: .1,
-				turbulence: 0,
-				lifetime: .2,
-				sizeBase: (isMobile?75:150),
-				sizeRandomness: 50
-}; 
-var fxSpawn = {
-	spawnRate: 10,
-	horizontalSpeed: .001,
-	verticalSpeed: .001,
-	timeScale: .5
-}
 
-var BIGfxParams = {
-				position: new THREE.Vector3(),
-				positionRandomness: .001,
-				velocity: new THREE.Vector3(),
-				velocityRandomness: 2.5,
-				color: 0xffffec,
-				colorRandomness: .1,
-				turbulence: 0,
-				lifetime: .5,
-				sizeBase: (isMobile?125:250),
-				sizeRandomness: 50
-}; 
-var BIGfxSpawn = {
-	spawnRate: 10,
-	horizontalSpeed: .001,
-	verticalSpeed: .001,
-	timeScale: .5
-}
-var ENEMYfxParams = {
-				position: new THREE.Vector3(),
-				positionRandomness: .001,
-				velocity: new THREE.Vector3(),
-				velocityRandomness: 2.5,
-				color: 0xff00ec,
-				colorRandomness: .1,
-				turbulence: 0,
-				lifetime: .5,
-				sizeBase: (isMobile?125:250),
-				sizeRandomness: 50
-}; 
-var ENEMYfxSpawn = {
-	spawnRate: 10,
-	horizontalSpeed: .001,
-	verticalSpeed: .001,
-	timeScale: .5
-}
-
-var hubMenu = "../../";
 var queryVal = false;//qs.gamehub;
 
 function setMuteParam( tUrl ) {

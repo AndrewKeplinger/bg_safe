@@ -76,30 +76,6 @@ function getLocalizedText( textId ) {
 	return textAssets[textId].value.replace("![CDATA[","").replace("]]","");
 }
 
-function makePlane( pos, name, material, size, scale, faceCamera, order ) {
-	var plane = new THREE.PlaneGeometry(size[0],size[1],8,8);
-
-	var sprite = new THREE.Mesh( plane , material );
-	//sprite.renderOrder = 4;
-	sprite.name = name; 
-	sprite.position.set(pos[0],pos[1],pos[2]);
-	sprite.scale.set( scale[0],scale[1],1);
-	sprite.doubleSided = true;
-	sprite.renderOrder = order;
-	//if (faceCamera) sprite.setFromVector3(camera.position);
-	scene.add(sprite);
-	return sprite;
-}
-
-function makeSprite( pos, name, material, size, scale ) {
-	var sprite = new THREE.Sprite( material );
-	//sprite.renderOrder = 4;
-	sprite.position.set(pos[0],pos[1],pos[2]);
-	sprite.scale.set( scale[0],scale[1],1);
-	scene.add(sprite);
-	return sprite;
-}
-
 // model
 var manager = new THREE.LoadingManager();
 manager.onProgress = function( item, loaded, total ) {
