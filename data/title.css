@@ -1,0 +1,296 @@
+@charset "UTF-8";
+/* CSS Document */
+#titleScreen_old {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 20;
+	background-color: #000000;
+	cursor: default;
+	visibility: hidden;
+	display: inline;
+}
+#titleBackground {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 960px;
+	height: 540px;
+	background-image: url(../Media/UI/Title_BG_Nya.jpg);
+	background-color: #000000;
+	background-size:cover;
+	background-repeat:repeat;
+	opacity: 1;
+}
+#titleCharacter {
+	background-image: url(../Media/EndScreen/Title_Jay.png);
+	top: 40px;
+	left: 82px;
+	width: 423px;
+	height: 492px;
+	background-size: 423px 492px;
+	z-index: 10;
+	display: inline;
+}
+#titleGameName {
+	position: absolute;
+	left: 375px;
+	top: 12px;
+	width: 520px;
+	height: 135px;
+	z-index: 11;
+	font-size: 30px;
+}
+#titleDescription {
+	position: absolute;
+	left: 375px;
+	top: 62px;
+	width: 450px;
+	height: 135px;
+	z-index: 11;
+	font-size: 18px;
+}
+#titleInstructionsImage {
+	position: absolute;
+	left: 523px;
+	top: 159px;
+	width: 416px;
+	height: 142px;
+	background-color:#888888;
+	/*background-image:url(../Media/UI/Title_Inst_Mobile.gif);*/
+	font-size: 12px;
+}
+#titleInstructionsImage_PC {
+	position: absolute;
+	left: 523px;
+	top: 159px;
+	width: 416px;
+	height: 142px;
+	background-color:#888888;
+	/*background-image:url(../Media/UI/Title_Inst_PC.gif);*/
+	font-size: 12px;
+}
+.InstructionImage{
+	width:100%;
+	height:100%;
+	-webkit-transform:none;
+	transform:none; 
+}
+#titleInstructions {
+	position: absolute;
+	left: 523px;
+	top: 305px;
+	width: 420px;
+	height: 55px;
+	font-size: 10px;
+	visibility: hidden;
+}
+#exitButton, #exitButton2 {
+	z-index:90;
+	cursor:pointer;
+	cursor:pointer;
+	position: absolute;
+	top:-100px;
+	left:890px;
+	width:64px;
+	height:64px;
+	background-image: url(../Media/UI/close.png);
+	background-size:64px 64px;
+}
+#pauseButton {
+	position: absolute;
+	top:7px;
+	right:64px;
+	width:64px;
+	height:64px;
+	background-image: url(../Media/UI/pause.png);
+	background-size:64px 64px;
+}
+#soundButton, #soundButton2, #soundButton3, #soundButton4 {
+	z-index:90;
+	cursor:pointer;
+	position: absolute;
+	top:7px;
+	right:0px;
+	width:64px;
+	height:64px;
+	background-image: url(../Media/UI/b_mute_off.png);
+	background-size:64px 64px;
+}
+#soundButtonoff, #soundButton2off, #soundButton3off, #soundButton4off {
+	z-index:90;
+	cursor:pointer;
+	position: absolute;
+	top:7px;
+	right:0px;
+	width:64px;
+	height:64px;
+	background-image: url(../Media/UI/b_mute_on.png);
+	background-size:64px 64px;
+}
+/*
+#soundButton3, #soundButton3off {
+	left:236px;
+	top: 480px;
+}*/
+#ninjagoLogo,#ninjagoLogo2 {
+	position: absolute;
+	top:17px;
+	left:11px;
+	width:215px;
+	height:48px;
+	z-index:12;
+	background-image: url(../Media/UI/UI_MovieLogo.png);
+	background-size:215px 48px;
+}
+
+#ninjagoLogo3 {
+	position: absolute;
+	top:460px;
+	left:11px;
+	width:215px;
+	height:48px;
+	z-index:3;
+	background-image: url(../Media/UI/UI_MovieLogo.png);
+	background-size:215px 48px;
+}
+#ninjagoLogo4 {
+	position: absolute;
+	top:120px;
+	left:372px;
+	width:215px;
+	height:48px;
+	z-index:3;
+	background-image: url(../Media/UI/UI_MovieLogo.png);
+	background-size:215px 48px;
+}
+.ninjagoLogoDate {
+	position: absolute;
+	top:64px;
+	left:10px;
+	width: 260px;
+	height: 25px;
+	text-align: center;
+	font-family: MontBold;
+	font-size: 8pt;
+	color: #ffffff;
+	z-index:14;
+	/*text-shadow: 1px 1px 1px black, -1px -1px 1px black, -1px 1px 1px black, 1px -1px 1px black;*/
+
+	  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+.ninjagoLogoDate3 {
+	position: absolute;
+	left: 0px;
+	top: 510px;
+	width: 233px;
+	height: 25px;
+	text-align: center;
+	font-family: MontBold;
+	font-size: 8pt;
+	z-index:4;
+	color: #ffffff;
+	/*text-shadow: 1px 1px 1px black, -1px -1px 1px black, -1px 1px 1px black, 1px -1px 1px black;*/
+
+	  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+#ninjagoLogoDate4 {
+	font-size: 12px;
+	top: 170px;
+	left: 363.5px;
+}
+#playButton {
+	cursor:pointer;
+	position: absolute;
+	left: 708px;
+	top: 417px;
+	width: 193px;
+	height: 133px;
+	background-image: url(../Media/EndScreen/UI_playAgain.png);
+	background-size: 193px 105px;
+	background-repeat: no-repeat;
+	z-index:12;
+}
+#titlePlayText {
+	cursor:pointer;
+	position: absolute;
+	left: 708px;
+	top: 437px;
+	width: 193px;
+	height: 85px;
+	text-align: center;
+	font-family: "bebas-neue";
+	font-size: 32pt;
+	z-index:13;
+	color: #FFFFFF;
+	text-shadow: 2px 2px 2px black, -2px -2px 2px black, -2px 2px 2px black, 2px -2px 2px black;
+
+	  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+#levelMessage1 {
+	z-index:7;
+	top: 90px;
+	left: 0px;
+	width: 147px;
+	height: 164px;
+	background-size: 147px 164px;
+	background-image: url(../Media/UI/Title_Character_01.png);
+}
+#levelMessage2 {
+	z-index:8;
+	top: 195px;
+	left: 0px;
+	width: 105px;
+	height: 227px;
+	background-size: 105px 227px;
+	background-image: url(../Media/UI/Title_Character_02.png);
+}
+#levelMessage3 {
+	z-index:9;
+	top: 280px;
+	left: 40px;
+	width: 102px;
+	height: 107px;
+	background-size: 102px 107px;
+	background-image: url(../Media/UI/Title_Character_03.png);
+}
+#loadbarBackground2 {
+	position: absolute;
+	left:720px;
+	top:420px;
+	width:160px;
+	height:16px;
+	z-index:12;
+	background-image: url(../Media/Loader/loadbarBackground.jpg);
+}
+#loadbar2 {
+	position: relative;
+	margin-top:-4px;
+	margin-left:-4px;
+	padding:0px;
+	width:90%;
+	height:100%;
+	z-index:13;
+	background-image: url(../Media/Loader/loadbar.png);
+}

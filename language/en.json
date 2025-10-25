@@ -1,0 +1,58 @@
+[
+{ "id":"hub_url","type":"config","value":"../../","note":"Link Hub button (and X button when available) use."},
+{ "id":"more_url","type":"config","value":"../../","note":"Link for More Games buttons"},
+{ "id":"movie_url","type":"config","value":"http://www.legoninjagomovie.com/","note":"Link Official Site Button."},
+{ "id":"browser_alert","type":"config","value":"../../browser_alert/","note":"Link for minimum browser requirement fallback."},
+  { "id":"date_playing","type":"config","value":"2017/09/22","note":"Movie release date"},
+  { "id":"date_day_before","type":"config","value":"2017/09/21","note":"Day before novie release date"},
+  { "id":"date_week_before","type":"config","value":"2017/09/15","note":"Week before movie release date"},
+{ "id":"hideOfficialSite", "type":"config", "value":0},
+	
+{ "id":"legalButtonWidth", "type":"config", "value":50, "note":"Forces pixel width of Legal rollover element (top left item only)"},
+{ "id":"legalVShift", "type":"config", "value":0, "note":"Vertical shift of Legal tag to prevent text cutoff on two line wrap"},
+{ "id":"legalLineHeight", "type":"config", "value":"9px", "note":"Forces line height to control appearance of Legal block top line"},
+	{"id":"fontBaselineShift", "type":"config", "value":0, "note":"Adjust position of text on Play and more games button. Value is scaled to screen size."},
+	
+{"id":"MontBold","type":"font-face","value":"","active":0, "note":"active 0 = off, value is url of font"},
+	
+{"id": "date_msg_date", "value": "IN THEATERS SEPTEMBER 22", "type": "text"},
+{"id": "date_msg_friday", "value": "IN THEATERS THIS FRIDAY", "type": "text"},
+{"id": "date_msg_tomorrow", "value": "IN THEATERS TOMORROW", "type": "text"},
+{"id": "date_msg_nowplaying", "value": "NOW PLAYING", "type": "text"},
+
+{"id": "ninjago_logo", "type": "image", "value": "Media/UI/UI_MovieLogo.png"},
+{"id": "ninjago_logo_browser", "type": "image", "value": "Media/UI/UI_MovieLogo.png"},
+
+{"id": "legal", "value": "LEGAL", "type":"text"},
+{"id": "legal_terms", "value": "TERMS OF SERVICE", "type":"legal", "link":"https://www.dreamworks.com/terms-of-use", "top":0,"active":1},
+{"id": "legal_privacy", "value": "PRIVACY POLICY", "type":"legal", "link":"https://www.nbcuniversal.com/privacy/pp-full-children#accordionheader4", "top":0,"active":1},
+{"id": "legal_ca_notice", "value": "CA NOTICE", "type":"legal", "link":"https://www.nbcuniversalprivacy.com/privacy/california-consumer-privacy-act?intake=Dreamworks_Animation", "top":0,"active":1},
+{"id": "legal_parentalguide", "value": "KID'S HELP", "type":"legal", "link":"https://www.dreamworks.com/kids-help", "top":0,"active":1},
+{"id": "legal_copyright", "value": "![CDATA[DreamWorks The Bad Guys 2025 © DreamWorks Animation LLC. All rights reserved.]]", "type":"text","active":1},
+	
+{"id": "legal_image_1", "type":"legal_images_na", "link":"Media/rating.png","active":1 },
+
+{"id": "error_webgl", "value": "Oops!<br>While your browser seems to support WebGL, it is disabled or unavailable. If possible, please ensure that you are running one of these latest browsers and the latest drivers for your video card.", "type":"text"},
+{"id": "error_browser", "value": "Oops!<br>Your browser seems to be out of date. Please ensure that you are running one of these latest browsers.", "type":"text"},
+{"id": "Title","type": "Text","style":"","size": 1,"target": "Intro","data": "![CDATA[FLIGHT OF THE NINJA]]"},
+{"id": "StartDate","type": "Text","style":"","size": 1,"target": "Intro","data": "![CDATA[IN THEATERS SEPTEMBER 22]]"},
+{"id": "WebLinkPrompt","type": "Text","style":"","size": 1,"target": "Intro","link": "","data": "![CDATA[OFFICIAL SITE]]"},
+{"id": "Description","type": "Text","style":"","size": 0.99,"target": "Intro","data": "![CDATA[Use the power of Jay's ninja launcher to fly through the sky, collecting as many coins as you can.]]"},
+{"id": "IntroPrompt_Mobile","type": "Text","style":"","size": 1,"target": "Intro","data": "![CDATA[]]"},
+{"id": "IntroPrompt_PC","type": "Text","style":"","size": 1,"target": "Intro","data": "![CDATA[]]"},
+{"id": "Pause_Menu_Heading","type": "Text","style":"","size": 1,"target": "Intro","data": "![CDATA[PAUSED]]"},
+{"id": "Pause_Menu_Continue","type": "Text","style":"","size": 1,"target": "Intro","data": "![CDATA[CONTINUE]]"},
+{"id": "Pause_Menu_Start_Over","type": "Text","style":"","size": 1,"target": "Intro","data": "![CDATA[START OVER]]"},
+{"id": "Pause_Menu_More_Games","type": "Text","style":"","size": 1,"target": "Intro","data": "![CDATA[MORE GAMES]]"},
+{"id": "Pause_Menu_Official_Site","type": "Text","style":"","size": 1,"target": "Intro","data": "![CDATA[OFFICIAL SITE]]"},
+{"id": "Action_Button","type": "Text","style":"","size": 1,"target": "Intro","data": "![CDATA[PLAY]]"},
+{"id": "End_Message","type": "Text","style":"","size": 1,"target": "Intro","data": "![CDATA[FLIGHT COMPLETE!]]"},
+{"id": "End_Best_Message","type": "Text","style":"","size": 1,"target": "Intro","data": "![CDATA[NEW BEST SCORE!]]"},
+{"id": "End_Score","type": "Text","style":"","size": 1,"target": "Intro","data": "![CDATA[SCORE:]]"},
+{"id": "End_Distance","type": "Text","style":"","size": 1,"target": "Intro","data": "![CDATA[DISTANCE:]]"},
+{"id": "Best_Score","type": "Text","style":"","size": 1,"target": "Intro","data": "![CDATA[BEST SCORE:]]"},
+{"id": "Best_Distance","type": "Text","style":"","size": 1,"target": "Intro","data": "![CDATA[LONGEST DISTANCE:]]"},
+{"id": "End_Play_Again","type": "Text","style":"","size": 1,"target": "Intro","data": "![CDATA[PLAY</br>AGAIN]]"},
+{"id": "End_More","type": "Text","style":"","size": 1,"target": "Intro","data": "![CDATA[MORE</br>GAMES]]"},
+{"id":"Jay_RubberBand","type":"audio","active":1,"value":"language/en/Jay_RubberBand_Eng.mp3"}
+]

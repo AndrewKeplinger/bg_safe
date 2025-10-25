@@ -1,0 +1,662 @@
+@charset "UTF-8";
+@font-face {
+	font-family: "bebas-neue", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+body {
+	-webkit-tap-highlight-color:  rgba(255, 255, 255, 0); 
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+.headingFont {
+	font-family: "bebas-neue";
+	font-size: 30pt;
+	color: #FFFFFF; /*#F5F538;*/
+	text-shadow: 2px 2px 2px black, -2px -2px 2px black, -2px 2px 2px black, 2px -2px 2px black;
+
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+.boldFont {
+	font-family: "bebas-neue";
+	font-size: 24pt;
+	color: #FFFFFF; /*#F5F538;*/
+	  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+.copyFont {
+	font-family: "bebas-neue";
+	font-size: 16pt;
+	color: #FFFFFF; /*#F5F538;*/
+	  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+html {
+	position:fixed;
+}
+html, body {
+	overflow: hidden;
+	height: 100vh; 
+	padding: 0; 
+	margin: 0;
+}
+
+div.content { height: 100%; }
+div.spacer { height: 1px; }
+body {
+	margin: 0;
+	background-color: black
+}
+#3d_canvas {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 644px;
+	height: 1120px;	
+	z-index: -1;
+}
+canvas {
+	position: relative;
+	top: 0px;
+	left: 0px;
+	width: 644px;
+	height: 1120px;
+	z-index: -1;
+}
+#canvas_container {
+	position: absolute;
+	top: 0px;
+	left: 5px;
+	width: 644px;
+	height: 1120px;
+}
+.mask {
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+	height:0px;
+	background-color:#000000;
+	z-index:99;
+}
+
+#levelMessage, #titleScreen, #instructionPanel {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 644px;
+	height: 1120px;
+	z-index: 10;
+	cursor: default;
+	visibility: visible;
+	display: inline;
+}
+#levelMessageBackground {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 644px;
+	height: 1120px;
+	background-color: #000000;
+	background-size: cover;
+	background-repeat: no-repeat;
+	opacity: 0.5;
+}
+#levelBackground {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 644px;
+	height: 1120px;
+	background-color: #000000;
+	background-image: url(../Media/UI/Title_BG_Nya.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	opacity: 1;
+}
+.levelCharacter {
+	position: absolute;
+	background-repeat: no-repeat;
+}
+#levelMessageCharacter {
+	background-image: url(../Media/EndScreen/End_Nya.png);
+	top: 30px;
+	left: 0px;
+	width: 440px;
+	height: 510px;
+	background-size: 440px 510px;
+	background-size: contain;
+}
+hitResponse {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 10;
+	cursor: default;
+	visibility: visible;
+	display: inline;
+}
+#hitResponseCharacter {
+	position: absolute;
+	background-image: url(../Media/EndScreen/End_Nya.png);
+	top: 30px;
+	left: 260px;
+	width: 440px;
+	height: 510px;
+	z-index: 9;
+	background-size: contain;
+	text-shadow: 0px 0px 300px cyan;
+}
+#hitResponseCharacterGlow {
+	position: absolute;
+	background-image: url(../Media/UI/BlueGlow.png);
+	top: -270px;
+	left: 60px;
+	width: 840px;
+	height: 840px;
+	z-index: 8;
+	background-size: contain;
+}
+#hitResponseText {
+	position: absolute;
+	text-align:center;
+	z-index: 11;
+	left: 330px;
+	top: 437px;
+	width: 300px;
+	height: 135px;
+	font-size:32px;
+}
+#levelText {
+	color: white;
+}
+
+.levelFont {
+	position: absolute;
+	font-family: "bebas-neue";
+	font-size: 24pt;
+	color: #F5F538;
+	text-shadow: 2px 2px 2px black, -2px -2px 2px black, -2px 2px 2px black, 2px -2px 2px black;
+	/*float: left;*/
+	/*text-align: center;*/
+	-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+.buttonText {
+	position: relative;
+	left:50%;
+	top:50%;
+	text-align: center;
+	font-family: "bebas-neue";
+	font-size: 38pt;
+	color: #FFFFFF;
+	text-shadow: 2px 2px 2px black, -2px -2px 2px black, -2px 2px 2px black, 2px -2px 2px black;
+	float: left;
+	transform: translate(-50%, -50%);
+	  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+#headingText {
+	position: absolute;
+	left: 320px;
+	top: 92px;
+	width: 320px;
+	height: 90px;
+	text-align:center;
+}
+#endGameText {
+	position: absolute;
+	left: 420px;
+	top: 92px;
+	width: 420px;
+	height: 90px;
+	text-align:center;
+}
+.levelMarker {
+	/*outline-color:black;
+				//outline-width:2px;
+				//outline-style:dashed;*/
+	background-repeat: no-repeat;
+}
+#playAgain {
+	cursor:pointer;
+	position: absolute;
+	left: 465px;
+	top: 422px;
+	width: 210px;
+	height: 133px;
+	background-image: url(../Media/EndScreen/UI_playAgain.png);
+	background-size: 210px 105px;
+	background-repeat: no-repeat;
+}
+#moreGames {
+	cursor:pointer;
+	position: absolute;
+	left: 710px;
+	top: 422px;
+	width: 210px;
+	height: 133px;
+	background-image: url(../Media/EndScreen/UI_moreGames.png);
+	background-size: 210px 105px;
+	background-repeat: no-repeat;
+}
+#playAgainButton {
+	cursor:pointer;
+	position: absolute;
+	left: 465px;
+	top: 442px;
+	width: 210px;
+	height: 85px;
+	font-family: "bebas-neue";
+	font-size: 24px;
+	z-index:12;
+	color: #FFFFFF;
+	text-align:center;
+	text-shadow: 2px 2px 2px black, -2px -2px 2px black, -2px 2px 2px black, 2px -2px 2px black;
+
+	  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+#moreGamesButton {
+	cursor:pointer;
+	position: absolute;
+	left: 710px;
+	top: 442px;
+	width: 210px;
+	height: 85px;
+	font-family: "bebas-neue";
+	font-size: 24px;
+	z-index:12;
+	color: #FFFFFF;
+	text-align:center;
+	text-shadow: 2px 2px 2px black, -2px -2px 2px black, -2px 2px 2px black, 2px -2px 2px black;
+
+	  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+
+#gameUI {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 644px;
+	height: 1120px;
+	z-index: 5;
+	cursor: default;
+	visibility: visible;
+	display: inline;
+}
+.gameUIText {
+	text-align: center;
+	font-family: "bebas-neue";
+	font-size: 38pt;
+	color: #FFFFFF;
+	text-shadow: 2px 2px 2px black, -2px -2px 2px black, -2px 2px 2px black, 2px -2px 2px black;
+	float: left;
+	-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+#pauseButton {
+	cursor:pointer;
+	position: absolute;
+	top:7px;
+	right:64px;
+	width:64px;
+	height:64px;
+	background-image: url(../Media/UI/pause.png);
+	background-size:80px 80px;
+}
+#gameScore {
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:100px;
+	height:70px;
+	text-align:left;
+	margin:20px;
+}
+#gameDistance {
+	position:absolute;
+	top:0px;
+	left:222px;
+	width:100px;
+	height:70px;
+	margin:20px;
+	text-align:center;
+}
+#gamePowerupUI {
+	
+}
+.gamePowerupClass {
+	position:absolute;
+	top:435px;
+	width:76px;
+	height:87.5px;
+	background-image: url(../Media/UI/UI_PowerUp.png);
+	background-size:76px 87.5px;
+}
+#gamePowerup0 {
+	left: 350px;
+}
+#gamePowerup1 {
+	left: 436px;
+}
+#gamePowerup2 {
+	left: 523px;
+}
+#siteLink2,#siteLink {
+	cursor:pointer;
+	position:absolute;
+	top:400px;
+	left:0px;
+	width:216px;
+	height:80px;
+	z-index:11;
+	background-image:url(../Media/UI/SiteLink_Left.png);
+	background-size:216px 80px;
+}
+#siteLinkText2,#siteLinkText {
+	cursor:pointer;
+	position: absolute;
+	left:5px;
+	top:420px;
+	width: 210px;
+	height: 100%;
+	font-family: "bebas-neue";
+	font-size: 16px;
+	z-index:12;
+	color: #FFFFFF;
+	text-align:center;
+	/*text-shadow: 2px 2px 2px black, -2px -2px 2px black, -2px 2px 2px black, 2px -2px 2px black;*/
+
+	  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+#EndDistanceLabel,#BestDistanceLabel {
+  font-size: 40px;
+  font-family: "bebas-neue";
+  color: rgb(255, 255, 255);
+  line-height: 1.2;
+  text-align: right;
+  position: absolute;
+  left: 320px;
+  top: 190px;
+  width: 395px;
+  height: 39px;
+  z-index: 4;
+}
+#EndScoreLabel,#BestScoreLabel {
+  font-size: 40px;
+  font-family: "bebas-neue";
+  color: rgb(255, 255, 255);
+  line-height: 1.2;
+  text-align: right;
+  position: absolute;
+  left: 320px;
+  top: 260px;
+  width: 395px;
+  height: 39px;
+}
+#EndDistance,#BestDistance {
+  font-size: 40px;
+  font-family: "bebas-neue";
+  color: rgb(255, 255, 255);
+  line-height: 1.2;
+  text-align: left;
+  position: absolute;
+  left: 735px;
+  top: 190px;
+  width: 100px;
+  height: 39px;
+}
+#EndScore,#BestScore{
+  font-size: 40px;
+  font-family: "bebas-neue";
+  color: rgb(255, 255, 255);
+  line-height: 1.2;
+  text-align: left;
+  position: absolute;
+  left: 735px;
+  top: 260px;
+  width: 100px;
+  height: 39px;
+}
+
+#BestScore,#BestScoreLabel { top: 400px; }
+#BestDistance,#BestDistanceLabel { top: 330px; }
+
+#pauseGameWindow {
+	position:fixed;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+	z-index:200;
+	visibility:hidden;
+	  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+#pauseGameWindowBackground {
+	position:absolute;
+	width:100%;
+	height:100%;
+	opacity:0.75;
+	background-color:black;
+}
+#pauseWindowAlignment {
+	position:absolute;
+	left:50%;
+	top:70%;
+	width:500px;
+	height:400px;
+	margin:-200px -250px;
+}
+.pauseGameHeading {
+	cursor: default;
+	margin-bottom:30px;
+	font-family: "bebas-neue";
+	font-size: 48px;
+	color: #FFFFFF;
+	text-align:center;
+	/*text-shadow: 2px 2px 2px black, -2px -2px 2px black, -2px 2px 2px black, 2px -2px 2px black;*/
+
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+.pauseGameOptions {
+	cursor:pointer;
+	margin-bottom:30px;
+	font-family: "bebas-neue";
+	font-size: 32px;
+	color: #FFFFFF;
+	text-align:center;
+	/*text-shadow: 2px 2px 2px black, -2px -2px 2px black, -2px 2px 2px black, 2px -2px 2px black;*/
+
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+/*
+@media only screen and (max-height: 600px) {
+	 .pauseGameHeading {
+		
+		margin-bottom:24px;
+		font-size: 40px;
+		
+	}
+	.pauseGameOptions {
+		
+		margin-bottom:20px;
+		font-size: 32px;
+		
+	}
+	#pauseWindowAlignment {
+		height:300px;
+		margin: -150px -250px;
+	}
+}
+
+@media only screen and (max-height: 400px) {
+	 .pauseGameHeading {
+		
+		margin-bottom:12px;
+		font-size: 36px;
+		
+	}
+	.pauseGameOptions {
+		
+		margin-bottom:12px;
+		font-size: 30px;
+		
+	}
+	#pauseWindowAlignment {
+		height:250px;
+		margin: -125px -250px;
+	}
+}
+@media only screen and (max-height: 320px) {
+	 .pauseGameHeading {
+		
+		margin-bottom:8px;
+		font-size: 26px;
+		
+	}
+	.pauseGameOptions {
+		
+		margin-bottom:9px;
+		font-size: 20px;
+		
+	}
+	#pauseWindowAlignment {
+		top:40%;
+		height:160px;
+		margin: -80px -250px;
+	}
+}*/
+#pauseGameHeadingText {
+	
+}
+#IEMessage {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	background-color: #000000;
+	cursor: default;
+	visibility: hidden;
+	z-index:200;
+}
+#IEMessageText {
+	position:absolute;
+	left:0px;
+	top:50%;
+	width:100%;
+	height:150px;
+	/*margin-top:-75px;*/
+	cursor: default;
+	font-family: "bebas-neue";
+	font-size: 32px;
+	color: white;
+	z-index:201;
+	text-align: center;
+	/*text-shadow: 2px 2px 2px black, -2px -2px 2px black, -2px 2px 2px black, 2px -2px 2px black;*/
+
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+#blocker {
+	background-color:black;
+	position:fixed;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+	z-index:150;
+}
+
+
+
+
+
+
+
+
+
+

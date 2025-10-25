@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<!--<meta http-equiv="pragma" content="no-cache"/> -->
+
+<meta name="format-detection" content="telephone=no">
+<meta name="HandheldFriendly" content="true" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no">
+<meta name="HandheldFriendly" content="true" />
+<meta property="og:title" content="The Bad Guys | Fling"/>
+<meta property="og:url" content="http://gamehub.legoninjagomovie.com/">
+<meta property="og:image" content="http://gamehub.legoninjagomovie.com/media/global/share.jpg"/>
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:description" content="Play Flight of the Ninja and see THE LEGO NINJAGO MOVIE in theaters September 22, 2017."/>
+<meta property="og:site_name" content=""/>
+<meta itemprop="name" content="" />
+<meta itemprop="image" content="" />
+<meta charset="utf-8"/>
+<title>The Bad Guys | Fling</title>
+<meta name="title" content="The Bad Guys | Fling">
+<meta name="description" content="Play Flight of the Ninja and see THE LEGO NINJAGO MOVIE in theaters September 22, 2017.">
+<meta name="keywords" content="flight of the ninja, lego ninjago movie, ninjago movie, lego, ninjago, game, lego movie, masters of Spinjitzu, Spinjitzu , Ninja Go, Five Paths, Spin Jitzu, Ninja, Ninjitsu, Kai, Cole, Jay, Zane, Wu, Garmadon, Dave Franco, Justin Theroux, Fred Armisen, Abbi Jacobson, Olivia Munn, Kumail Nanjiani, Michael Peña, Zach Woods Shurkien, Staff, Nunchucks, Nya, Sensei, Pythor, Hypnobrai, Fire, Earth, Ice, Lightning, Lightening, warner bros, warner bros pictures, wb, warner brothers">
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" href="https://use.typekit.net/qsj4vhx.css">
+<link type="text/css" rel="stylesheet" href="data/center.css" />
+<link type="text/css" rel="stylesheet" href="data/loader.css" />
+<link type="text/css" rel="stylesheet" href="data/title.css" />
+<link type="text/css" rel="stylesheet" href="data/legal.css" />
+<link type="text/css" rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!--<div id="canvas_container"><canvas id="c"></canvas></div>-->
+<div id="wrapper"></div>
+<div id="div_screens">
+	<div id="levelMessage" >
+		<div id="recap_DISTANCE_Label" class="recap_DISTANCE_Label" style="font-family: bebas-neue; font-size: 50px; ">DISTANCE</div>
+		<div id="recap_DISTANCE" class="recap_DISTANCE" style="font-family: bebas-neue; font-size: 100px; "></div>
+		<div id="recap_SCORE_Label" class="recap_SCORE_Label" style="font-family: bebas-neue; font-size: 50px; ">POINTS</div>
+		<div id="recap_SCORE" class="recap_SCORE" style="font-family: bebas-neue; font-size: 100px; "></div>
+		<!--<div id="End_Message" class="End_Message" style="font-family: bebas-neue; padding-top: 40px; line-height: 35px; font-size: 30px; ">C'mon, you can do better than that, right?</div>-->
+		<div id="recap_PLAY_MORE" class="recap_PLAY_MORE" style="font-family: bebas-neue; line-height: 88px; font-size: 32px; " onclick="playAgainButtonAction(false);advanceGameState(2);">PLAY AGAIN</div>
+		<div id="recap_INSTRUCTIONS" class="recap_INSTRUCTIONS" style="font-family: bebas-neue; line-height: 90px; font-size: 32px; " onclick="playAgainButtonAction(true);advanceGameState(7);">HOW TO PLAY</div>
+		<div id="recap_WATCH_TRAILER" class="recap_WATCH_TRAILER" style="font-family: bebas-neue; line-height: 88px; font-size: 32px; ">WATCH TRAILER</div>
+		<div id="recap_legal" class="recap_legal"></div>
+		<div id="recap_date" class="recap_date" style="font-family: bebas-neue; line-height: 33.6px; font-size: 28px; ">EXCLUSIVELY ON NETFLIX</div>
+		<div id="Title_copy" class="Title_copy" style=""></div>
+		<!--<div id="recap_top_rect" class="recap_top_rect"></div>-->
+		<div id="recap_RUSS" class="recap_RUSS" style=""></div>
+		<div id="recap_HANK" class="recap_HANK" style=""></div>
+		<div id="recap_background" class="recap_background"></div>
+		<div id="soundButton2" onclick="muteToggle();"></div>
+		<div id="soundButton2off" onclick="muteToggle();"></div>
+	</div>
+	<div class="headingFont" id="headingText">Tap to Start</div>
+	<div  id="loadingScreen" >
+		<table border="0" width="100%" height="100%">
+			<tr>
+				<td align="center" valign="middle"><div class="film_logo_block" style="position: relative; display: block; top: 0px; left: 0px;">
+						<div class="game_logo" style="top: -32px; left: 50%; margin-left: -161px; font-family: bebas-neue; line-height: 68px; font-size: 68px;"> </div>
+					</div>
+					<div class="loader_spinner" style="position: relative; display: block;"> </div>
+					<div class="loader_bar" style="position: relative; display: block;">
+						<div id="loader_bar_fill" class="loader_bar_fill" style="width: 18.1818%;"> </div>
+					</div></td>
+			</tr>
+		</table>
+	</div>
+	<div id="titleScreen">
+		<div id="film_logo_block"  class="film_logo_block"></div>
+		<div id="film_logo_block_background"  class="film_logo_block_background"></div>
+		
+		<div id="run_Title"  class="run_Title" style="font-family: bebas-neue; line-height: 75px; font-size: 75px;">BLING FLING</div>
+		<div id="character_title"  class="character_title" style="transform: rotate(0deg);"></div>
+		<div id="character_title_mid"  class="character_title_mid" ></div>
+		<div id="title_background"  class="title_background"></div>
+		<div id="title_film_logo_date"  class="title_film_logo_date" style="font-family: bebas-neue; line-height: 33.6px; font-size: 28px;">NOW EXCLUSIVELY IN THEATRES</div>
+		<div id="game_logo"  class="game_logo"></div>
+		<div id="b_play"  class="b_play" style="font-family: bebas-neue; line-height: 62px; font-size: 58px; left: 24px; bottom: 80px;" onclick="advanceGameState(7);">PLAY</div>
+		<div id="b_instructions"  class="b_main" style="font-family: bebas-neue; line-height: 34.8px; font-size: 29px; right: 24px; bottom: 80px;">WATCH TRAILER</div>
+		<div id="loadbarBackground2">
+			<div id="loadbar2"></div>
+		</div>
+		<div id="exitButton" onclick="exitButtonAction();"></div>
+		<div id="soundButton" onclick="muteToggle();"></div>
+		<div id="soundButtonoff" onclick="muteToggle();"></div>
+	</div>
+	<div id="instructionPanel" class="instructionPanel" style="background-color: black; left: 302.5px;">
+		<div class="instructions_PC" style="" id="instructionPanel_gif"></div>
+		<div class="inst_b_PLAY" id="inst_b_PLAY" style="font-family: bebas-neue; line-height: 62px; font-size: 58px;" onclick="advanceGameState(2);">PLAY</div>
+		<div class="recap_legal"></div>
+		<div class="recap_date" style="font-family: bebas-neue; line-height: 33.6px; font-size: 28px;">NOW EXCLUSIVELY IN THEATRES</div>
+		<div class="Title_copy"></div>
+		<!--<div class="recap_top_rect"></div>-->
+		<div class="inst_background" id="inst_background" style="opacity: 1;"></div>
+		<div id="soundButton4" onclick="muteToggle();"></div>
+		<div id="soundButton4off" onclick="muteToggle();"></div>
+	</div>
+	<div id="canvas_container">
+		<canvas id="3d_canvas" width="540" height="960" style="width: 540px; height: 960px; left: 0px; opacity: 1; display: block;"></canvas>
+	</div>
+	<div id="pauseGameWindow">
+		<div id="pauseGameWindowBackground"></div>
+		<div class="instructions_PC" style="" id="pauseGameWindow_gif"></div>
+		<div id="pauseWindowAlignment">
+			
+			<div class="pauseGameHeading" id="pauseGameHeadingText"></div>
+			<div class="pauseGameOptions" id="pauseGameOptions1" onclick="pauseButtonButton(1);">Resume</div>
+			<!--<div class="pauseGameOptions" id="pauseGameOptions2" onclick="pauseButtonButton(2);"></div>
+			<div class="pauseGameOptions" id="pauseGameOptions3" onclick="pauseButtonButton(3);"></div>
+			<div class="pauseGameOptions" id="pauseGameOptions4" onclick="pauseButtonButton(4);" style="color:#FFFF00"></div>-->
+		</div>
+	</div>
+	<div id="gameUI">
+		<div class="gameUIText" id="gameScore">0</div>
+		<div class="gameUIText" id="gameDistance">0</div>
+		<!--<div id="gameExitButton"></div>-->
+		<div id="gamePowerupUI" >
+			<div class="gamePowerupClass" id="gamePowerup0"></div>
+			<div class="gamePowerupClass" id="gamePowerup1"></div>
+			<div class="gamePowerupClass" id="gamePowerup2"></div>
+		</div>
+		<!--<div id="ninjagoLogo3">
+			<div class="ninjagoLogoDate3" id="ninjaLogoText3">IN THEATERS SEPTEMBER 22</div>
+		</div>-->
+		<div id="soundButton3" onclick="muteToggle();"></div>
+		<div id="soundButton3off" onclick="muteToggle();"></div>
+		<div id="pauseButton" onclick="pauseButtonAction(-1);"></div>
+	</div>
+	<div id="blocker" ></div>
+	<div class="mask" id="topMask"></div>
+	<div class="mask" id="bottomMask"></div>
+	<div id="legal_panel"></div>
+	<div id="IEMessage">
+		<div id="IEMessageText"></div>
+	</div>
+</div>
+<script src="js/lib/blit_tools.min.js"></script> 
+<script src="js/lib/soundjs.min.js"></script> 
+<script src="prefs.js"></script> 
+<script src="js/prep.js"></script> 
+<script src="js/lib/three.js"></script> 
+<script src="js/lib/FBXLoader.js"></script> 
+<script src="js/lib/TweenLite.min.js"></script> 
+<script src="js/lib/CSSPlugin.min.js"></script> 
+<script src="js/lib/EasePack.min.js"></script> 
+<script src="js/loader.js"></script> 
+<script src="js/lib/THREE.MeshLine.js"></script> 
+<script src="js/lib/GPUParticleSystem.js"></script> 
+<script src="js/lib/NURBSCurve.js"></script> 
+<script src="js/lib/NURBSUtils.js"></script> 
+<script src="js/gameParams.js"></script> 
+<script src="js/legal.js"></script> 
+<script src="js/jsondata.js"></script> 
+<script src="js/nyaEnemy.js"></script> 
+<script src="js/interface.js"></script> 
+<script src="js/touch.js"></script> 
+<script src="js/main.js"></script>
+</body>
+</html>
