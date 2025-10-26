@@ -183,6 +183,9 @@ var game_parts = {
 		1: {
 			action: "anim1",
 			safe2: 1,
+			safecarrot_on:0,
+			turnmarker_1:0,
+			turnmarker_fill_1:0,
 			safe2_door: 1,
 			safe2_open_01: 0,
 			safe2_open_02: 0,
@@ -209,6 +212,11 @@ var game_parts = {
 		1: {
 			action: "anim2",
 			safe3: 1,
+			safecarrot_on:0,
+			turnmarker_1:0,
+			turnmarker_fill_1:0,
+			turnmarker_2:0,
+			turnmarker_fill_2:0,
 			safe3_door: 1,
 			safe3_open_01: 0,
 			safe3_open_02: 0,
@@ -233,6 +241,13 @@ var game_parts = {
 	},
 	safe3: {
 		1: {
+			safecarrot_on:0,
+			turnmarker_1:0,
+			turnmarker_fill_1:0,
+			turnmarker_2:0,
+			turnmarker_fill_2:0,
+			turnmarker_3:0,
+			turnmarker_fill_3:0,
 			action: "anim3",
 			turner_03: 0,
 			turnmarkers:0,
@@ -327,7 +342,7 @@ function renderAnim(name, phase) {
 						stopClock();
 						break;
 					case "win":
-						triggerGameOver();
+						setTimeout(triggerGameOver,1000);
 						break;
 					case "wolf_exit":
 						break;

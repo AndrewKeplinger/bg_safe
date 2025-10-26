@@ -306,7 +306,7 @@ function changeGameState(tState) {
 			//console.log("END GAME!");
 			
 			document.getElementById("recap_SCORE").innerHTML=""+gameScore;
-			document.getElementById("recap_DISTANCE").innerHTML=""+gameDistance;
+			//document.getElementById("recap_DISTANCE").innerHTML=""+gameDistance;
 			
 			saveState();
 			var reveal_items="recap_RUSS,recap_HANK,recap_date,Title_copy,recap_SCORE_Label,recap_SCORE,recap_PLAY_MORE,recap_INSTRUCTIONS,recap_WATCH_TRAILER".split(",");
