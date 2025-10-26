@@ -309,7 +309,7 @@ function changeGameState(tState) {
 			document.getElementById("recap_DISTANCE").innerHTML=""+gameDistance;
 			
 			saveState();
-			var reveal_items="recap_RUSS,recap_HANK,recap_date,Title_copy,recap_SCORE_Label,recap_SCORE,recap_DISTANCE_Label,recap_DISTANCE,recap_PLAY_MORE,recap_INSTRUCTIONS,recap_WATCH_TRAILER".split(",");
+			var reveal_items="recap_RUSS,recap_HANK,recap_date,Title_copy,recap_SCORE_Label,recap_SCORE,recap_PLAY_MORE,recap_INSTRUCTIONS,recap_WATCH_TRAILER".split(",");
 			var items={};
 			for (var idx=0;idx<reveal_items.length;idx++) {
 				items[reveal_items[idx]]=document.getElementById(reveal_items[idx]);
