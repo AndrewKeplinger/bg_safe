@@ -26,7 +26,7 @@ function handleKeyEvent(event) {
 	} else {
 		//document.getElementById("headingText").style.visibility="hidden";
 		currentMotion = -1;
-		endCelebration();
+		//endCelebration();
 		switch (event.key) {
 			case "Space":
 			case " ":
@@ -149,9 +149,8 @@ function F_event_Touch_onDocument_handle(evt) {
 	mouse.x = (touch.clientX / window.innerWidth) * 2 - 1;
 	mouse.y = -(touch.clientY / window.innerHeight) * 2 + 1;
 	
-	if (reaction_type === "mouseup" && gameState==2) {
+	if (reaction_type === "onclick" && gameState==2) {
 		//if (thisTouch.x > -100) {
-		console.log(flyState);
 		if (flyState==1) {
 			stopWheel();
 		}
@@ -164,7 +163,7 @@ function F_event_Touch_onDocument_handle(evt) {
 		//}
 	}
 				
-
+	/*
 	if (reaction_type === "onclick") {
 		if (flyState == 2) {
 			if (isPaused || evt.target.id.indexOf("Button")>-1 || evt.target.id.indexOf("Options")>-1) {
@@ -172,21 +171,16 @@ function F_event_Touch_onDocument_handle(evt) {
 				return;
 			}
 		} else {
-
-			var tVel = .8;//moveVelocity.length();
-			var tAng = Math.atan2(mouse.y+1,-1.5);
-			//console.log(new THREE.Vector3(Math.cos(tAng)*tVel,Math.sin(tAng)*tVel));
 			
 			if (gameState==2 && flyState == 0) {
 			}
 		}
-
-
 	} // if (reaction_type == "onclick").
+	
 	//return false;
 	if (reaction_type === "mousemove") {
 
 		evt.preventDefault();
-	}
+	}*/
 }
 

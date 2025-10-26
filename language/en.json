@@ -48,10 +48,8 @@
 {"id": "Action_Button","type": "Text","style":"","size": 1,"target": "Intro","data": "![CDATA[PLAY]]"},
 {"id": "End_Message","type": "Text","style":"","size": 1,"target": "Intro","data": "![CDATA[FLIGHT COMPLETE!]]"},
 {"id": "End_Best_Message","type": "Text","style":"","size": 1,"target": "Intro","data": "![CDATA[NEW BEST SCORE!]]"},
-{"id": "End_Score","type": "Text","style":"","size": 1,"target": "Intro","data": "![CDATA[SCORE:]]"},
+{"id": "End_Score","type": "Text","style":"","size": 1,"target": "Intro","data": "![CDATA[TIME:]]"},
 {"id": "End_Distance","type": "Text","style":"","size": 1,"target": "Intro","data": "![CDATA[DISTANCE:]]"},
-{"id": "Best_Score","type": "Text","style":"","size": 1,"target": "Intro","data": "![CDATA[BEST SCORE:]]"},
-{"id": "Best_Distance","type": "Text","style":"","size": 1,"target": "Intro","data": "![CDATA[LONGEST DISTANCE:]]"},
 {"id": "End_Play_Again","type": "Text","style":"","size": 1,"target": "Intro","data": "![CDATA[PLAY</br>AGAIN]]"},
 {"id": "End_More","type": "Text","style":"","size": 1,"target": "Intro","data": "![CDATA[MORE</br>GAMES]]"},
 {"id":"Jay_RubberBand","type":"audio","active":1,"value":"language/en/Jay_RubberBand_Eng.mp3"}

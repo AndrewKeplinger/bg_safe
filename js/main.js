@@ -103,7 +103,7 @@ function startUpLoaderUI() {
 
 function animate() {
 	var deltaTime = Date.now();
-
+	anim_step();
 	window.requestAnimationFrame(animate);
 }
 
@@ -165,9 +165,11 @@ var game_parts = {
 			turner_02: 0,
 			turner_03: 0,
 			iceRing: 0,
+			safecarrot_on:0,
 			safe2: 0,
 			safe3: 0,
-			safe_cases: 1,
+			loot:0,
+			//safe_cases: 1,
 			safe1_door: 1,
 			safe1_open_01: 0,
 			safe1_open_02: 0,
@@ -179,15 +181,16 @@ var game_parts = {
 	},
 	safe1: {
 		1: {
-			action: "anim",
+			action: "anim1",
 			safe2: 1,
 			safe2_door: 1,
 			safe2_open_01: 0,
 			safe2_open_02: 0,
 			safe2_open_03: 0,
 			Safe2_case: 1,
+			turners:0,
 			turner_01: 0,
-			turner_02: 1,
+			turnmarkers:0,
 			safe1_open_01: 1,
 			safe1_door: 0
 		},
@@ -197,21 +200,23 @@ var game_parts = {
 		},
 		3: {
 			safe1_open_02: 0,
-			safe1_open_03: 1,
+			safe1_open_03: 1,			
+			safecarrot_on:0,
 			action: "initDial"
 		}
 	},
 	safe2: {
 		1: {
-			action: "anim",
+			action: "anim2",
 			safe3: 1,
 			safe3_door: 1,
 			safe3_open_01: 0,
 			safe3_open_02: 0,
 			safe3_open_03: 0,
-			Safe3_case: 1,
+			//Safe3_case: 1,
+			turners:0,
 			turner_02: 0,
-			turner_03: 1,
+			turnmarkers:0,
 			safe2_open_01: 1,
 			safe2_door: 0
 		},
@@ -221,19 +226,22 @@ var game_parts = {
 		},
 		3: {
 			safe2_open_02: 0,
-			safe2_open_03: 1,
+			safe2_open_03: 1,			
+			safecarrot_on:0,
 			action: "initDial"
 		}
 	},
 	safe3: {
 		1: {
-			action: "anim",
+			action: "anim3",
 			turner_03: 0,
+			turnmarkers:0,
+			turners:0,
 			safe3_open_01: 1,
 			safe3_door: 0,
-			action: "stopclock"
 		},
-		2: {
+		2: {action:"stopclock",
+			loot:1,
 			safe3_open_01: 0,
 			safe3_open_02: 1
 		},
@@ -289,7 +297,7 @@ function anim_step() {
 	if (gV.anim) {
 		if (Date.now() > gV.nextStep) {
 			gV.animStep++;
-			if (!game_parts[gV.animStep]) {
+			if (!game_parts[gV.anim][gV.animStep]) {
 				gV.anim = null;
 			} else {
 				renderAnim(gV.anim, gV.animStep);
@@ -298,7 +306,7 @@ function anim_step() {
 		}
 	}
 }
-
+var safe_zs={"safe1":40,"safe2":17,"safe3":10};
 function renderAnim(name, phase) {
 	var anim = game_parts[name][phase];
 	var keys = Object.keys(anim);
@@ -315,6 +323,8 @@ function renderAnim(name, phase) {
 					case "wolf_reveal":
 						break;
 					case "stopclock":
+						gobj(document.getElementById("loot"),"on");
+						stopClock();
 						break;
 					case "win":
 						triggerGameOver();
@@ -324,11 +334,22 @@ function renderAnim(name, phase) {
 					case "initDial":
 						initDial();
 						break;
-					case "anim":
+					case "anim1":
+					case "anim2":
+					case "anim3":
+						//var animnum=anim[keys[idx]].substring(4,5);
+						
+						// special code to move turner layer then fall through to loop
+						var turners = document.getElementById("turners");
+						turners.style.rotate="0deg";
+						//turners.style.zIndex=Number(safe_zs["safe"+animnum]);
+						
+						
 					case "loop":
 						if (gV.anim) {
-
+							//if any existing animations are playing, stop
 						}
+						flyState=2; //prevent touches from activating anything
 						gV.anim = name;
 						gV.animStep = 1;
 						gV.nextStep = Date.now() + oCONFIG.animationDelay;
@@ -351,7 +372,18 @@ function renderAnim(name, phase) {
 		}
 	}
 }
-
+//meterWidth 300
+function startClock() {
+	gV.clockObject=document.getElementById("meterFill");
+	gV.clockStart=Date.now();
+}
+function updateClock() {
+	
+}
+function stopClock() {
+	gV.clockStart=-1;
+	gobj(document.getElementById("loot_0"+gV.loot),"on");
+}
 function initGame() {
 	//Start up.
 	flyState = 0;
@@ -359,10 +391,16 @@ function initGame() {
 	gV.gameStep = 1;
 	gV.opening = -1;
 	gV.animRate = 0.1;
+	gV.loot=rnd(3)+1;
+	for (var idx=1; idx<4; idx++) {
+		gobj(document.getElementById("loot_0"+idx),"off");
+	}//gobj(document.getElementById("loot_0"+gV.loot),"on");
+	gobj(document.getElementById("loot"),"off");
 	renderAnim("initalState", 1);
 }
 
 function gobj(obj, state) {
+	console.log(obj.id+" "+state);
 	switch (state) {
 		case "on":
 			obj.style.visibility = "visible";
@@ -376,18 +414,27 @@ function gobj(obj, state) {
 	}
 }
 var targetNum=0;
-var turner;
 function initDial() {
 	gV.gameStep = 1;
+	flyState=0;
+	targetNum=0;
+	gobj(document.getElementById("turners"), "on");
 	gobj(document.getElementById("turner_iced"), "off");
 	gobj(document.getElementById("iceRing"), "off");
 	for (var idx = 0; idx < 3; idx++) {
 		gobj(document.getElementById("turnmarker_" + (idx + 1)), idx < gV.level?"on":"off");
-		gobj(document.getElementById("turnmarker_fill_" + (idx + 1)), idx < gV.level?"on":"off");		
-		turner = document.getElementById("turner_0" + (idx + 1))
-		gobj(document.getElementById("turner_0" + (idx + 1)), idx == gV.level?"on":"off");
+		gobj(document.getElementById("turnmarker_fill_" + (idx + 1)), "off");		
+		turner = document.getElementById("turner_0" + (idx + 1));
+		gobj(document.getElementById("turner_0" + (idx + 1)), (idx+1) == gV.level?"on":"off");
 	}
-	targetNum= rnd(36);
+	newNumber();
+}
+function newNumber() {
+	var newNum = rnd(36);
+	while (Math.abs(newNum-targetNum)<3) {
+		newNum = rnd(36);
+	}
+	targetNum = newNum;
 	//if (targetNum>35) targetNum=0;
 	console.log(targetNum);
 	var angleNum = Math.PI * targetNum /18.0;
@@ -397,44 +444,60 @@ function initDial() {
 	var v = numberMark.offsetTop-turner_01.offsetTop;
 	var ch = turner_01.offsetLeft+(turner_01.offsetWidth/2);
 	var cv = turner_01.offsetTop+(turner_01.offsetHeight/2);
-	var radius = 132-numberMark.offsetWidth/2;
+	var radius = 132-(numberMark.offsetWidth/2);
 	var nh = ch+(Math.sin(angleNum)*radius);
 	var nv = cv+(-Math.cos(angleNum)*radius);
 	numberMark.style.left = (nh-numberMark.offsetWidth/2)+"px";
 	numberMark.style.top = (nv-numberMark.offsetWidth/2)+"px";
 }
+function get_turner_rot(){
+	var rawrot = document.getElementById("turners").style.rotate;
+	return Number(rawrot.substr(0,rawrot.length-3));
+}
 function stopWheel() {
-	var rotation = getCurrentRotation(document.getElementById("turners")) % 360;
+	var rotation = get_turner_rot();
 	
-	var diffrot = ((targetNum*10)-rotation);
-	console.log(rotation+"  "+diffrot);
-	if (diffrot<0) diffrot+=360;
-	if (Math.abs(diffrot)<7) {
+	var diffrot = ((360-(targetNum*10))-rotation);
+	if (diffrot>270) diffrot-=360;
+	
+	if (Math.abs(diffrot)<oCONFIG.accuracy) {
 		if (gV.rotateTimeout) clearTimeout(gV.rotateTimeout);
-		gV.gameStep++;
+		gV.gameStep++;		
+		//gobj(document.getElementById("turners"), "off");
 		if (gV.gameStep<=gV.level) {
+			newNumber();
 			startRotate();
 		} else {
-			
-			renderAnim("safe"+gV.level, 1);
-			gV.level++;
+			flyState=2;
+			setTimeout(advanceSafe,1000);
 			
 		}
 	} else {
 		//Missed
 	}
-
+}
+function advanceSafe() {	
+	renderAnim("safe"+gV.level, 1);
+	gV.level++;
 }
 function startRotate(){
 	flyState=0;
 	gV.startTime=Date.now();
 	gV.turnRate=oCONFIG.turnRate; 
-	gV.direction=gV.gameStep%2==0?1:-1;
+	gV.direction=(gV.gameStep%2==0)?-1:1;
 	gV.rotateTimeout = setTimeout(rotateDial,10);
 }
+var safecarrot_on = document.getElementById("safecarrot_on");
 function rotateDial() {
+	var rotation = get_turner_rot();
+	var diffrot = ((360-(targetNum*10))-rotation);
+	gobj(safecarrot_on,(Math.abs(diffrot)<oCONFIG.accuracy)?"on":"off");
+		 
 	var dTime = 0.001*( Date.now()-gV.startTime);
-	var rot = gV.turnRate*dTime*gV.direction;
+	gV.startTime=Date.now();
+	var rot = gV.turnRate*dTime*gV.direction + get_turner_rot();
+	if (rot>360) rot-=360;
+	if (rot<0) rot+=360;
 	document.getElementById("turners").style.rotate=rot+"deg";
 	if (gV.rotateTimeout) clearTimeout(gV.rotateTimeout);
 	gV.rotateTimeout = setTimeout(rotateDial,10);

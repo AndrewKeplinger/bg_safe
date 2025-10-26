@@ -42,7 +42,7 @@
   z-index: 61;
 }
 #meterFill {
-  background-image: url("../Media/safe/meterFill.png");
+  /*background-image: url("../Media/safe/meterFill.png");*/
   position: absolute;
   left: 127px;
   top: 73px;
@@ -277,7 +277,7 @@
   height: 290px;
   background-repeat: no-repeat;
   background-size: contain;
-  z-index: 29;
+  z-index: 19;
 }
 #turner_03 {
   background-image: url("../Media/safe/turner_03.png");
@@ -288,7 +288,7 @@
   height: 290px;
   background-repeat: no-repeat;
   background-size: contain;
-  z-index: 28;
+  z-index: 21;
 }
 #turner_iced {
   background-image: url("../Media/safe/turner_iced.png");
@@ -377,6 +377,13 @@
   background-repeat: no-repeat;
   background-size: contain;
   z-index: 34;
+}
+#safe_cases {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 644px;
+  height: 1120px;
 }
 #safe1 {
   position: absolute;
@@ -501,13 +508,14 @@
   background-image: url("../Media/safe/Safe2_case.png");
   position: absolute;
   left: 0px;
-  top: 0px;
+  top: 193px;
   width: 644px;
-  height: 1070px;
+  height: 701px;
   background-repeat: no-repeat;
   background-size: contain;
   z-index: 12;
 }
+
 #safe3 {
   position: absolute;
   left: 0px;
