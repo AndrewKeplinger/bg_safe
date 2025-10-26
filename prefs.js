@@ -19,7 +19,8 @@ oCONFIG = {
   page_width:644.0,
 	page_height:1120.0,
 	page_land_ratio:0.575,
-	animationDelay:250
+	animationDelay:250,
+	turnRate:90.0
 };
 // Overridden from en.json language file
 

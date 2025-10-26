@@ -149,13 +149,19 @@ function F_event_Touch_onDocument_handle(evt) {
 	mouse.x = (touch.clientX / window.innerWidth) * 2 - 1;
 	mouse.y = -(touch.clientY / window.innerHeight) * 2 + 1;
 	
-	if (reaction_type === "mouseup") {
-		if (thisTouch.x > -100) {
-			if (flyState == 0) {
-				
-			}
-			thisTouch.x = -100;
+	if (reaction_type === "mouseup" && gameState==2) {
+		//if (thisTouch.x > -100) {
+		console.log(flyState);
+		if (flyState==1) {
+			stopWheel();
 		}
+		if (flyState == 0) {
+			//start spinner
+			startRotate();
+			flyState=1;
+		}
+		thisTouch.x = -100;
+		//}
 	}
 				
 

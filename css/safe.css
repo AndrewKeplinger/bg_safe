@@ -217,10 +217,10 @@
 }
 #turners {
   position: absolute;
-  left: 0px;
-  top: 0px;
-  width: 644px;
-  height: 1120px;
+  left: 182px;
+  top: 426px;
+  width: 290px;
+  height: 290px;
   background-repeat: no-repeat;
   background-size: contain;
   z-index: 41;
@@ -235,7 +235,84 @@
   background-size: contain;
   z-index: 40;
 }
-#turnmarker_fill_copy_2 {
+#numberMark {
+  background-image: url("../Media/safe/numberMark.png");
+  position: absolute;
+  left: 120px;
+  top: 12px;
+  width: 48px;
+  height: 49px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 32;
+}
+#safecarrot_on {
+  background-image: url("../Media/safe/safecarrot_on.png");
+  position: absolute;
+  left: 310px;
+  top: 390px;
+  width: 33px;
+  height: 29px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 31;
+}
+#turner_01 {
+  background-image: url("../Media/safe/turner_01.png");
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 290px;
+  height: 290px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 30;
+}
+#turner_02 {
+  background-image: url("../Media/safe/turner_02.png");
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 290px;
+  height: 290px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 29;
+}
+#turner_03 {
+  background-image: url("../Media/safe/turner_03.png");
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 290px;
+  height: 290px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 28;
+}
+#turner_iced {
+  background-image: url("../Media/safe/turner_iced.png");
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 290px;
+  height: 290px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 27;
+}
+#iceRing {
+  background-image: url("../Media/safe/iceRing.png");
+  position: absolute;
+  left: -39px;
+  top: -31px;
+  width: 358px;
+  height: 351px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 31;
+}
+#turnmarker_fill_3 {
   background-image: url("../Media/safe/turnmarker_fill.png");
   position: absolute;
   left: 349px;
@@ -257,7 +334,7 @@
   background-size: contain;
   z-index: 38;
 }
-#turnmarker_fill_copy {
+#turnmarker_fill_2 {
   background-image: url("../Media/safe/turnmarker_fill.png");
   position: absolute;
   left: 316px;
@@ -268,7 +345,7 @@
   background-size: contain;
   z-index: 37;
 }
-#turnmarker_1 {
+#turnmarker_2 {
   background-image: url("../Media/safe/turnmarker_backing.png");
   position: absolute;
   left: 313px;
@@ -279,7 +356,7 @@
   background-size: contain;
   z-index: 36;
 }
-#turnmarker_fill {
+#turnmarker_fill_1 {
   background-image: url("../Media/safe/turnmarker_fill.png");
   position: absolute;
   left: 283px;
@@ -300,83 +377,6 @@
   background-repeat: no-repeat;
   background-size: contain;
   z-index: 34;
-}
-#numberMark {
-  background-image: url("../Media/safe/numberMark.png");
-  position: absolute;
-  left: 302px;
-  top: 438px;
-  width: 48px;
-  height: 49px;
-  background-repeat: no-repeat;
-  background-size: contain;
-  z-index: 32;
-}
-#safecarrot_on {
-  background-image: url("../Media/safe/safecarrot_on.png");
-  position: absolute;
-  left: 310px;
-  top: 390px;
-  width: 33px;
-  height: 29px;
-  background-repeat: no-repeat;
-  background-size: contain;
-  z-index: 31;
-}
-#turner_01 {
-  background-image: url("../Media/safe/turner_01.png");
-  position: absolute;
-  left: 182px;
-  top: 426px;
-  width: 290px;
-  height: 290px;
-  background-repeat: no-repeat;
-  background-size: contain;
-  z-index: 30;
-}
-#turner_02 {
-  background-image: url("../Media/safe/turner_02.png");
-  position: absolute;
-  left: 182px;
-  top: 426px;
-  width: 290px;
-  height: 290px;
-  background-repeat: no-repeat;
-  background-size: contain;
-  z-index: 29;
-}
-#turner_03 {
-  background-image: url("../Media/safe/turner_03.png");
-  position: absolute;
-  left: 182px;
-  top: 426px;
-  width: 290px;
-  height: 290px;
-  background-repeat: no-repeat;
-  background-size: contain;
-  z-index: 28;
-}
-#turner_iced {
-  background-image: url("../Media/safe/turner_iced.png");
-  position: absolute;
-  left: 182px;
-  top: 426px;
-  width: 290px;
-  height: 290px;
-  background-repeat: no-repeat;
-  background-size: contain;
-  z-index: 27;
-}
-#iceRing {
-  background-image: url("../Media/safe/iceRing.png");
-  position: absolute;
-  left: 143px;
-  top: 395px;
-  width: 358px;
-  height: 351px;
-  background-repeat: no-repeat;
-  background-size: contain;
-  z-index: 26;
 }
 #safe1 {
   position: absolute;
