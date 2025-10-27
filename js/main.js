@@ -511,7 +511,7 @@ function stopWheel() {
 	} else {
 		playSound("Safe_Btn");
 		gV.missCount++;
-		if (gV.missCount==4) {
+		if (gV.missCount==oCONFIG.freeze_event_triger) {
 			renderAnim("freeze", 1);
 		}
 	}
