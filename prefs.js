@@ -20,9 +20,9 @@ oCONFIG = {
 	page_height:1120.0,
 	page_land_ratio:0.575,
 	animationDelay:250,
-	turnRate:90.0,
-	freezeTurnRate:45.0,
-	accuracy:10,
+	turnRate:120.0,
+	freezeTurnRate:60.0,
+	accuracy:3,
 	wrong_penalty:250,
 	game_duration:60000,
 	time_meter_width:300,
@@ -57,7 +57,7 @@ var legal_images = [
   "Media/rating.png"
 ];
 
-var official_site_link = "http://www.legoninjagomovie.com/";
+var official_site_link = "https://tv.dreamworks.com/badguys/safecracker/";
 
 var menu_list = [
   {title_msg: "menu_resume", action:"resume", link:""},
