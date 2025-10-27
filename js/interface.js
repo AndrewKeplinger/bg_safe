@@ -314,6 +314,22 @@ function changeGameState(tState) {
 			for (var idx=0;idx<reveal_items.length;idx++) {
 				items[reveal_items[idx]]=document.getElementById(reveal_items[idx]);
 			}
+			
+			gV.recap_loot=[];
+			var base = document.getElementById("levelMessage");
+			var tDiv = document.createElement("div");
+			base.appendChild(tDiv);
+			tDiv.className="loot_rays_01";
+			gV.recap_loot.push(tDiv);
+			var tDiv = document.createElement("div");
+			base.appendChild(tDiv);
+			tDiv.className="loot_rays_02";
+			gV.recap_loot.push(tDiv);
+			var tDiv = document.createElement("div");
+			base.appendChild(tDiv);
+			tDiv.className="loot_0"+gV.loot;
+			gV.recap_loot.push(tDiv);
+			
 			/*
 			for (var idx=0; idx< reveal_items.length; idx++) {
 				var item = reveal_items[idx];

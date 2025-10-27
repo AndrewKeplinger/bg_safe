@@ -21,7 +21,9 @@ oCONFIG = {
 	page_land_ratio:0.575,
 	animationDelay:250,
 	turnRate:90.0,
-	accuracy:10
+	freezeTurnRate:90.0,
+	accuracy:10,
+	wrong_penalty:250
 };
 // Overridden from en.json language file
 

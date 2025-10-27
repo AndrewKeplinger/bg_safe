@@ -160,7 +160,7 @@
   background-size: contain;
   z-index: 9;
 }
-#loot_01 {
+#loot_01,.loot_01 {
   background-image: url("../Media/safe/loot_01.png");
   position: absolute;
   left: 187px;
@@ -171,7 +171,11 @@
   background-size: contain;
   
 }
-#loot_02 {
+.loot_01,.loot_02,.loot_03,.loot_rays_01,.loot_rays_02 {
+	top:380px;
+	z-index:80;
+}
+#loot_02,.loot_02 {
   background-image: url("../Media/safe/loot_02.png");
   position: absolute;
   left: 219px;
@@ -182,7 +186,7 @@
   background-size: contain;
   
 }
-#loot_03 {
+#loot_03.loot_03 {
   background-image: url("../Media/safe/loot_03.png");
   position: absolute;
   left: 223px;
@@ -193,7 +197,7 @@
   background-size: contain;
   
 }
-#loot_rays_01 {
+#loot_rays_01,.loot_rays_01 {
   background-image: url("../Media/safe/loot_rays_01.png");
   position: absolute;
   left: 102px;
@@ -204,7 +208,7 @@
   background-size: contain;
   
 }
-#loot_rays_02 {
+#loot_rays_02,.loot_rays_02 {
   background-image: url("../Media/safe/loot_rays_02.png");
   position: absolute;
   left: 130px;
@@ -233,7 +237,7 @@
   height: 1120px;
   background-repeat: no-repeat;
   background-size: contain;
-  z-index: 40;
+  z-index: 79;
 }
 #numberMark {
   background-image: url("../Media/safe/numberMark.png");
@@ -321,7 +325,7 @@
   height: 22px;
   background-repeat: no-repeat;
   background-size: contain;
-  z-index: 53;
+  z-index: 81;
 }
 #turnmarker_3 {
   background-image: url("../Media/safe/turnmarker_backing.png");
@@ -332,7 +336,7 @@
   height: 29px;
   background-repeat: no-repeat;
   background-size: contain;
-  z-index: 52;
+  z-index: 80;
 }
 #turnmarker_fill_2 {
   background-image: url("../Media/safe/turnmarker_fill.png");
@@ -343,7 +347,7 @@
   height: 22px;
   background-repeat: no-repeat;
   background-size: contain;
-  z-index: 53;
+  z-index: 81;
 }
 #turnmarker_2 {
   background-image: url("../Media/safe/turnmarker_backing.png");
@@ -354,7 +358,7 @@
   height: 29px;
   background-repeat: no-repeat;
   background-size: contain;
-  z-index: 52;
+  z-index: 80;
 }
 #turnmarker_fill_1 {
   background-image: url("../Media/safe/turnmarker_fill.png");
@@ -365,7 +369,7 @@
   height: 22px;
   background-repeat: no-repeat;
   background-size: contain;
-  z-index: 53;
+  z-index: 81;
 }
 #turnmarker_1 {
   background-image: url("../Media/safe/turnmarker_backing.png");
@@ -376,7 +380,7 @@
   height: 29px;
   background-repeat: no-repeat;
   background-size: contain;
-  z-index: 52;
+  z-index: 80;
 }
 #safe_cases {
   position: absolute;

@@ -63,9 +63,9 @@ resetGame = function (showTitle) {
 
 	flyState = 0;
 	gameScore = 0;
-	gameScoreField.innerHTML = "" + gameScore;
-	gameDistance = 0;
-	gameDistField.innerHTML = "" + gameDistance; //+"m";
+	//gameScoreField.innerHTML = "" + gameScore;
+	//gameDistance = 0;
+	//gameDistField.innerHTML = "" + gameDistance; //+"m";
 	isPaused = false;
 
 	repopulationRange = -15;
@@ -159,7 +159,7 @@ var game_parts = {
 		1: {
 			alarmOn: 0,
 			GameLoss_Lasers: 0,
-			snake: 0,
+			snake: 1,
 			wolf: 0,
 			turners: 1,
 			turner_02: 0,
@@ -334,8 +334,10 @@ function renderAnim(name, phase) {
 					case "iceFx":
 						break;
 					case "freeze":
+						gV.turnRate=oCONFIG.freezeTurnRate;
 						break;
 					case "wolf_reveal":
+						gV.nextStep = Date.now() + oCONFIG.animationDelay;
 						break;
 					case "stopclock":
 						gobj(document.getElementById("loot"),"on");
@@ -413,9 +415,13 @@ function initGame() {
 	gobj(document.getElementById("loot"),"off");
 	renderAnim("initalState", 1);
 }
-
+var dbg="";
 function gobj(obj, state) {
-	console.log(obj.id+" "+state);
+	if (dbg!=obj.id+state){
+		console.log(obj.id+" "+state);
+		dbg=obj.id+state;
+	}
+	//
 	switch (state) {
 		case "on":
 			obj.style.visibility = "visible";
@@ -445,6 +451,7 @@ function initDial() {
 	newNumber();
 }
 function newNumber() {
+	gV.missCount=0;
 	var newNum = rnd(36);
 	while (Math.abs(newNum-targetNum)<3) {
 		newNum = rnd(36);
@@ -469,7 +476,12 @@ function get_turner_rot(){
 	var rawrot = document.getElementById("turners").style.rotate;
 	return Number(rawrot.substr(0,rawrot.length-3));
 }
+var nextWheelTime=-1;
 function stopWheel() {
+	if (nextWheelTime>Date.now()) {
+		nextWheelTime=Date.now()+oCONFIG.wrong_penalty;
+		return;
+	}
 	var rotation = get_turner_rot();
 	
 	var diffrot = ((360-(targetNum*10))-rotation);
@@ -477,10 +489,12 @@ function stopWheel() {
 	
 	if (Math.abs(diffrot)<oCONFIG.accuracy) {
 		if (gV.rotateTimeout) clearTimeout(gV.rotateTimeout);
+		gobj(document.getElementById("turnmarker_"+gV.gameStep),"on");
 		gV.gameStep++;		
+		playSound("Safe_ComboTurn");
 		//gobj(document.getElementById("turners"), "off");
 		if (gV.gameStep<=gV.level) {
-			newNumber();
+			newNumber();			
 			startRotate();
 		} else {
 			flyState=2;
@@ -488,10 +502,15 @@ function stopWheel() {
 			
 		}
 	} else {
-		//Missed
+		playSound("Safe_Btn");
+		gV.missCount++;
+		if (gV.missCount==4) {
+			renderAnim("freeze", 1);
+		}
 	}
 }
 function advanceSafe() {	
+	playSound("Safe_Door Open");
 	renderAnim("safe"+gV.level, 1);
 	gV.level++;
 }

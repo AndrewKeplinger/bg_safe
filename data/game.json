@@ -1,122 +1,45 @@
 [{
 	"id": "DisplayLoadText",
 	"type": "Command"
-},{
+}, {
 	"id": "MenuLoop",
 	"type": "audio",
-	"loop":"1",
-	"value":"Sfx/Jay_TitleLoop.mp3"
-},{
+	"loop": "1",
+	"value": "Sfx/Jay_TitleLoop.mp3"
+}, {
 	"id": "Jay_MusicLoop",
 	"type": "audio",
-	"loop":"1",
-	"value":"Sfx/Jay_MusicLoop.mp3"
-},{
-	"id": "Jay_CoinCollect",
+	"loop": "1",
+	"value": "Sfx/Jay_MusicLoop.mp3"
+}, {
+	"id": "Safe_Alarm",
 	"type": "audio",
-	"value":"Sfx/Jay_CoinCollect.mp3"
-},{
-	"id": "Jay_CoinCollect01",
+	"value": "Sfx/Safe_Alarm.mp3"
+}, {
+	"id": "Safe_Btn",
 	"type": "audio",
-	"value":"Sfx/Jay_CoinCollect01.mp3"
-},{
-	"id": "Jay_CoinCollect02",
+	"value": "Sfx/Safe_Btn.mp3"
+}, {
+	"id": "Safe_ComboTurn",
 	"type": "audio",
-	"value":"Sfx/Jay_CoinCollect02.mp3"
-},{
-	"id": "Jay_CoinCollect03",
+	"value": "Sfx/Safe_ComboTurn.mp3"
+}, {
+	"id": "Safe_Door Open",
 	"type": "audio",
-	"value":"Sfx/Jay_CoinCollect03.mp3"
-},{
-	"id": "Jay_CoinCollect04",
+	"value": "Sfx/Safe_Door Open.mp3"
+}, {
+	"id": "Safe_IceSpray",
 	"type": "audio",
-	"value":"Sfx/Jay_CoinCollect04.mp3"
-},{
-	"id": "Jay_EndofLevel",
+	"value": "Sfx/Safe_IceSpray.mp3"
+}, {
+	"id": "Safe_Win",
 	"type": "audio",
-	"value":"Sfx/Jay_EndofLevel.mp3"
-},{
-	"id": "Jay_HitPowerup1",
-	"type": "audio",
-	"value":"Sfx/Jay_HitPowerup.mp3"
-},{
-	"id": "Jay_HitPowerup2",
-	"type": "audio",
-	"value":"Sfx/Jay_HitPowerup2.mp3"
-},{
-	"id": "Jay_HitPowerup3",
-	"type": "audio",
-	"value":"Sfx/Jay_HitPowerup3.mp3"
-},{
-	"id": "Jay_RubberBand",
-	"type": "audio",
-	"value":"Sfx/Jay_RubberBand.mp3"
-},{
-	"id": "Coin",
-	"type": "atlas",
-	"totalFrames": 20,
-	"size":256,
-	"cols":8,
-	"anims": {"default":{"start":0,"end":19,"loop":1}},
-	"value": "Media/coin.png"
-},{
-	"id": "Jay",
-	"type": "atlas",
-	"totalFrames": 50,
-	"size":275,
-	"cols":7,
-	"anims": {"default":{"start":0,"end":49,"loop":0},"idle0":{"start":0,"end":0,"loop":0},"idle1":{"start":0,"end":7,"loop":0},"idle2":{"start":7,"end":7,"loop":0},"idle3":{"start":7,"end":0,"loop":0},"fly":{"start":8,"end":24,"loop":1},"jump":{"start":25,"end":30,"loop":0},"leap":{"start":31,"end":37,"loop":0},"land":{"start":38,"end":48,"loop":0}},
-	"value": "Media/jay.png"
-},{
-	"id": "PowerUp",
-	"type": "atlas",
-	"totalFrames": 5,
-	"cols": 4,
-	"size": 256,
-	"anims": {"default":{"start":0,"end":4,"loop":1}},
-	"value": "Media/Powerup.png"
-},{
-	"id": "highSky",
-	"type": "plane",
-	"value": "Media/Background/highSky.jpg"
-},{
-	"id": "BG_Water",
-	"type": "plane",
-	"value": "Media/Background/BG_Water.jpg"
-},{
-	"id": "BG_Flight",
-	"type": "plane",
-	"value": "Media/Background/BG_Flight.jpg"
-},{
-	"id": "FG_Grass",
-	"type": "plane",
-	"value": "Media/Background/FG_Grass.png"
-},{
-	"id": "FG_Bush",
-	"type": "plane",
-	"value": "Media/Background/FG_Bush.png"
-},{
-	"id": "LauncherBase",
-	"type": "plane",
-	"value": "Media/Background/LauncherBase.png"
-},{
-	"id": "LauncherSeat",
-	"type": "plane",
-	"value": "Media/Background/LauncherSeat.png"
-},{
+	"value": "Sfx/Safe_Win.mp3"
+}, {
 	"id": "LevelLoaded",
 	"value": 4,
 	"type": "Command"
-},{
+}, {
 	"id": "StartGame",
 	"type": "Command"
 }]
-
-
-
-
-
-
-
-
-
