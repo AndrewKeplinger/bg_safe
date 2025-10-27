@@ -32,23 +32,6 @@ function LoadComplete() {
 		document.getElementById("pauseGameOptions4").style.display = "none";
 	}
 
-	//setFieldText("WebLinkPrompt", "siteLinkText3");
-	// AHL
-	/*
-	if (isMobile) {
-		setFieldText("IntroPrompt_Mobile", "titleInstructions");
-		document.getElementById("titleInstructionsImage_PC").style.visibility = "hidden";
-	} else {
-		setFieldText("IntroPrompt_PC", "titleInstructions");
-		document.getElementById("titleInstructionsImage").style.visibility = "hidden"; 
-	}
-	*/
-
-
-	//preroll = makePlane([10,0.5,-00],"playerPreRoll", materials["Jay_0"], [7.5,7.5],[1,1],false,0);
-	//preroll.baseAnim = "Jay_";
-	//startAnim("default",preroll, purgePreroll);
-
 	changeGameState(0);
 	gameState = 1;
 	changeGameState(1);
@@ -60,7 +43,6 @@ function LoadComplete() {
 
 var obstacle2;
 resetGame = function (showTitle) {
-
 	flyState = 0;
 	gameScore = 0;
 	//gameScoreField.innerHTML = "" + gameScore;
@@ -75,7 +57,6 @@ resetGame = function (showTitle) {
 	if (!showTitle) {
 		changeGameState(2);
 	}
-
 }
 
 var repopulationRange = -15;
@@ -268,7 +249,9 @@ var game_parts = {
 	},
 	lasers: {
 		1: {
-			action: "anim",
+			action: "loop",
+			alarmOn:1,
+			alarmOff:0,
 			laser_darker: 1,
 			laser_02: 0,
 			laser_01: 1
@@ -284,13 +267,13 @@ var game_parts = {
 		4: {
 			laser_04: 1,
 			laser_01: 0,
-			action: "loop"
+			action: "lose"
 		}
 	},
 	freeze: {
 		1: {
-			wolf: 1,
-			action: "wolf_reveal"
+			action: "wolf_reveal",
+			wolf: 1
 		},
 		2: {
 			iceRing: 1,
@@ -301,18 +284,23 @@ var game_parts = {
 			action: "freeze"
 		},
 		4: {
-			turner_iced: 0,
-			iceRing: 0,
+			//turner_iced: 0,
+			//iceRing: 0,
 			action: "wolf_exit"
 		}
 	}
 }
-
+var iceRing=document.getElementById("iceRing");
 function anim_step() {
+	/*if (iceRing.style.visibility=="visible") {
+		iceRing.style.rotate=rnd(360)+"deg";	
+	}*/
+	updateClock();
 	if (gV.anim) {
 		if (Date.now() > gV.nextStep) {
 			gV.animStep++;
 			if (!game_parts[gV.anim][gV.animStep]) {
+				console.log("End Anim:"+gV.anim);
 				gV.anim = null;
 			} else {
 				renderAnim(gV.anim, gV.animStep);
@@ -329,24 +317,30 @@ function renderAnim(name, phase) {
 		switch (keys[idx]) {
 			case "action":
 				switch (anim[keys[idx]]) {
-					case "wolf_reveal":
-						break;
 					case "iceFx":
 						break;
 					case "freeze":
 						gV.turnRate=oCONFIG.freezeTurnRate;
 						break;
 					case "wolf_reveal":
+						gV.anim="freeze";
+						gV.animStep=1;
 						gV.nextStep = Date.now() + oCONFIG.animationDelay;
+						var wolf=document.getElementById("wolf");
+						wolf.style.opacity=0;
+						TweenLite.to(wolf, 1.0, {opacity:1, overwrite:true, ease: Elastic.easeOut.config(1.0, .8)});									
 						break;
 					case "stopclock":
 						gobj(document.getElementById("loot"),"on");
 						stopClock();
 						break;
 					case "win":
+					case "lose":
 						setTimeout(triggerGameOver,1000);
 						break;
 					case "wolf_exit":
+						var wolf=document.getElementById("wolf");
+						TweenLite.to(wolf, 1.0, {opacity:0, overwrite:true, ease: Elastic.easeOut.config(1.0, .8)});
 						break;
 					case "initDial":
 						initDial();
@@ -390,12 +384,20 @@ function renderAnim(name, phase) {
 	}
 }
 //meterWidth 300
-function startClock() {
 	gV.clockObject=document.getElementById("meterFill");
+function startClock() {
+	gV.clockObject.style.width=oCONFIG.time_meter_width+"px";
 	gV.clockStart=Date.now();
 }
 function updateClock() {
-	
+	if (gV.clockStart==-1)return;
+	var dTime = (Date.now()-gV.clockStart)/oCONFIG.game_duration;
+	if (dTime>1) {
+		gV.clockStart=-1;
+		renderAnim("lasers", 1);
+	} else {
+		gV.clockObject.style.width=(oCONFIG.time_meter_width*dTime)+"px";
+	}
 }
 function stopClock() {
 	gV.clockStart=-1;
@@ -403,6 +405,7 @@ function stopClock() {
 }
 function initGame() {
 	//Start up.
+	startClock();
 	flyState = 0;
 	gV.level = 1;
 	gV.gameStep = 1;
@@ -452,13 +455,15 @@ function initDial() {
 }
 function newNumber() {
 	gV.missCount=0;
-	var newNum = rnd(36);
+	var newNum = rnd(12)*3;
+	gV.turnRate=oCONFIG.turnRate; 
+
 	while (Math.abs(newNum-targetNum)<3) {
-		newNum = rnd(36);
+		newNum = rnd(12)*3;
 	}
 	targetNum = newNum;
 	//if (targetNum>35) targetNum=0;
-	console.log(targetNum);
+	
 	var angleNum = Math.PI * targetNum /18.0;
 	var numberMark = document.getElementById("numberMark");
 	var turner_01 = document.getElementById("turner_01");
@@ -488,8 +493,10 @@ function stopWheel() {
 	if (diffrot>270) diffrot-=360;
 	
 	if (Math.abs(diffrot)<oCONFIG.accuracy) {
+		gobj(document.getElementById("iceRing"),"off");
+		gobj(document.getElementById("turner_iced"),"off");
 		if (gV.rotateTimeout) clearTimeout(gV.rotateTimeout);
-		gobj(document.getElementById("turnmarker_"+gV.gameStep),"on");
+		gobj(document.getElementById("turnmarker_fill_"+gV.gameStep),"on");
 		gV.gameStep++;		
 		playSound("Safe_ComboTurn");
 		//gobj(document.getElementById("turners"), "off");

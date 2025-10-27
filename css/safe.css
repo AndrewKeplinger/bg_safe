@@ -148,6 +148,7 @@
   height: 469px;
   background-repeat: no-repeat;
   background-size: contain;
+	transform-origin: left middle;
   z-index: 49;
 }
 #loot {
@@ -171,10 +172,6 @@
   background-size: contain;
   
 }
-.loot_01,.loot_02,.loot_03,.loot_rays_01,.loot_rays_02 {
-	top:380px;
-	z-index:80;
-}
 #loot_02,.loot_02 {
   background-image: url("../Media/safe/loot_02.png");
   position: absolute;
@@ -197,6 +194,10 @@
   background-size: contain;
   
 }
+.loot_01,.loot_02,.loot_03,.loot_rays_01,.loot_rays_02 {
+	top:380px;
+	z-index:80;
+}
 #loot_rays_01,.loot_rays_01 {
   background-image: url("../Media/safe/loot_rays_01.png");
   position: absolute;
@@ -217,7 +218,10 @@
   height: 386px;
   background-repeat: no-repeat;
   background-size: contain;
-
+}
+.loot_rays_01,.loot_rays_02 {
+	top:380px;
+	z-index:79;
 }
 #turners {
   position: absolute;

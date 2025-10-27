@@ -21,9 +21,11 @@ oCONFIG = {
 	page_land_ratio:0.575,
 	animationDelay:250,
 	turnRate:90.0,
-	freezeTurnRate:90.0,
+	freezeTurnRate:45.0,
 	accuracy:10,
-	wrong_penalty:250
+	wrong_penalty:250,
+	game_duration:60000,
+	time_meter_width:300
 };
 // Overridden from en.json language file
 
