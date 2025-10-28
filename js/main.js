@@ -152,7 +152,13 @@ var game_parts = {
 	initalState: {
 		1: {
 			alarmOn: 0,
+			alarmOff:1,
 			GameLoss_Lasers: 0,
+			laser_01:0,
+			laser_02:0,
+			laser_03:0,
+			laser_04:0,
+			laser_darker:0,
 			snake: 1,
 			wolf: 0,
 			turners: 1,
@@ -468,7 +474,6 @@ function initDial() {
 	newNumber();
 }
 function newNumber() {
-	gV.missCount=0;
 	var newNum = rnd(12)*3;
 	gV.turnRate=oCONFIG.turnRate; 
 
@@ -547,7 +552,8 @@ async function restart_safe() {
 	newNumber();
 	await wait(1);
 	gV.missCount++;
-	if (gV.missCount==oCONFIG.freeze_event_triger) {
+	if (gV.missCount==oCONFIG.freeze_event_triger) {		
+		gV.missCount=0;
 		playSound("Safe_IceSpray");
 		renderAnim("freeze", 1);
 	}

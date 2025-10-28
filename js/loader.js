@@ -40,6 +40,7 @@ var loaderBar = document.getElementById("loader_bar_fill");
 var loaderSwitched = false;
 
 function animateLoader() {
+	if (!doInitResizer) return;
 	doInitResizer();
 	doWindowResize();
 	var delta = Date.now()-lastLoaderUpdate;
