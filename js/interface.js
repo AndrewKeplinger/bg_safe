@@ -25,7 +25,7 @@ var panels = {};
 for (var idx = 0; idx<panelList.length; idx++) {
 	panels[panelList[idx]]=document.getElementById(panelList[idx]);
 }
-
+document.getElementById("wrapper").style.visibility=oSTAGE.wrapper_ratio>1.6?"visible":"hidden";
 //doInitResizer();
 //doWindowResize();
 function doInitResizer() {
@@ -73,11 +73,16 @@ function doInitResizer() {
 	});
 
 }
-var bib_reference=document.body.style.backgroundImage;
+
 function doWindowResize() {
 
-
-	oSTAGE.is_landscape = false;
+	oSTAGE.pixel_ratio = window.__utils.getPixelRatio();
+	var e = document.body.offsetWidth,
+	g = document.body.offsetHeight;
+	oSTAGE.is_landscape = e >= g ? !0 : !1;
+	var k = document.getElementById("orientation_overlay");
+	k && (isMobile && "landscape" == window.oCONFIG.game_orientation && !window.oSTAGE.is_landscape ? (k.style.backgroundImage = "url('media/landscape_only.gif')", k.style.display = "block"/*, window.__snds.forceMute()*/) : window.platform.isMobile && "portrait" == window.oCONFIG.game_orientation && window.oSTAGE.is_landscape ? (k.style.backgroundImage = "url('media/portrait_only.gif')", k.style.display = "block"/*, window.__snds.forceMute()*/) : (k.style.display = "none"/*, window.__snds.unforceMute()*/));
+	k = 0;
 	oSTAGE.scale = Math.min(Infinity, (Math.min(window.innerHeight / 1120 , window.innerWidth / 644)));
 
 	oSTAGE.scale_inv = (1.0 / oSTAGE.scale);
@@ -107,16 +112,7 @@ function doWindowResize() {
 	for (var idx = 0; idx<panelList.length; idx++) {
 		panels[panelList[idx]].style.left = left_edge+"px";//((column_x - ((panels[panelList[idx]].clientWidth * 0.5)-322 ) | 0)) + "px";
 	}
-	if (oSTAGE.wrapper_ratio>0.7) {
-		if (document.body.style.backgroundImage!="") {
-			document.body.style.backgroundImage="";
-		}
-	}else{
-		if (document.body.style.backgroundImage=="") {
-			document.body.style.backgroundImage=bib_reference;
-		}
-	}
-
+	document.getElementById("wrapper").style.visibility=oSTAGE.wrapper_ratio>1.6?"visible":"hidden";
 }
 /*"loadingMessage","loadingPrompt",*/
 var locationsInited = false;

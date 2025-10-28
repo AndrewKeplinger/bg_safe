@@ -31,17 +31,7 @@ var loadingPhase = 0;
 var loadProgressAmount = 0;
 var loadTotal = 10;
 var logoReveal=0;
-//var loaderRing = document.getElementById("loadingRing");
-/*var loaderLogoArray = [];
-for (var idx = 1; idx<7; idx++ ){
-	var element = document.getElementById("loadingRingCenter"+idx);
-	loaderLogoArray.push(element);	
-	element.style.visibility="hidden";
-	//element.style.display="none";
-}
-loaderLogoArray[0].style.visibility="visible";
-*/
-//loaderLogoArray[0].style.display="block";
+
 var ringRotation = 0;
 var lastLoaderUpdate = Date.now();
 var loaderStartTime = Date.now();

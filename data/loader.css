@@ -1,5 +1,4 @@
 @charset "UTF-8";
-/* CSS Document */
 #loadingScreen {
 	position: absolute;
 	top: 0px;
@@ -7,47 +6,11 @@
 	width: 100%;
 	height: 100%;
 	z-index: 10;
-	background-color: #000000;
+	background-color: #ffffff;
 	cursor: default;
 	visibility: visible;
 	display: inline;
 	z-index: 100;
-}
-#loadingRing {
-	position: absolute;
-	background-image: url(../Media/Loader/NinjagoRing.png);
-	background-size: 190px 190px;
-	background-repeat: no-repeat;
-	top: 175px;
-	left: 385px;
-	width: 190px;
-	height: 190px;
-	rotation: 0;
-	z-index:11;
-}
-.loadingRingCenter {
-	position: absolute;
-	background-image: url(../Media/Loader/Loader_Lloyd.png);
-	background-size: 40px 40px;
-	top: 250px;
-	left: 460px;
-	width: 40px;
-	height: 40px;
-}
-#loadingRingCenter2 {
-	background-image: url(../Media/Loader/Loader_Nya.png);
-}
-#loadingRingCenter3 {
-	background-image: url(../Media/Loader/Loader_Jay.png);
-}
-#loadingRingCenter4 {
-	background-image: url(../Media/Loader/Loader_Cole.png);
-}
-#loadingRingCenter5 {
-	background-image: url(../Media/Loader/Loader_Kai.png);
-}
-#loadingRingCenter6 {
-	background-image: url(../Media/Loader/Loader_Zane.png);
 }
 #loadingBackground {
 	position: absolute;
@@ -55,7 +18,7 @@
 	left: 0px;
 	width: 960px;
 	height: 540px;
-	background-color: #000000;
+	background-color: #ffffff;
 	background-size: contain;
 	background-repeat: no-repeat;
 	opacity: 1;
@@ -98,14 +61,7 @@
 	height: 67px;
 	background-size: 960px 67px;
 }
-#loadingCharacter {
-	background-image: url(../Media/EndScreen/End_Nya.png);
-	top: 30px;
-	left: 0px;
-	width: 440px;
-	height: 510px;
-	display: none;
-}
+
 #loadbarBackground {
 	position: absolute;
 	left:400px;

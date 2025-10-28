@@ -2,8 +2,8 @@
 
 oCONFIG = {
   language :"en",
-
-  game_id: "ninjago-flight",
+  game_orientation:"portrait",
+  game_id: "badguysfly",
   show_trace: false,
   show_stats: false,
   show_debug: false,

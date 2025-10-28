@@ -11,7 +11,7 @@ html, body {
   -ms-user-select: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
-  -moz-user-select: none;
+  -moz-user-select: none; 
   user-select: none;
   -webkit-touch-callout: none;
   -webkit-user-drag: none;
@@ -72,6 +72,13 @@ div {
 /*==========================*/
 /* wrapper */
 /*==========================*/
+#wrapper {
+	position: absolute;
+	width:100%;
+	height:100%;
+	background-color:black;
+	visibility: hidden;
+}
 #debug {
   position: absolute;
   display: inline-block;
@@ -1228,7 +1235,21 @@ background-repeat:no-repeat;background-repeat:no-repeat;
 .sonyheader img {
   height: 15px;
 }
-
+#orientation_overlay {
+  position: absolute;
+  display: none;
+  top: 0px; 
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 20000;
+  background-color: #000000;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
 
 
 
