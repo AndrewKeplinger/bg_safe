@@ -305,7 +305,7 @@ function changeGameState(tState) {
 			playSound("Jay_EndofLevel");
 			//console.log("END GAME!");
 			
-			document.getElementById("recap_SCORE").innerHTML=""+gameScore;
+			document.getElementById("recap_SCORE").innerHTML=""+Math.ceil(gV.playTime);
 			//document.getElementById("recap_DISTANCE").innerHTML=""+gameDistance;
 			
 			saveState();
@@ -314,23 +314,31 @@ function changeGameState(tState) {
 			for (var idx=0;idx<reveal_items.length;idx++) {
 				items[reveal_items[idx]]=document.getElementById(reveal_items[idx]);
 			}
-			if (gV.clockStart==-1) {
-				
+			if (!gV.gameWon) {
+				document.getElementById("recap_background").className="recap_background2";
 			} else {
+				document.getElementById("recap_background").className="recap_background";
 				gV.recap_loot=[];
+				var dly = 1;
 				var base = document.getElementById("levelMessage");
 				var tDiv = document.createElement("div");
 				base.appendChild(tDiv);
 				tDiv.className="loot_rays_01";
 				gV.recap_loot.push(tDiv);
+				tDiv.style.transform="scale(0.001)";
+				TweenLite.to(tDiv, 1.0, {transform:"scale(1)", overwrite:true, ease: Elastic.easeOut.config(1.0, .8), delay: dly+=0.3});
 				var tDiv = document.createElement("div");
 				base.appendChild(tDiv);
 				tDiv.className="loot_rays_02";
 				gV.recap_loot.push(tDiv);
+				tDiv.style.transform="scale(0.001)";
+				TweenLite.to(tDiv, 1.0, {transform:"scale(1)", overwrite:true, ease: Elastic.easeOut.config(1.0, .8), delay: dly+=0.3});
 				var tDiv = document.createElement("div");
 				base.appendChild(tDiv);
 				tDiv.className="loot_0"+gV.loot;
 				gV.recap_loot.push(tDiv);
+				tDiv.style.transform="scale(0.001)";
+				TweenLite.to(tDiv, 1.0, {transform:"scale(1)", overwrite:true, ease: Elastic.easeOut.config(1.0, .8), delay: dly+=0.3});
 			}
 			/*
 			for (var idx=0; idx< reveal_items.length; idx++) {
@@ -362,23 +370,6 @@ function advanceGameState(nextState=-1) {
 	}
 	playSound("Jay_CoinCollect");
 	changeGameState(nextState);
-	/*switch (gameState) {
-		case 1:
-			playSound("Jay_HitPowerup");
-			changeGameState(nextState);
-			break;
-		case 4: // Running to next level
-			//alert("Start Next Level");
-			changeGameState(2);
-			//levelNum++;
-			//loadLevel(levelNum);
-			gameState = 2;
-			//generateEnemies();
-			changeGameState(2);
-			lastUpdate = Date.now();
-			break;
-		
-	}*/
 	return (gameState==2);
 }
 

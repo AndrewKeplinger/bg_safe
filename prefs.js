@@ -8,7 +8,7 @@ oCONFIG = {
   show_stats: false,
   show_debug: false,
 	hideOfficialSite:1,
-	back_color: "#000000",
+	back_color: "#000000", 
   build: 1,
   hub_url: "",
   more_url: "",

@@ -1,7 +1,7 @@
 [
-{ "id":"hub_url","type":"config","value":"../../","note":"Link Hub button (and X button when available) use."},
-{ "id":"more_url","type":"config","value":"../../","note":"Link for More Games buttons"},
-{ "id":"movie_url","type":"config","value":"http://www.legoninjagomovie.com/","note":"Link Official Site Button."},
+{ "id":"hub_url","type":"config","value":"","note":"Link Hub button (and X button when available) use."},
+{ "id":"more_url","type":"config","value":"","note":"Link for More Games buttons"},
+{ "id":"movie_url","type":"config","value":"","note":"Link Official Site Button."},
 { "id":"browser_alert","type":"config","value":"../../browser_alert/","note":"Link for minimum browser requirement fallback."},
   { "id":"date_playing","type":"config","value":"2017/09/22","note":"Movie release date"},
   { "id":"date_day_before","type":"config","value":"2017/09/21","note":"Day before novie release date"},
@@ -15,9 +15,9 @@
 	
 {"id":"MontBold","type":"font-face","value":"","active":0, "note":"active 0 = off, value is url of font"},
 	
-{"id": "date_msg_date", "value": "IN THEATERS SEPTEMBER 22", "type": "text"},
-{"id": "date_msg_friday", "value": "IN THEATERS THIS FRIDAY", "type": "text"},
-{"id": "date_msg_tomorrow", "value": "IN THEATERS TOMORROW", "type": "text"},
+{"id": "date_msg_date", "value": "COMING SOON ON NETFLIX", "type": "text"},
+{"id": "date_msg_friday", "value": "COMING SOON ON NETFLIX", "type": "text"},
+{"id": "date_msg_tomorrow", "value": "COMING SOON ON NETFLIX", "type": "text"},
 {"id": "date_msg_nowplaying", "value": "NOW PLAYING", "type": "text"},
 
 {"id": "ninjago_logo", "type": "image", "value": "Media/UI/UI_MovieLogo.png"},
@@ -35,9 +35,9 @@
 {"id": "error_webgl", "value": "Oops!<br>While your browser seems to support WebGL, it is disabled or unavailable. If possible, please ensure that you are running one of these latest browsers and the latest drivers for your video card.", "type":"text"},
 {"id": "error_browser", "value": "Oops!<br>Your browser seems to be out of date. Please ensure that you are running one of these latest browsers.", "type":"text"},
 {"id": "Title","type": "Text","style":"","size": 1,"target": "Intro","data": "![CDATA[FLIGHT OF THE NINJA]]"},
-{"id": "StartDate","type": "Text","style":"","size": 1,"target": "Intro","data": "![CDATA[IN THEATERS SEPTEMBER 22]]"},
+{"id": "StartDate","type": "Text","style":"","size": 1,"target": "Intro","data": "![CDATA[COMING SOON ON NETFLIX]]"},
 {"id": "WebLinkPrompt","type": "Text","style":"","size": 1,"target": "Intro","link": "","data": "![CDATA[OFFICIAL SITE]]"},
-{"id": "Description","type": "Text","style":"","size": 0.99,"target": "Intro","data": "![CDATA[Use the power of Jay's ninja launcher to fly through the sky, collecting as many coins as you can.]]"},
+{"id": "Description","type": "Text","style":"","size": 0.99,"target": "Intro","data": "![CDATA[Use the launcher to fly through the sky, collecting as many coins as you can.]]"},
 {"id": "IntroPrompt_Mobile","type": "Text","style":"","size": 1,"target": "Intro","data": "![CDATA[]]"},
 {"id": "IntroPrompt_PC","type": "Text","style":"","size": 1,"target": "Intro","data": "![CDATA[]]"},
 {"id": "Pause_Menu_Heading","type": "Text","style":"","size": 1,"target": "Intro","data": "![CDATA[PAUSED]]"},

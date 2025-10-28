@@ -24,14 +24,26 @@ function LoadComplete() {
 
 	setFieldText("Pause_Menu_Heading", "pauseGameHeadingText");
 	setFieldText("Pause_Menu_Continue", "pauseGameOptions1");
-	//setFieldText("Pause_Menu_Start_Over", "pauseGameOptions2");
-	//setFieldText("Pause_Menu_More_Games", "pauseGameOptions3");
-	//setFieldText("Pause_Menu_Official_Site", "pauseGameOptions4");
+
 	if (oCONFIG.hideOfficialSite == 1) {
 		document.getElementById("pauseGameOptions4").style.visibility = "hidden";
 		document.getElementById("pauseGameOptions4").style.display = "none";
 	}
-
+	
+	setFieldText("recap_SCORE_Label", "recap_SCORE_Label");
+	setFieldText("recap_PLAY_MORE", "recap_PLAY_MORE");
+	setFieldText("recap_INSTRUCTIONS", "recap_INSTRUCTIONS");
+	setFieldText("recap_WATCH_TRAILER", "recap_WATCH_TRAILER");
+	setFieldText("recap_date", "recap_date");
+	setFieldText("Title_copy", "Title_copy");
+	setFieldText("headingFont", "headingFont");
+	setFieldText("run_Title", "run_Title");
+	setFieldText("title_film_logo_date", "title_film_logo_date");
+	setFieldText("b_play", "b_play");
+	setFieldText("b_instructions", "b_instructions");
+	setFieldText("inst_b_PLAY", "inst_b_PLAY");
+	setFieldText("pauseGameHeadingText", "pauseGameHeadingText");
+	
 	changeGameState(0);
 	gameState = 1;
 	changeGameState(1);
@@ -253,20 +265,16 @@ var game_parts = {
 			alarmOn:1,
 			alarmOff:0,
 			laser_darker: 1,
-			laser_02: 0,
 			laser_01: 1
 		},
 		2: {
-			laser_02: 1,
-			laser_03: 0
+			laser_02: 1
 		},
 		3: {
-			laser_03: 1,
-			laser_04: 0
+			laser_03: 1
 		},
 		4: {
 			laser_04: 1,
-			laser_01: 0,
 			action: "lose"
 		}
 	},
@@ -394,13 +402,16 @@ function updateClock() {
 	var dTime = (Date.now()-gV.clockStart)/oCONFIG.game_duration;
 	if (dTime>1) {
 		gV.clockStart=-1;
+		playSound("Safe_Alarm");
 		renderAnim("lasers", 1);
 	} else {
 		gV.clockObject.style.width=(oCONFIG.time_meter_width*dTime)+"px";
 	}
 }
 function stopClock() {
+	gV.playTime=((Date.now()-gV.clockStart)/1000);
 	gV.clockStart=-1;
+	gV.gameWon=true;
 	gobj(document.getElementById("loot_0"+gV.loot),"on");
 }
 function initGame() {
@@ -411,6 +422,8 @@ function initGame() {
 	gV.gameStep = 1;
 	gV.opening = -1;
 	gV.animRate = 0.1;
+	gV.gameWon=false;
+	gV.playTime=0;
 	gV.loot=rnd(3)+1;
 	for (var idx=1; idx<4; idx++) {
 		gobj(document.getElementById("loot_0"+idx),"off");
@@ -420,10 +433,10 @@ function initGame() {
 }
 var dbg="";
 function gobj(obj, state) {
-	if (dbg!=obj.id+state){
+	/*if (dbg!=obj.id+state){
 		console.log(obj.id+" "+state);
 		dbg=obj.id+state;
-	}
+	}*/
 	//
 	switch (state) {
 		case "on":
@@ -458,7 +471,7 @@ function newNumber() {
 	var newNum = rnd(12)*3;
 	gV.turnRate=oCONFIG.turnRate; 
 
-	while (Math.abs(newNum-targetNum)<3) {
+	while (Math.abs(newNum-targetNum)<6) {
 		newNum = rnd(12)*3;
 	}
 	targetNum = newNum;
@@ -476,6 +489,8 @@ function newNumber() {
 	var nv = cv+(-Math.cos(angleNum)*radius);
 	numberMark.style.left = (nh-numberMark.offsetWidth/2)+"px";
 	numberMark.style.top = (nv-numberMark.offsetWidth/2)+"px";
+	flyState=0;
+	if (gV.rotateTimeout) clearTimeout(gV.rotateTimeout);
 }
 function get_turner_rot(){
 	var rawrot = document.getElementById("turners").style.rotate;
@@ -493,6 +508,7 @@ function stopWheel() {
 	if (diffrot>270) diffrot-=360;
 	
 	if (Math.abs(diffrot)<oCONFIG.accuracy) {
+		document.getElementById("turners").style.rotate=(360-(targetNum*10))+"deg";
 		gobj(document.getElementById("iceRing"),"off");
 		gobj(document.getElementById("turner_iced"),"off");
 		if (gV.rotateTimeout) clearTimeout(gV.rotateTimeout);
@@ -501,26 +517,46 @@ function stopWheel() {
 		playSound("Safe_ComboTurn");
 		//gobj(document.getElementById("turners"), "off");
 		if (gV.gameStep<=gV.level) {
-			newNumber();			
-			startRotate();
+			newNumber();	
+			flyState=0;		
+			//startRotate();
 		} else {
 			flyState=2;
 			setTimeout(advanceSafe,1000);
 			
 		}
 	} else {
-		playSound("Safe_Btn");
-		gV.missCount++;
-		if (gV.missCount==oCONFIG.freeze_event_triger) {
-			renderAnim("freeze", 1);
-		}
+		//playSound("Safe_Btn");
+		flyState=2;
+		restart_safe();
 	}
 }
+function wait(seconds) {
+    return new Promise(resolve => setTimeout(resolve, seconds * 1000));
+}
+async function restart_safe() {
+	playSound("Safe_Negative");
+	while (gV.gameStep>1) {
+		gobj(document.getElementById("turnmarker_fill_"+gV.gameStep),"off");
+		await wait(0.5);
+		gV.gameStep--;
+	}
+	await wait(1);
+	gobj(document.getElementById("turnmarker_fill_1"),"off");
+	newNumber();
+	await wait(1);
+	gV.missCount++;
+	if (gV.missCount==oCONFIG.freeze_event_triger) {
+		playSound("Safe_IceSpray");
+		renderAnim("freeze", 1);
+	}
+} 
 function advanceSafe() {	
 	playSound("Safe_Door Open");
 	renderAnim("safe"+gV.level, 1);
 	gV.level++;
 }
+
 function startRotate(){
 	flyState=0;
 	gV.startTime=Date.now();

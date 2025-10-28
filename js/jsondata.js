@@ -405,14 +405,20 @@ function getLocalizedText( textId ) {
 function setFieldText( sourceName, fieldName) {
 	
 	var tAsset = textAssets[sourceName];
-	if (tAsset==undefined) return;
+	if (tAsset==undefined) {
+		console.log("setFieldText( def "+sourceName+")");
+		return;
+	}
 	var tField;
 	if (fieldName!=""){
 		tField = document.getElementById(fieldName);
 	} else {
 		tField = document.getElementById(tAsset.target);
 	}
-	if (tField==undefined) return;
+	if (tField==undefined) {
+		console.log("setFieldText( missing"+fieldName+")");
+		return;
+	}
 	if (tField !== undefined && tAsset !== undefined) {
 		//tField.style.visibility="visible";
 		var itemText = tAsset.data;
@@ -447,94 +453,9 @@ function setFrame(frameNum, model) {
 }
 
 function shiftAudioButtons() {
-	//trace("shiftAudioButtons");
-	//storedLocations.soundButton2=storedLocations.exitButton2;
-	//storedLocations.soundButton2off==storedLocations.exitButton2;
-	//storedLocations.soundButton=storedLocations.exitButton;
-	//storedLocations.soundButtonoff==storedLocations.exitButton;
+
 }
 
-function getGoodlocs(){ // Used by scaling system to position nearly all UI elements/  Some are overridden inside interface:setStage()
-	var baseLocs = JSON.parse('{"titleGameName":{"top":12,"left":375,"width":520,"height":135,"fontSize":30,"anchor":"TR"},'+ 
-	'"titleDescription":{"top":62,"left":375,"width":550,"height":135,"fontSize":18,"anchor":"TR"},'+ 
-	'"playButton":{"top":407,"left":708,"width":193,"height":133,"fontSize":16,"anchor":"BR"},'+ 
-	'"titlePlayText":{"top":437,"left":708,"width":193,"height":85,"fontSize":42.66666793823242,"anchor":"BR"},'+ 
-	'"playAgain":{"top":407,"left":465,"width":210,"height":133,"fontSize":16,"anchor":"BR"},'+ 
-	'"moreGames":{"top":407,"left":710,"width":210,"height":133,"fontSize":16,"anchor":"BR"},'+ 
-	'"playAgainButton":{"top":427,"left":465,"width":210,"height":85,"fontSize":28,"anchor":"BR"},'+ 
-	'"moreGamesButton":{"top":427,"left":710,"width":210,"height":85,"fontSize":28,"anchor":"BR"},'+ 
-	'"levelMessageCharacter":{"top":70,"left":0,"width":405,"height":470,"fontSize":16,"anchor":"BL"},'+ 
-	'"loadingScreen":{"top":0,"left":0,"width":1064,"height":592,"fontSize":16,"anchor":"S"},'+ 
-	'"titleScreen":{"top":0,"left":0,"width":1064,"height":592,"fontSize":16,"anchor":"S"},'+ 
-	'"levelMessage":{"top":0,"left":0,"width":1064,"height":592,"fontSize":16,"anchor":"S"},'+ 
-	'"loadingMessage":{"top":400,"left":100,"width":760,"height":0,"fontSize":24,"anchor":"C"},'+ 
-	'"levelBackground":{"top":0,"left":0,"width":960,"height":540,"fontSize":16,"anchor":"S"},'+ 
-	'"exitButton2":{"top":7,"left":890,"width":48,"height":48,"fontSize":16,"anchor":"TR"},'+ 
-	'"soundButton2":{"top":5,"left":843,"width":48,"height":48,"fontSize":16,"anchor":"TR"},'+ 
-	'"soundButton2off":{"top":5,"left":843,"width":48,"height":48,"fontSize":16,"anchor":"TR"},'+ 
-	'"soundButton3":{"top":5,"left":843,"width":48,"height":48,"fontSize":16,"anchor":"TR"},'+ 
-	'"soundButton3off":{"top":5,"left":843,"width":48,"height":48,"fontSize":16,"anchor":"TR"},'+ 
-	'"headingText":{"top":92,"left":320,"width":320,"height":90,"fontSize":40,"anchor":"C"},'+ 
-	'"loadingBackground":{"top":0,"left":0,"width":960,"height":540,"fontSize":16,"anchor":"C"},'+ 
-	'"loadingCharacter":{"top":0,"left":0,"width":0,"height":0,"fontSize":16,"anchor":"BL"},'+ 
-	'"loadingGraphic":{"top":230,"left":0,"width":960,"height":67,"fontSize":16,"anchor":"C"},'+ 
-	'"endGameText":{"top":92,"left":420,"width":420,"height":90,"fontSize":40,"anchor":"TR"},'+ 
-	'"loadingRing":{"top":164,"left":374,"width":212,"height":212,"fontSize":16,"anchor":"C"},'+ 
-	'"loadingRingCenter1":{"top":250,"left":460,"width":40,"height":40,"fontSize":16,"anchor":"C"},'+ 
-	'"loadingRingCenter2":{"top":250,"left":460,"width":40,"height":40,"fontSize":16,"anchor":"C"},'+ 
-	'"loadingRingCenter3":{"top":250,"left":460,"width":40,"height":40,"fontSize":16,"anchor":"C"},'+ 
-	'"loadingRingCenter4":{"top":250,"left":460,"width":40,"height":40,"fontSize":16,"anchor":"C"},'+ 
-	'"loadingRingCenter5":{"top":250,"left":460,"width":40,"height":40,"fontSize":16,"anchor":"C"},'+ 
-	'"loadingRingCenter6":{"top":250,"left":460,"width":40,"height":40,"fontSize":16,"anchor":"C"},'+ 
-	'"loadbarBackground":{"top":400,"left":400,"width":160,"height":16,"fontSize":16,"anchor":"C"},'+ 
-	'"loadbarBackground2":{"top":420,"left":720,"width":160,"height":16,"fontSize":16,"anchor":"BR"},'+ 
-	'"titleBackground":{"top":0,"left":0,"width":960,"height":540,"fontSize":16,"anchor":"S"},'+ 
-	'"titleInstructions":{"top":305,"left":523,"width":420,"height":55,"fontSize":16,"anchor":"BR"},'+ 
-	'"titleInstructionsImage":{"top":122,"left":523,"width":420,"height":229,"fontSize":12,"anchor":"BR"},'+ 
-	'"titleInstructionsImage_PC":{"top":122,"left":523,"width":420,"height":229,"fontSize":12,"anchor":"BR"},'+ 
-	'"titleCharacter":{"top":40,"left":82,"width":423,"height":492,"fontSize":16,"anchor":"BL"},'+ 
-	'"exitButton":{"top":7,"left":890,"width":48,"height":48,"fontSize":16,"anchor":"TR"},'+ 
-	'"soundButton":{"top":5,"left":843,"width":48,"height":48,"fontSize":16,"anchor":"TR"},'+ 
-	'"soundButtonoff":{"top":5,"left":843,"width":48,"height":48,"fontSize":16,"anchor":"TR"},'+ 
-	'"levelMessage1":{"top":90,"left":0,"width":147,"height":164,"fontSize":16,"anchor":"BL"},'+ 
-	'"levelMessage2":{"top":195,"left":0,"width":105,"height":227,"fontSize":16,"anchor":"BL"},'+ 
-	'"levelMessage3":{"top":280,"left":40,"width":102,"height":107,"fontSize":16,"anchor":"BL"},'+ 
-	'"pauseButton":{"top":7,"left":880,"width":64,"height":64,"fontSize":16,"anchor":"TR"},'+ 
-	'"gameScore":{"top":20,"left":20,"width":100,"height":70,"fontSize":50.66666793823242,"anchor":"TL"},'+ 
-	'"gameDistance":{"top":20,"left":430,"width":100,"height":70,"fontSize":50,"anchor":"TC"},'+ 
-	'"gamePowerup0":{"top":435,"left":350,"width":100,"height":88,"fontSize":16,"anchor":"BC"},'+ 
-	'"gamePowerup1":{"top":435,"left":436,"width":76,"height":88,"fontSize":16,"anchor":"BC"},'+ 
-	'"gamePowerup2":{"top":435,"left":523,"width":76,"height":88,"fontSize":16,"anchor":"BC"},'+ 
-	'"ninjagoLogo":{"top":17,"left":11,"width":215,"height":48,"fontSize":16,"anchor":"TL"},'+ 
-	'"ninjagoLogo2":{"top":17,"left":11,"width":215,"height":48,"fontSize":16,"anchor":"TL"},'+ 
-	'"ninjagoLogo3":{"top":450,"left":11,"width":215,"height":48,"fontSize":16,"anchor":"BL"},'+ 
-	'"ninjaLogoText":{"top":66,"left":11,"width":215,"height":25,"fontSize":10.3,"anchor":"TL"},'+ 
-	'"ninjaLogoText2":{"top":66,"left":11,"width":215,"height":25,"fontSize":10.3,"anchor":"TL"},'+ 
-	'"ninjaLogoText3":{"top":497,"left":2,"width":233,"height":25,"fontSize":10.3,"anchor":"BL"},'+ 
-	'"ninjagoLogo4":{"top":20,"left":372,"width":215,"height":48,"fontSize":16,"anchor":"TC"},'+ 
-	'"ninjaLogoText4":{"top":70,"left":372,"width":215,"height":25,"fontSize":12,"anchor":"TC"},'+ 
-	'"EndDistanceLabel":{"top":170,"left":320,"width":395,"height":39,"fontSize":32,"anchor":"TR"},'+ 
-	'"EndDistance":{"top":170,"left":735,"width":100,"height":39,"fontSize":32,"anchor":"TR"},'+ 
-	'"EndScore":{"top":220,"left":735,"width":100,"height":39,"fontSize":32,"anchor":"TR"},'+ 
-	'"EndScoreLabel":{"top":220,"left":320,"width":395,"height":39,"fontSize":32,"anchor":"TR"},'+ 
-	'"BestDistanceLabel":{"top":270,"left":320,"width":395,"height":39,"fontSize":32,"anchor":"TR"},'+ 
-	'"BestDistance":{"top":270,"left":735,"width":100,"height":39,"fontSize":32,"anchor":"TR"},'+ 
-	'"BestScore":{"top":320,"left":735,"width":100,"height":39,"fontSize":32,"anchor":"TR"},'+ 
-	'"BestScoreLabel":{"top":320,"left":320,"width":395,"height":39,"fontSize":32,"anchor":"TR"},'+ 
-	'"siteLink":{"top":460,"left":0,"width":186,"height":50,"fontSize":16,"anchor":"BL"},'+ 
-	'"siteLinkText":{"top":474,"left":-10,"width":210,"height":592,"fontSize":20,"anchor":"BL"},'+ 
-	'"siteLink2":{"top":460,"left":0,"width":186,"height":50,"fontSize":16,"anchor":"BL"},'+ 
-	'"siteLinkText2":{"top":474,"left":-10,"width":210,"height":592,"fontSize":20,"anchor":"BL"}}'); 
-	if (isMobile) {
-		baseLocs.siteLink.top=420;
-		baseLocs.siteLink2.top=420;
-		baseLocs.siteLinkText.top=434;
-		baseLocs.siteLinkText2.top=434;
-		baseLocs.ninjagoLogo3.top-=30;
-		baseLocs.ninjaLogoText3.top-=30;
-	}
-	return baseLocs;
-}
 if (!audioFallback){
 	var listener = new THREE.AudioListener();
 	var soundChanNum = 0;

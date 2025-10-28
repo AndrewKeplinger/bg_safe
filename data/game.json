@@ -20,6 +20,10 @@
 	"type": "audio",
 	"value": "Sfx/Safe_Btn.mp3"
 }, {
+	"id": "Safe_Negative",
+	"type": "audio",
+	"value": "Sfx/Safe_Negative.mp3"
+}, {
 	"id": "Safe_ComboTurn",
 	"type": "audio",
 	"value": "Sfx/Safe_ComboTurn.mp3"
@@ -35,6 +39,10 @@
 	"id": "Safe_Win",
 	"type": "audio",
 	"value": "Sfx/Safe_Win.mp3"
+}, {
+	"id": "altRecap",
+	"value": "Media/recap/recap_background2.png",
+	"type": "image"
 }, {
 	"id": "LevelLoaded",
 	"value": 4,

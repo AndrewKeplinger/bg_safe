@@ -561,7 +561,7 @@ div {
   text-align: center;
   position: absolute;
   left: 140px;
-  top: 323.921px;
+  top: 260.921px;
   width: 366px;
   height: 99px;
   z-index: 4;
@@ -574,85 +574,11 @@ div {
   text-align: center;
   position: absolute;
   left: 140px;
-  top: 250.408px;
+  top: 210.408px;
   width: 366px;
   height: 57px;
   z-index: 3;
 }
-/*
-.recap_SCORE_Label {
-  font-size: 50px;
-  font-family: "bebas-neue";
-  color: rgb(0, 0, 0);
-  font-weight: bold;
-  line-height: 1.2;
-  text-align: center;
-  position: absolute;
-  left: 198px;
-  top: 190px;
-  width: 244px;
-  height: 135px;
-  z-index: 33;
-}
-.recap_Score {
-  font-size: 100px;
-  font-family: "bebas-neue";
-  color: rgb(0, 0, 0);
-  font-weight: bold;
-  line-height: 1.2;
-  text-align: center;
-  position: absolute;
-  left: 109px;
-  top: 244px;
-  width: 428px;
-  height: 110px;
-  z-index: 31;
-}
-.recap_DISTANCE_Label {
-  font-size: 50px;
-  font-family: "bebas-neue";
-  color: rgb(0, 0, 0);
-  font-weight: bold;
-  line-height: 1.2;
-  text-align: center;
-  position: absolute;
-  left: 198px;
-  top: 190px;
-  width: 244px;
-  height: 135px;
-  z-index: 33;
-}
-.recap_DISTANCE {
-  font-size: 100px;
-  font-family: "bebas-neue";
-  color: rgb(0, 0, 0);
-  font-weight: bold;
-  line-height: 1.2;
-  text-align: center;
-  position: absolute;
-  left: 109px;
-  top: 244px;
-  width: 428px;
-  height: 110px;
-  z-index: 31;
-}
-.End_Message {	
-  background-image: url("../Media/recap/recap_Speech.png");
-  background-size: contain;
-background-repeat:no-repeat;
-  font-size: 60px;
-  font-family: "bebas-neue";
-  color: rgb(0, 0, 0);
-	padding:20px;
-  line-height: 100px;
-  text-align: center;
-  position: absolute;
-  left: 98px;
-  top: 331px;
-	width:427px;
-	height:135px;
-  z-index: 28;
-}*/
 .recap_PLAY_MORE {
   font-size: 60px;
   font-family: "bebas-neue";
@@ -804,6 +730,18 @@ background-repeat:no-repeat;
 }
 .recap_background {
   background-image: url("../Media/recap/recap_background.jpg");
+  background-size: contain;
+background-repeat:no-repeat;background-repeat:no-repeat;
+  background-repeat:no-repeat;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 644px;
+  height: 1120px;
+  z-index: 2;
+}
+.recap_background2 {
+  background-image: url("../Media/recap/recap_background2.jpg");
   background-size: contain;
 background-repeat:no-repeat;background-repeat:no-repeat;
   background-repeat:no-repeat;
