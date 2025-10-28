@@ -281,7 +281,7 @@ function changeGameState(tState) {
 			tDiv.visibility = "hidden";
 			tDiv = document.getElementById("legal_panel").style;
 			tDiv.visibility = "hidden";
-			//tDiv.display = "none";
+			tDiv.display = "none";
 
 			break;
 		case 3: // Transition to next level
@@ -300,6 +300,7 @@ function changeGameState(tState) {
 			tDiv.display = "block";
 			tDiv = document.getElementById("legal_panel").style;
 			tDiv.visibility = "visible";
+			tDiv.display = "block";
 			playMusic("MenuLoop");
 			tDiv = document.getElementById("pauseGameWindow").style;
 			tDiv.visibility = "hidden";
