@@ -73,6 +73,7 @@ function doInitResizer() {
 	});
 
 }
+var bib_reference=document.body.style.backgroundImage;
 function doWindowResize() {
 
 
@@ -106,7 +107,15 @@ function doWindowResize() {
 	for (var idx = 0; idx<panelList.length; idx++) {
 		panels[panelList[idx]].style.left = left_edge+"px";//((column_x - ((panels[panelList[idx]].clientWidth * 0.5)-322 ) | 0)) + "px";
 	}
-
+	if (oSTAGE.wrapper_ratio>0.7) {
+		if (document.body.style.backgroundImage!="") {
+			document.body.style.backgroundImage="";
+		}
+	}else{
+		if (document.body.style.backgroundImage=="") {
+			document.body.style.backgroundImage=bib_reference;
+		}
+	}
 
 }
 /*"loadingMessage","loadingPrompt",*/

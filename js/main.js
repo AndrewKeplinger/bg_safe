@@ -2,9 +2,10 @@ function purgePreroll() {
 
 }
 
+
 function LoadComplete() {
 	links_block.style.visibility = "visible";
-
+	
 	document.getElementById("headingText").style.visibility = "hidden";
 	// Set text from JSON
 	setFieldText("Title", "titleGameName");

@@ -24,7 +24,7 @@ oCONFIG = {
 	freezeTurnRate:60.0,
 	accuracy:3,
 	wrong_penalty:250,
-	game_duration:60000,
+	game_duration:10000,
 	time_meter_width:300,
 	freeze_event_triger:5
 };
