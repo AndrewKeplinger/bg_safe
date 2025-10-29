@@ -481,8 +481,8 @@ function pauseButtonAction(event) {
 		resumeMusic=true;
 		stopMusic();
 	}
-	stopAllSounds();
-	if (gameState>1 && gameState!==5 && gameState!==6){
+	//stopAllSounds();
+	if (gameState==2){
 		var tDiv = document.getElementById("pauseGameWindow");
 		tDiv.style.visibility = "visible";
 		isPaused = true;
