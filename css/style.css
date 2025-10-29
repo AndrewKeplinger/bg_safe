@@ -234,14 +234,15 @@ div {
 .title_film_logo_date {
   font-size: 27px; /* 60px */
   font-family: "bebas-neue";
-  color: rgb(0,0,0);
+  color: #ffffff;
   font-weight: 800;
   line-height: 1.2;
   position: absolute;
   left: 0px;
-  top: 49px;
+  top: 149px;
   width: 644px;
   text-align: center;
+  z-index:99;
 }
 
 .title_background {

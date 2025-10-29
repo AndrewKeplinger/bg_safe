@@ -238,7 +238,7 @@
 #turners {
   position: absolute;
   left: 182px;
-  top: 426px;
+  top: 425px;
   width: 290px;
   height: 290px;
   background-repeat: no-repeat;
@@ -268,6 +268,17 @@
 }
 #safecarrot_on {
   background-image: url("../Media/safe/safecarrot_on.png");
+  position: absolute;
+  left: 310px;
+  top: 390px;
+  width: 33px;
+  height: 29px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 51;
+}
+#safecarrot_missed {
+  background-image: url("../Media/safe/safecarrot_missed.png");
   position: absolute;
   left: 310px;
   top: 390px;
@@ -321,6 +332,17 @@
   background-size: contain;
   z-index: 27;
 }
+#turner_scramble {
+  background-image: url("../Media/safe/turner_scramble.png");
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 290px;
+  height: 290px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 31;
+}
 #iceRing {
   background-image: url("../Media/safe/iceRing.png");
   position: absolute;
@@ -331,6 +353,17 @@
   background-repeat: no-repeat;
   background-size: contain;
   z-index: 31;
+}
+#turnmarker_missed_3 {
+  background-image: url("../Media/safe/turnmarker_missed.png");
+  position: absolute;
+  left: 349px;
+  top: 559px;
+  width: 22px;
+  height: 22px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 81;
 }
 #turnmarker_fill_3 {
   background-image: url("../Media/safe/turnmarker_fill.png");
@@ -354,6 +387,17 @@
   background-size: contain;
   z-index: 80;
 }
+#turnmarker_missed_2 {
+  background-image: url("../Media/safe/turnmarker_missed.png");
+  position: absolute;
+  left: 316px;
+  top: 559px;
+  width: 22px;
+  height: 22px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 81;
+}
 #turnmarker_fill_2 {
   background-image: url("../Media/safe/turnmarker_fill.png");
   position: absolute;
@@ -375,6 +419,17 @@
   background-repeat: no-repeat;
   background-size: contain;
   z-index: 80;
+}
+#turnmarker_missed_1 {
+  background-image: url("../Media/safe/turnmarker_missed.png");
+  position: absolute;
+  left: 283px;
+  top: 559px;
+  width: 22px;
+  height: 22px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 81;
 }
 #turnmarker_fill_1 {
   background-image: url("../Media/safe/turnmarker_fill.png");

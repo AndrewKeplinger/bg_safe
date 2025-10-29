@@ -8,20 +8,6 @@ function LoadComplete() {
 	
 	document.getElementById("headingText").style.visibility = "hidden";
 	// Set text from JSON
-	setFieldText("Title", "titleGameName");
-	setFieldText("Description", "titleDescription");
-	//setFieldText("Action_Button", "Action_Button");
-	setFieldText("Description", "titleDescription");
-	setFieldText("hitResponse", "hitResponseText");
-	setFieldText("End_Play_Again", "playAgainButton");
-	setFieldText("End_More", "moreGamesButton");
-
-	setFieldText("StartDate", "ninjaLogoText");
-	setFieldText("StartDate", "ninjaLogoText2");
-	setFieldText("StartDate", "ninjaLogoText3");
-	setFieldText("StartDate", "ninjaLogoText4");
-	setFieldText("WebLinkPrompt", "siteLinkText");
-	setFieldText("WebLinkPrompt", "siteLinkText2");
 
 	setFieldText("Pause_Menu_Heading", "pauseGameHeadingText");
 	setFieldText("Pause_Menu_Continue", "pauseGameOptions1");
@@ -165,7 +151,9 @@ var game_parts = {
 			turner_02: 0,
 			turner_03: 0,
 			iceRing: 0,
+			turner_scramble: 0,
 			safecarrot_on:0,
+			safecarrot_missed:0,
 			safe2: 0,
 			safe3: 0,
 			loot:0,
@@ -186,6 +174,7 @@ var game_parts = {
 			safecarrot_on:0,
 			turnmarker_1:0,
 			turnmarker_fill_1:0,
+			turnmarker_missed_1:0,
 			safe2_door: 1,
 			safe2_open_01: 0,
 			safe2_open_02: 0,
@@ -214,9 +203,9 @@ var game_parts = {
 			safe3: 1,
 			safecarrot_on:0,
 			turnmarker_1:0,
-			turnmarker_fill_1:0,
+			turnmarker_missed_1:0,
 			turnmarker_2:0,
-			turnmarker_fill_2:0,
+			turnmarker_missed_2:0,
 			safe3_door: 1,
 			safe3_open_01: 0,
 			safe3_open_02: 0,
@@ -243,11 +232,11 @@ var game_parts = {
 		1: {
 			safecarrot_on:0,
 			turnmarker_1:0,
-			turnmarker_fill_1:0,
+			turnmarker_missed_1:0,
 			turnmarker_2:0,
-			turnmarker_fill_2:0,
+			turnmarker_missed_2:0,
 			turnmarker_3:0,
-			turnmarker_fill_3:0,
+			turnmarker_missed_3:0,
 			action: "anim3",
 			turner_03: 0,
 			turnmarkers:0,
@@ -462,12 +451,14 @@ function initDial() {
 	gV.gameStep = 1;
 	flyState=0;
 	targetNum=0;
+	gobj(document.getElementById("numberMark"),"on");
 	gobj(document.getElementById("turners"), "on");
 	gobj(document.getElementById("turner_iced"), "off");
 	gobj(document.getElementById("iceRing"), "off");
 	for (var idx = 0; idx < 3; idx++) {
 		gobj(document.getElementById("turnmarker_" + (idx + 1)), idx < gV.level?"on":"off");
-		gobj(document.getElementById("turnmarker_fill_" + (idx + 1)), "off");		
+		gobj(document.getElementById("turnmarker_fill_" + (idx + 1)), "off");	
+		gobj(document.getElementById("turnmarker_missed_" + (idx + 1)), "off");			
 		turner = document.getElementById("turner_0" + (idx + 1));
 		gobj(document.getElementById("turner_0" + (idx + 1)), (idx+1) == gV.level?"on":"off");
 	}
@@ -505,7 +496,6 @@ function get_turner_rot(){
 var nextWheelTime=-1;
 function stopWheel() {
 	if (nextWheelTime>Date.now()) {
-		nextWheelTime=Date.now()+oCONFIG.wrong_penalty;
 		return;
 	}
 	var rotation = get_turner_rot();
@@ -524,15 +514,15 @@ function stopWheel() {
 		//gobj(document.getElementById("turners"), "off");
 		if (gV.gameStep<=gV.level) {
 			newNumber();	
-			flyState=0;		
+			flyState=0;	
+			
 			//startRotate();
 		} else {
 			flyState=2;
 			setTimeout(advanceSafe,1000);
 			
 		}
-	} else {
-		//playSound("Safe_Btn");
+	} else {		
 		flyState=2;
 		restart_safe();
 	}
@@ -541,24 +531,49 @@ function wait(seconds) {
     return new Promise(resolve => setTimeout(resolve, seconds * 1000));
 }
 async function restart_safe() {
+	console.log("miss");
+	gobj(safecarrot_on,"off");
+	gobj(document.getElementById("safecarrot_missed"),"on");
+	if (gV.rotateTimeout) clearTimeout(gV.rotateTimeout);
 	playSound("Safe_Negative");
 	while (gV.gameStep>1) {
+		if (gV.gameStep<3) {
+			gobj(document.getElementById("turnmarker_missed_"+(1+gV.gameStep)),"off");
+		}
 		gobj(document.getElementById("turnmarker_fill_"+gV.gameStep),"off");
+		gobj(document.getElementById("turnmarker_missed_"+gV.gameStep),"on");
 		await wait(0.5);
 		gV.gameStep--;
 	}
-	await wait(1);
+	await wait(0.5);
+	gobj(document.getElementById("turnmarker_missed_2"),"off");
+	gobj(document.getElementById("turnmarker_missed_1"),"on");
 	gobj(document.getElementById("turnmarker_fill_1"),"off");
+	gobj(document.getElementById("numberMark"),"off");
+	await wait(0.5);
+	gobj(document.getElementById("turnmarker_missed_1"),"off");
+	gobj(document.getElementById("turner_scramble"),"on");
+	var blurturner = document.getElementById("turners");
+	var rotation = get_turner_rot() + 360;
+	while (rotation>0) {
+		blurturner.style.rotate= rotation+"deg";
+		rotation-=22;
+		await wait(0.05);
+	}
+	blurturner.style.rotate= "0deg";
 	newNumber();
+	gobj(document.getElementById("turner_scramble"),"off");	
+	gobj(document.getElementById("numberMark"),"on");
 	await wait(1);
 	gV.missCount++;
 	if (gV.missCount==oCONFIG.freeze_event_triger) {		
 		gV.missCount=0;
 		playSound("Safe_IceSpray");
 		renderAnim("freeze", 1);
-	}
+	} 
 } 
 function advanceSafe() {	
+	gobj(document.getElementById("numberMark"),"off");
 	playSound("Safe_Door Open");
 	renderAnim("safe"+gV.level, 1);
 	gV.level++;

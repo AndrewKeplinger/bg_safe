@@ -1,6 +1,6 @@
 // JavaScript Document
 var mouse = new THREE.Vector2();
-
+/*
 //function keyDownEventHandler(event) {
 window.addEventListener("keydown", function (event) {
 	//console.log("keydown.listener:" + event.key);
@@ -64,7 +64,7 @@ function handleKeyEvent(event) {
 
 	return false;
 } //,true);
-
+*/
 function enableGameTouches() {
 	document.addEventListener('touchstart', F_event_Touch_onDocument_handle, false);
 	document.addEventListener('touchend', F_event_Touch_onDocument_handle, false);

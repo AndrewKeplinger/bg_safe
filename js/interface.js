@@ -81,7 +81,7 @@ function doWindowResize() {
 	g = document.body.offsetHeight;
 	oSTAGE.is_landscape = e >= g ? !0 : !1;
 	var k = document.getElementById("orientation_overlay");
-	k && (isMobile && "landscape" == window.oCONFIG.game_orientation && !window.oSTAGE.is_landscape ? (k.style.backgroundImage = "url('media/landscape_only.gif')", k.style.display = "block"/*, window.__snds.forceMute()*/) : window.platform.isMobile && "portrait" == window.oCONFIG.game_orientation && window.oSTAGE.is_landscape ? (k.style.backgroundImage = "url('media/portrait_only.gif')", k.style.display = "block"/*, window.__snds.forceMute()*/) : (k.style.display = "none"/*, window.__snds.unforceMute()*/));
+	k && (isMobile && "landscape" == window.oCONFIG.game_orientation && !window.oSTAGE.is_landscape ? (k.style.backgroundImage = "url('Media/landscape_only.gif')", k.style.display = "block"/*, window.__snds.forceMute()*/) : window.platform.isMobile && "portrait" == window.oCONFIG.game_orientation && window.oSTAGE.is_landscape ? (k.style.backgroundImage = "url('Media/portrait_only.gif')", k.style.display = "block"/*, window.__snds.forceMute()*/) : (k.style.display = "none"/*, window.__snds.unforceMute()*/));
 	k = 0;
 	oSTAGE.scale = Math.min(Infinity, (Math.min(window.innerHeight / 1120 , window.innerWidth / 644)));
 

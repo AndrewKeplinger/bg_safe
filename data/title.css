@@ -1,17 +1,4 @@
 @charset "UTF-8";
-/* CSS Document */
-#titleScreen_old {
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	width: 100%;
-	height: 100%;
-	z-index: 20;
-	background-color: #000000;
-	cursor: default;
-	visibility: hidden;
-	display: inline;
-}
 #titleBackground {
 	position: absolute;
 	top: 0px;
@@ -23,44 +10,6 @@
 	background-size:cover;
 	background-repeat:repeat;
 	opacity: 1;
-}
-#titleCharacter {
-	background-image: url(../Media/EndScreen/Title_Jay.png);
-	top: 40px;
-	left: 82px;
-	width: 423px;
-	height: 492px;
-	background-size: 423px 492px;
-	z-index: 10;
-	display: inline;
-}
-#titleGameName {
-	position: absolute;
-	left: 375px;
-	top: 12px;
-	width: 520px;
-	height: 135px;
-	z-index: 11;
-	font-size: 30px;
-}
-#titleDescription {
-	position: absolute;
-	left: 375px;
-	top: 62px;
-	width: 450px;
-	height: 135px;
-	z-index: 11;
-	font-size: 18px;
-}
-#titleInstructionsImage {
-	position: absolute;
-	left: 523px;
-	top: 159px;
-	width: 416px;
-	height: 142px;
-	background-color:#888888;
-	/*background-image:url(../Media/UI/Title_Inst_Mobile.gif);*/
-	font-size: 12px;
 }
 #titleInstructionsImage_PC {
 	position: absolute;
@@ -89,7 +38,6 @@
 }
 #exitButton, #exitButton2 {
 	z-index:90;
-	cursor:pointer;
 	cursor:pointer;
 	position: absolute;
 	top:-100px;
@@ -129,90 +77,6 @@
 	height:64px;
 	background-image: url(../Media/UI/b_mute_on.png);
 	background-size:64px 64px;
-}
-/*
-#soundButton3, #soundButton3off {
-	left:236px;
-	top: 480px;
-}*/
-#ninjagoLogo,#ninjagoLogo2 {
-	position: absolute;
-	top:17px;
-	left:11px;
-	width:215px;
-	height:48px;
-	z-index:12;
-	background-image: url(../Media/UI/UI_MovieLogo.png);
-	background-size:215px 48px;
-}
-
-#ninjagoLogo3 {
-	position: absolute;
-	top:460px;
-	left:11px;
-	width:215px;
-	height:48px;
-	z-index:3;
-	background-image: url(../Media/UI/UI_MovieLogo.png);
-	background-size:215px 48px;
-}
-#ninjagoLogo4 {
-	position: absolute;
-	top:120px;
-	left:372px;
-	width:215px;
-	height:48px;
-	z-index:3;
-	background-image: url(../Media/UI/UI_MovieLogo.png);
-	background-size:215px 48px;
-}
-.ninjagoLogoDate {
-	position: absolute;
-	top:64px;
-	left:10px;
-	width: 260px;
-	height: 25px;
-	text-align: center;
-	font-family: MontBold;
-	font-size: 8pt;
-	color: #ffffff;
-	z-index:14;
-	/*text-shadow: 1px 1px 1px black, -1px -1px 1px black, -1px 1px 1px black, 1px -1px 1px black;*/
-
-	  -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome and Opera */
-}
-
-.ninjagoLogoDate3 {
-	position: absolute;
-	left: 0px;
-	top: 510px;
-	width: 233px;
-	height: 25px;
-	text-align: center;
-	font-family: MontBold;
-	font-size: 8pt;
-	z-index:4;
-	color: #ffffff;
-	/*text-shadow: 1px 1px 1px black, -1px -1px 1px black, -1px 1px 1px black, 1px -1px 1px black;*/
-
-	  -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome and Opera */
-}
-#ninjagoLogoDate4 {
-	font-size: 12px;
-	top: 170px;
-	left: 363.5px;
 }
 #playButton {
 	cursor:pointer;

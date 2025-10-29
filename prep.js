@@ -152,7 +152,7 @@ function doPrep(){
                 	 	oLANG[o.id] = o.value;
       				}
           	}
-			  var dateMessage = getDateMessage(); // ninjaLogoText
+			  var dateMessage = getDateMessage();
 			  textAssets["StartDate"].data = dateMessage;
            if (!support.canvas || !support.webgl || !support.clamped_array) {
 		        doBrowserAlert();

@@ -15,11 +15,6 @@ function loadJSON() {
 		return;
 	}
 	
-	/*setLocalizedImage("ninjagoLogo","ninjago_logo");
-	setLocalizedImage("ninjagoLogo2","ninjago_logo");
-	setLocalizedImage("ninjagoLogo3","ninjago_logo");
-	setLocalizedImage("ninjagoLogo4","ninjago_logo");
-	*/
 	
 	var xmlhttp = new XMLHttpRequest();
 	//if (window.devicePixelRatio) lowRes = (window.devicePixelRatio!=1);
@@ -129,15 +124,11 @@ function loadSequence() {
 		case "Command":
 			switch (currentLoadingTexture.id) {	
 				case "DisplayLoadText":
-					setFieldText("StartDate","ninjaLogoText");
-					setFieldText("StartDate","ninjaLogoText2");
-					setFieldText("StartDate","ninjaLogoText3");
-					setFieldText("StartDate","ninjaLogoText4");
 					setLegalText();
 					//setFieldText("Loading_Bar","loadingMessage");
-					setFieldText("Title","titleGameName");
-					setFieldText("Description","titleDescription");
-					setFieldText("Action_Button","titlePlayText");
+					//setFieldText("Title","titleGameName");
+					//setFieldText("Description","titleDescription");
+					//setFieldText("Action_Button","titlePlayText");
 					if (isMobile) {
 						//setFieldText("Loading_Mobile","loadingPrompt");
 						//setFieldText("IntroPrompt_Mobile","titleInstructions");
@@ -416,7 +407,7 @@ function setFieldText( sourceName, fieldName) {
 		tField = document.getElementById(tAsset.target);
 	}
 	if (tField==undefined) {
-		console.log("setFieldText( missing"+fieldName+")");
+		console.log("setFieldText( missing "+fieldName+")");
 		return;
 	}
 	if (tField !== undefined && tAsset !== undefined) {
