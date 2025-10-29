@@ -574,6 +574,11 @@ async function restart_safe() {
 } 
 function advanceSafe() {	
 	gobj(document.getElementById("numberMark"),"off");
+	for (var idx=1; idx<4; idx++) {
+		gobj(document.getElementById("turnmarker_"+idx),"off");
+		gobj(document.getElementById("turnmarker_fill_"+idx),"off");
+		gobj(document.getElementById("turnmarker_missed_"+idx),"off");
+	}
 	playSound("Safe_Door Open");
 	renderAnim("safe"+gV.level, 1);
 	gV.level++;

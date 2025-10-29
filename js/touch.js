@@ -93,6 +93,7 @@ var thisTouch = {
 var LovelyPie = Math.PI * 1.25;
 var lastActionTime = -1;
 var nextPowerupTime = 0;
+var next_tap_time = -1;
 
 function F_event_Touch_onDocument_handle(evt) {
 
@@ -148,19 +149,21 @@ function F_event_Touch_onDocument_handle(evt) {
 	
 	mouse.x = (touch.clientX / window.innerWidth) * 2 - 1;
 	mouse.y = -(touch.clientY / window.innerHeight) * 2 + 1;
-	
-	if (reaction_type === "onclick" && gameState==2) {
-		//if (thisTouch.x > -100) {
-		if (flyState==1) {
-			stopWheel();
+	if (Date.now()>next_tap_time) {
+		if (reaction_type === "onclick" && gameState==2) {
+			next_tap_time=Date.now()+250;
+			//if (thisTouch.x > -100) {
+			if (flyState==1) {
+				stopWheel();
+			}
+			if (flyState == 0) {
+				//start spinner
+				startRotate();
+				flyState=1;
+			}
+			thisTouch.x = -100;
+			//}
 		}
-		if (flyState == 0) {
-			//start spinner
-			startRotate();
-			flyState=1;
-		}
-		thisTouch.x = -100;
-		//}
 	}
 				
 	/*

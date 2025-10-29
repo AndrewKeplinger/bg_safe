@@ -564,7 +564,7 @@ div {
 .recap_DISTANCE {
   font-size: 160px;
   font-family: "Bebas Neue";
-  color: rgb(0, 0, 0);
+  color: #f3b133;
   line-height: 1.2;
   text-align: center;
   position: absolute;
@@ -577,7 +577,7 @@ div {
 .recap_DISTANCE_Label {
   font-size: 78px;
   font-family: "Bebas Neue";
-  color: rgb(0, 0, 0);
+  color: #f3b133;
   line-height: 1.2;
   text-align: center;
   position: absolute;
