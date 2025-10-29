@@ -435,7 +435,7 @@ function muteToggle(dontPlay) {
 	//saveState();
 	
 }
-/*
+
 if(window.addEventListener && !isIE) {
 	window.addEventListener("blur", pauseButtonAction, true);
 	window.addEventListener("focus", onFocusAction, true);
@@ -449,7 +449,7 @@ if(window.addEventListener && !isIE) {
 		window.onfocus = onFocusAction;
 	}
 }
-*/
+
 
 setInterval(watchFocus, 100);
 var document_blurred = false;
@@ -481,6 +481,7 @@ function pauseButtonAction(event) {
 		resumeMusic=true;
 		stopMusic();
 	}
+	stopAllSounds();
 	if (gameState>1 && gameState!==5 && gameState!==6){
 		var tDiv = document.getElementById("pauseGameWindow");
 		tDiv.style.visibility = "visible";
