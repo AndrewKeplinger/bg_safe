@@ -79,10 +79,13 @@ function startUpLoaderUI() {
 	}
 }
 
-
+var anim_sync=Date.now();
 function animate() {
-	var deltaTime = Date.now();
-	anim_step();
+	var deltaTime = Date.now()-anim_sync;
+	anim_sync=Date.now();
+	
+	anim_step(deltaTime);
+	
 	window.requestAnimationFrame(animate);
 }
 
@@ -294,10 +297,15 @@ var game_parts = {
 	}
 }
 var iceRing=document.getElementById("iceRing");
-function anim_step() {
+function anim_step(deltaTime) {
 	/*if (iceRing.style.visibility=="visible") {
 		iceRing.style.rotate=rnd(360)+"deg";	
 	}*/
+	if (isPaused) {
+		gV.clockStart += deltaTime;
+		//console.log(gV.clockStart);
+		return;
+	}
 	updateClock();
 	if (gV.anim) {
 		if (Date.now() > gV.nextStep) {
@@ -394,6 +402,11 @@ function startClock() {
 }
 function updateClock() {
 	if (gV.clockStart==-1)return;
+	if (isPaused) {
+		gV.clockStart = Date.now()-(Date.now()-gV.clockStart);
+		return;
+	}
+	
 	var dTime = (Date.now()-gV.clockStart)/oCONFIG.game_duration;
 	if (dTime>1) {
 		gV.clockStart=-1;
@@ -419,6 +432,7 @@ function initGame() {
 	gV.animRate = 0.1;
 	gV.gameWon=false;
 	gV.playTime=0;
+	gV.missCount=0;
 	gV.loot=rnd(3)+1;
 	for (var idx=1; idx<4; idx++) {
 		gobj(document.getElementById("loot_0"+idx),"off");
@@ -464,10 +478,11 @@ function initDial() {
 	newNumber();
 }
 function newNumber() {
+	if (gV.gameStep==1) targetNum=0;
 	var newNum = rnd(12)*3;
 	gV.turnRate=oCONFIG.turnRate; 
 
-	while (Math.abs(newNum-targetNum)<6) {
+	while (Math.abs(newNum-targetNum)<7) {
 		newNum = rnd(12)*3;
 	}
 	targetNum = newNum;
@@ -561,6 +576,8 @@ async function restart_safe() {
 	}
 	blurturner.style.rotate= "0deg";
 	newNumber();
+	
+	gobj(document.getElementById("safecarrot_missed"),"off");
 	gobj(document.getElementById("turner_scramble"),"off");	
 	gobj(document.getElementById("numberMark"),"on");
 	await wait(1);
@@ -590,18 +607,21 @@ function startRotate(){
 	gV.direction=(gV.gameStep%2==0)?-1:1;
 	gV.rotateTimeout = setTimeout(rotateDial,10);
 }
+
 var safecarrot_on = document.getElementById("safecarrot_on");
 function rotateDial() {
-	var rotation = get_turner_rot();
-	var diffrot = ((360-(targetNum*10))-rotation);
-	gobj(safecarrot_on,(Math.abs(diffrot)<oCONFIG.accuracy)?"on":"off");
-		 
-	var dTime = 0.001*( Date.now()-gV.startTime);
-	gV.startTime=Date.now();
-	var rot = gV.turnRate*dTime*gV.direction + get_turner_rot();
-	if (rot>360) rot-=360;
-	if (rot<0) rot+=360;
-	document.getElementById("turners").style.rotate=rot+"deg";
+	if (!isPaused) {
+		var rotation = get_turner_rot();
+		var diffrot = ((360-(targetNum*10))-rotation);
+		gobj(safecarrot_on,(Math.abs(diffrot)<oCONFIG.accuracy)?"on":"off");
+
+		var dTime = 0.001*( Date.now()-gV.startTime);
+		gV.startTime=Date.now();
+		var rot = gV.turnRate*dTime*gV.direction + get_turner_rot();
+		if (rot>360) rot-=360;
+		if (rot<0) rot+=360;
+		document.getElementById("turners").style.rotate=rot+"deg";
+	}
 	if (gV.rotateTimeout) clearTimeout(gV.rotateTimeout);
 	gV.rotateTimeout = setTimeout(rotateDial,10);
 }

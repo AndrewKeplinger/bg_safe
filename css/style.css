@@ -748,6 +748,14 @@ background-repeat:no-repeat;background-repeat:no-repeat;
   height: 1120px;
   z-index: 2;
 }
+recap_2_preload {
+	background-image: url("../Media/recap/recap_background2.jpg");
+	position:absolute;
+	left:-1000px;
+	top:-1000px;
+	width:1px;
+	height:1px;
+}
 .recap_background2 {
   background-image: url("../Media/recap/recap_background2.jpg");
   background-size: contain;
