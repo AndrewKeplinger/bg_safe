@@ -13,8 +13,8 @@ function LoadComplete() {
 	setFieldText("Pause_Menu_Continue", "pauseGameOptions1");
 
 	if (oCONFIG.hideOfficialSite == 1) {
-		document.getElementById("pauseGameOptions4").style.visibility = "hidden";
-		document.getElementById("pauseGameOptions4").style.display = "none";
+		//document.getElementById("pauseGameOptions4").style.visibility = "hidden";
+		//document.getElementById("pauseGameOptions4").style.display = "none";
 	}
 	
 	setFieldText("recap_SCORE_Label", "recap_SCORE_Label");

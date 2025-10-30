@@ -13,8 +13,6 @@
 	{ "id":"legalLineHeight", "type":"config", "value":"9px", "note":"Forces line height to control appearance of Legal block top line"},
 	{"id":"fontBaselineShift", "type":"config", "value":0, "note":"Adjust position of text on Play and more games button. Value is scaled to screen size."},
 
-	{"id":"MontBold","type":"font-face","value":"","active":0, "note":"active 0 = off, value is url of font"},
-
 	{"id": "date_msg_date", "value": "COMING SOON ON NETFLIX", "type": "text"},
 	{"id": "date_msg_friday", "value": "COMING SOON ON NETFLIX", "type": "text"},
 	{"id": "date_msg_tomorrow", "value": "COMING SOON ON NETFLIX", "type": "text"},

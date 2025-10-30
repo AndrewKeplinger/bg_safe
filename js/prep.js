@@ -98,71 +98,56 @@ var top_links = [];
 var prepComplete=false;
 function doPrep(){
 
-	var loader = new XMLHttpRequest();
-    loader.open("GET", "language/" + oCONFIG.language + ".json", true);
-    //loader.open("GET", "data/game.json", true);
-    loader.onreadystatechange = function () {
-		
-          if (loader.readyState == 4 && loader.status == "200") {
-			  
-			legal_links = [];
-			top_links = [];
-  			legal_images = [];
-			var parseText = loader.response || loader.responseText;
-          	var json_arr = JSON.parse(parseText);
-          	for(var i=0; i<json_arr.length; i++){
-          		var o = json_arr[i];
-				if (o.type=="font-face" && o.active==1){
-					var newStyle = document.createElement('style');
-					var tStyle = "@font-face {font-family: \"" + o.id + "\";src: local('☺'),url('" + o.value + "') format('woff');}";
-					newStyle.appendChild(document.createTextNode(tStyle));
-					document.head.appendChild(newStyle);
-				}
-				if (o.type=="legal_images" && o.active==1) {
-					legal_images.push(o.link);
-				}
-				if (o.type=="config") {
-					oCONFIG[o.id]=o.value;
-				}
-				if (o.type=="audio") {
-					localSounds[o.id] = o;
-				}
-				if (o.type == "legal" && o.active==1) {
-					var tLegalMsg = {};
-					tLegalMsg.msg = o.id;
-					tLegalMsg.link = o.link;
-					if (o.top==1) {
-						top_links.push(tLegalMsg);
-					}else{
-						legal_links.push(tLegalMsg);
-					}
-				}
-          		if(o.type == "text" || o.type == "Text" || o.type == "legal"){
-          			oLANG[o.id] = {}; 
-					textAssets[o.id] = o;// Compatibility with existing system
-					//console.log("set "+o.id+" = "+ o.data);
-					
-          			for(var a in o){
-							if(a != "type" && a != "id"){
-								oLANG[o.id][a] = o[a];
-							}
-						}
-      				}
-      				if (o.type == "image") {
-                	 	oLANG[o.id] = o.value;
-      				}
-          	}
-			  var dateMessage = getDateMessage(); // ninjaLogoText
-			  textAssets["StartDate"].data = dateMessage;
-           if (!support.canvas || !support.webgl || !support.clamped_array) {
-		        doBrowserAlert();
-		      }else{
+	var http = new XMLHttpRequest();
+  var url = oCONFIG.language_file;
+
+  http.open("GET", url, true);
+  http.onreadystatechange = function() {
+
+    if(http.readyState == 4 && http.status == 200) {
+
+      var myxml = http.responseXML || parseXml(http.responseText);
+      var root = myxml.documentElement;
+
+      oLANG = {};
+      oLANG_IMAGES = {};
+
+      var textnodes = root.getElementsByTagName("txt");
+      if (textnodes) {
+            for (var i = 0; i < textnodes.length; i++) {
+              var my_node = textnodes[i];
+              var o = {};
+              o.id = my_node.getAttribute('id');
+              for (var ii= 0; ii < my_node.attributes.length; ii++) {
+                var attrib = my_node.attributes[ii];
+                if (attrib.specified) {
+                  o[attrib.name] = attrib.value;
+                }
+              }
+              o.value = my_node.childNodes[0].nodeValue;
+              oLANG[o.id] = o;
+            }
+      }
+
+      var imagenodes = root.getElementsByTagName("img");
+      if (imagenodes) {
+            for (var i = 0; i < imagenodes.length; i++) {
+              var my_node = imagenodes[i];
+              var my_id = my_node.getAttribute('id');
+              var my_value = my_node.childNodes[0].nodeValue;
+              oLANG_IMAGES[my_id] = my_value;
+            }
+      }
+
+        if (!support.canvas || !support.webgl || !support.clamped_array) {
+            doBrowserAlert();
+        }else{
 		        //doInit();
 				  prepComplete=true;
 			  }
         }
     };
-    loader.send(null);  
+    http.send(null);  
 }
 
 var query = window.location.search.substring(1);

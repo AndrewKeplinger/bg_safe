@@ -231,6 +231,7 @@ function createLegalBlock() {
 		__utils.doHTMLText(legal_link, oLANG[legal_links[i].msg]);
 		if (i < legal_links.length - 1) {
 			var divider = links_block.appendChild(document.createElement("a"));
+			divider.className = "b_legal";
 			divider.innerHTML = " | ";
 		}
 	}

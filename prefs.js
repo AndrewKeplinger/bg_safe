@@ -1,7 +1,8 @@
 
 
 oCONFIG = {
-	language :"en",
+	language_file :"language/en-us.xml",
+	//language :"en-us",
 	game_orientation:"portrait",
 	game_id: "badguysfly",
 	show_trace: false,
@@ -34,13 +35,13 @@ oCONFIG = {
 var legal_links = [
   {msg: "legal_terms", link:"https://www.dreamworks.com/terms-of-use"},
   {msg: "legal_privacy", link:"https://www.nbcuniversal.com/privacy/pp-full-children#accordionheader4"},
-  {msg: "legal_mpaa", link:"https://www.nbcuniversalprivacy.com/privacy/california-consumer-privacy-act?intake=Dreamworks_Animation"},
+  {msg: "legal_caprivacy", link:"https://www.nbcuniversalprivacy.com/privacy/california-consumer-privacy-act?intake=Dreamworks_Animation"},
   {msg: "legal_parentalguide", link:"https://www.dreamworks.com/kids-help"}//,
   //{msg: "legal_ratings", link:"http://www.filmratings.com"}
 ];
 
 var textAssets = {};
-
+/*
 var oLANG = {
 	"legal":"LEGAL",
 	"legal_terms":"TERMS OF SERVICE",
@@ -48,7 +49,7 @@ var oLANG = {
 	"legal_mpaa":"CA NOTICE",
 	"legal_parentalguide":"KID'S HELP",
 	"legal_copyright":"&copy;2025"
-};
+};*/
 
 
 var legal_billing = null;

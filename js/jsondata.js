@@ -395,7 +395,9 @@ function getLocalizedText( textId ) {
 
 function setFieldText( sourceName, fieldName) {
 	
-	var tAsset = textAssets[sourceName];
+	
+	
+	var tAsset = oLANG[sourceName];
 	if (tAsset==undefined) {
 		console.log("setFieldText( def "+sourceName+")");
 		return;
@@ -412,6 +414,11 @@ function setFieldText( sourceName, fieldName) {
 	}
 	if (tField !== undefined && tAsset !== undefined) {
 		//tField.style.visibility="visible";
+		
+		__utils.doHTMLText(tField,tAsset);//element, o, append
+		
+		return;
+		/*
 		var itemText = tAsset.data;
 		if (itemText!==undefined) {
 			itemText = itemText.replace("![CDATA[","").replace("]]","");//![CDATA[Tap Anywhere to Start]]
@@ -434,6 +441,7 @@ function setFieldText( sourceName, fieldName) {
 				}
 			}
 		}
+		*/
 	}
 }
 

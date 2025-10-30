@@ -918,7 +918,7 @@ background-repeat:no-repeat;background-repeat:no-repeat;
 .b_legal {
   position: relative;
   display: inline;
-  top: -45px;
+  /*top: -45px;*/
   left: 0px;
   height: 46px;
   min-width: 120px;

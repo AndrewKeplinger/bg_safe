@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xml>
+
+    <!--images-->
+    <img id="logo">Media/logo_en.png</img>
+ 
+    <txt id="legal"  font-family="bebas-neue" line-height="normal" font-size="14px">LEGAL</txt>
+	
+	
+    <txt id="legal_hide"  font-family="bebas-neue" line-height="normal" font-size="14px" width="70px">CLOSE</txt>
+    <txt id="legal_show"  font-family="bebas-neue" line-height="normal" font-size="14px" width="70px">LEGAL</txt>
+
+	<!--To hide an items use 'display="none"' in the txt defintion. Allows most CSS tags -->
+	<!--To add html tags into a txt definition (like <br>, \n, etc.) use a CDATA block like below to enclose the tags.<![CDATA[ONLY IN CINEMAS<br>AUGUST 29]]>-->
+    <!--upcoming date messge-->
+	<txt id="date_msg_1" font-family="bebas-neue" line-height="33.6px" font-size="28px">EXCLUSIVELY ON NETFLIX</txt>
+    <!--Message for Opening coming friday-->
+	<txt id="date_msg_2" font-family="bebas-neue" line-height="33.6px" font-size="28px">EXCLUSIVELY ON NETFLIX</txt>
+    <!--Message for Opening Tomorrow-->
+	<txt id="date_msg_3" font-family="bebas-neue" line-height="33.6px" font-size="28px">EXCLUSIVELY ON NETFLIX</txt>
+    <!--Message for now playing-->
+	<txt id="date_msg_4" font-family="bebas-neue" line-height="33.6px" font-size="28px">EXCLUSIVELY ON NETFLIX</txt>
+
+    <txt id="title" font-family="bebas-neue" line-height="68px" font-size="68px"><![CDATA[]]></txt>
+
+    <txt id="run" font-family="bebas-neue" line-height="75px" font-size="75px">RUN</txt>
+    <txt id="play" font-family="bebas-neue" line-height="62px" font-size="58px">PLAY</txt>
+    <txt id="titlewatch" font-family="bebas-neue" line-height="34.8px" font-size="44px">GET TICKETS</txt>
+
+    <txt id="quit" font-family="bebas-neue" line-height="normal" font-size="40px">>Restart</txt>
+    <txt id="resume" font-family="bebas-neue" line-height="normal" font-size="40px">>Continue</txt>
+
+	<txt id="legal_privacy_link">https://www.nbcuniversal.com/privacy/pp-full-children#accordionheader4</txt>
+	<txt id="legal_terms_link">https://www.dreamworks.com/terms-of-use</txt>
+	<txt id="legal_ca_notice_link">https://www.nbcuniversalprivacy.com/privacy/california-consumer-privacy-act?intake=Dreamworks_Animation</txt>
+	<txt id="legal_parentalguide_link">https://www.dreamworks.com/kids-help</txt>
+
+	<txt id="watch_link">https://caughtstealing.movie/tickets/</txt>
+	<txt id="tickets_link">https://caughtstealing.movie/tickets/</txt>
+
+	<!-- GDRP text is controlled by the plugin -->
+	<!-- Add display="none" to disable any legal item -->
+	<txt id="legal_gdpr"> </txt>
+    <txt id="legal_privacy" font-family="bebas-neue" line-height="normal" font-size="16px">PRIVACY POLICY</txt>
+    <txt id="legal_caprivacy" font-family="bebas-neue" line-height="normal" font-size="16px">CA NOTICE</txt>	
+    <txt id="legal_terms" font-family="bebas-neue" line-height="normal" font-size="16px">TERMS OF SERVICE</txt>
+    <txt id="legal_parentalguide" font-family="bebas-neue" line-height="normal" font-size="16px">KID'S HELP</txt>
+	<txt id="legal_copyright" font-family="bebas-neue" margin-top="6px" line-height="normal" font-size="16px"><![CDATA[DreamWorks The Bad Guys 2025 © DreamWorks Animation LLC. All rights reserved.]]></txt>
+		
+    <txt id="browser_alert">YOUR BROWSER SEEMS TO BE OUT OF DATE. PLEASE ENSURE THAT YOU ARE RUNNING ONE OF THESE LATEST BROWSERS.</txt>
+
+	<txt id="recap_SCORE_Label" font-family="bebas-neue" font-size="50px">SCORE</txt>
+	<txt id="Recap_Score" font-family="bebas-neue"  font-size="120px">0</txt>
+
+	<txt id="recap_INSTRUCTIONS" font-family="bebas-neue" line-height="90px" font-size="32px">HOW TO PLAY</txt>
+	<txt id="recap_WATCH_TRAILER" font-family="bebas-neue" line-height="88px" font-size="32px">GET TICKETS</txt>
+	<txt id="recap_PLAY_MORE" font-family="bebas-neue" line-height="1.2" font-size="58px">PLAY AGAIN</txt>
+
+	<txt id="recap_date" font-family="bebas-neue" line-height="88px" font-size="32px">EXCLUSIVELY ON NETFLIX</txt>
+	<txt id="Title_copy" font-family="bebas-neue" line-height="88px" font-size="32px"><![CDATA[MR. SNAKE'S SAFE CRACKER]]></txt>	
+	<txt id="run_Title" font-family="bebas-neue" line-height="88px" font-size="32px"><![CDATA[MR. SNAKE'S SAFE CRACKER]]></txt>
+	<txt id="title_film_logo_date" font-family="bebas-neue" line-height="88px" font-size="32px">EXCLUSIVELY ON NETFLIX</txt>
+	<txt id="b_play" font-family="bebas-neue" line-height="1.2" font-size="58px">PLAY</txt>
+	<txt id="inst_b_PLAY" font-family="bebas-neue" line-height="1.2" font-size="58px">PLAY</txt>
+	<txt id="pauseGameHeadingText" font-family="bebas-neue" line-height="88px" font-size="32px">PAUSED</txt>    
+</xml>
