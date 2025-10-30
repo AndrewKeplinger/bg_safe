@@ -26,7 +26,7 @@ oCONFIG = {
 	wrong_penalty:200,
 	game_duration:60000,
 	time_meter_width:300,
-	freeze_event_triger:5
+	freeze_event_trigger:3
 };
 // Overridden from en.json language file
 

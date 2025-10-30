@@ -313,9 +313,9 @@ function anim_step(deltaTime) {
 			if (!game_parts[gV.anim][gV.animStep]) {
 				console.log("End Anim:"+gV.anim);
 				gV.anim = null;
-			} else {
+			} else {				
 				renderAnim(gV.anim, gV.animStep);
-				gV.nextStep = Date.now() + oCONFIG.animationDelay;
+				//gV.nextStep = Date.now() + oCONFIG.animationDelay;
 			}
 		}
 	}
@@ -324,11 +324,13 @@ var safe_zs={"safe1":40,"safe2":17,"safe3":10};
 function renderAnim(name, phase) {
 	var anim = game_parts[name][phase];
 	var keys = Object.keys(anim);
+	gV.nextStep = Date.now() + oCONFIG.animationDelay;
 	for (var idx = 0; idx < keys.length; idx++) {
 		switch (keys[idx]) {
 			case "action":
 				switch (anim[keys[idx]]) {
 					case "iceFx":
+						gV.nextStep = Date.now() + 2000;
 						break;
 					case "freeze":
 						gV.turnRate=oCONFIG.freezeTurnRate;
@@ -461,6 +463,7 @@ function gobj(obj, state) {
 }
 var targetNum=0;
 function initDial() {
+	gV.turnRate=oCONFIG.turnRate; 
 	gV.gameStep = 1;
 	flyState=0;
 	targetNum=0;
@@ -480,7 +483,6 @@ function initDial() {
 function newNumber() {
 	if (gV.gameStep==1) targetNum=0;
 	var newNum = rnd(12)*3;
-	gV.turnRate=oCONFIG.turnRate; 
 
 	while (Math.abs(newNum-targetNum)<7) {
 		newNum = rnd(12)*3;
@@ -582,7 +584,7 @@ async function restart_safe() {
 	gobj(document.getElementById("numberMark"),"on");
 	await wait(1);
 	gV.missCount++;
-	if (gV.missCount==oCONFIG.freeze_event_triger) {		
+	if (gV.missCount>=oCONFIG.freeze_event_trigger) {		
 		gV.missCount=0;
 		playSound("Safe_IceSpray");
 		renderAnim("freeze", 1);
@@ -603,7 +605,7 @@ function advanceSafe() {
 function startRotate(){
 	flyState=0;
 	gV.startTime=Date.now();
-	gV.turnRate=oCONFIG.turnRate; 
+	//gV.turnRate=oCONFIG.turnRate; 
 	gV.direction=(gV.gameStep%2==0)?-1:1;
 	gV.rotateTimeout = setTimeout(rotateDial,10);
 }

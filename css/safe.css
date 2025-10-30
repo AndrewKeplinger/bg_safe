@@ -264,7 +264,7 @@
   height: 49px;
   background-repeat: no-repeat;
   background-size: contain;
-  z-index: 32;
+  z-index: 60;
 }
 #safecarrot_on {
   background-image: url("../Media/safe/safecarrot_on.png");
@@ -330,7 +330,7 @@
   height: 300px;
   background-repeat: no-repeat;
   background-size: contain;
-  z-index: 27;
+  z-index: 31;
 }
 #turner_scramble {
   background-image: url("../Media/safe/turner_scramble.png");
@@ -352,7 +352,7 @@
   height: 351px;
   background-repeat: no-repeat;
   background-size: contain;
-  z-index: 31;
+  z-index: 50;
 }
 #turnmarker_missed_3 {
   background-image: url("../Media/safe/turnmarker_missed.png");
