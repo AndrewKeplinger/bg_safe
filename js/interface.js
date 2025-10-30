@@ -321,8 +321,11 @@ function changeGameState(tState) {
 				items[reveal_items[idx]]=document.getElementById(reveal_items[idx]);
 			}
 			if (!gV.gameWon) {
+				
+				playSound("Safe_Results_Lose");
 				document.getElementById("recap_background").className="recap_background2";
 			} else {
+				playSound("Safe_Results_Win");
 				document.getElementById("recap_background").className="recap_background";
 				gV.recap_loot=[];
 				var dly = 1;

@@ -36,6 +36,18 @@
 	"type": "audio",
 	"value": "Sfx/Safe_IceSpray.mp3"
 }, {
+	"id": "Safe_Start",
+	"type": "audio",
+	"value": "Sfx/Safe_Start.mp3"
+}, {
+	"id": "Safe_Results_Win",
+	"type": "audio",
+	"value": "Sfx/Safe_Results_Win.mp3"
+}, {
+	"id": "Safe_Results_Lose",
+	"type": "audio",
+	"value": "Sfx/Safe_Results_Lose.mp3"
+}, {
 	"id": "Safe_Win",
 	"type": "audio",
 	"value": "Sfx/Safe_Win.mp3"

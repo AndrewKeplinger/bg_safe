@@ -22,7 +22,7 @@ function LoadComplete() {
 	setFieldText("recap_INSTRUCTIONS", "recap_INSTRUCTIONS");
 	setFieldText("recap_WATCH_TRAILER", "recap_WATCH_TRAILER");
 	setFieldText("recap_date", "recap_date");
-	setFieldText("Title_copy", "Title_copy");
+	//setFieldText("Title_copy", "Title_copy");
 	setFieldText("run_Title", "run_Title");
 	setFieldText("title_film_logo_date", "title_film_logo_date");
 	setFieldText("b_play", "b_play");
@@ -426,6 +426,8 @@ function stopClock() {
 }
 function initGame() {
 	//Start up.
+	
+	playSound("Safe_Start");
 	startClock();
 	flyState = 0;
 	gV.level = 1;
