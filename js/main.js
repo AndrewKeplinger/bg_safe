@@ -527,7 +527,6 @@ function stopWheel() {
 	if (Math.abs(diffrot)<oCONFIG.accuracy) {
 		document.getElementById("turners").style.rotate=(360-(targetNum*10))+"deg";
 		gobj(document.getElementById("iceRing"),"off");
-		gobj(document.getElementById("turner_iced"),"off");
 		if (gV.rotateTimeout) clearTimeout(gV.rotateTimeout);
 		gobj(document.getElementById("turnmarker_fill_"+gV.gameStep),"on");
 		gV.gameStep++;		

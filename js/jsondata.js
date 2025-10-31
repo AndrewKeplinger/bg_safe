@@ -573,7 +573,14 @@ function stopMusic() {
 		}
 	}
 }
-
+function stopAllSounds() {
+	if (isMuted) {
+		return;
+	}
+	for (var idx=0; idx<soundList.length; idx++) {
+		soundList[idx].stop();
+	}
+}
 
 
 

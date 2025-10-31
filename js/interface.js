@@ -327,24 +327,31 @@ function changeGameState(tState) {
 			} else {
 				playSound("Safe_Results_Win");
 				document.getElementById("recap_background").className="recap_background";
+				for (var idx=0;idx<3;idx++) {
+					var tDiv = document.getElementById("recap_loot_0"+idx);
+					if (tDiv) tDiv.remove();
+				}
 				gV.recap_loot=[];
 				var dly = 1;
 				var base = document.getElementById("levelMessage");
-				var tDiv = document.createElement("div");
+				tDiv = document.createElement("div");
 				base.appendChild(tDiv);
 				tDiv.className="loot_rays_01";
+				tDiv.id="recap_loot_01";
 				gV.recap_loot.push(tDiv);
 				tDiv.style.transform="scale(0.001)";
 				TweenLite.to(tDiv, 1.0, {transform:"scale(1)", overwrite:true, ease: Elastic.easeOut.config(1.0, .8), delay: dly+=0.3});
 				var tDiv = document.createElement("div");
 				base.appendChild(tDiv);
 				tDiv.className="loot_rays_02";
+				tDiv.id="recap_loot_02";
 				gV.recap_loot.push(tDiv);
 				tDiv.style.transform="scale(0.001)";
 				TweenLite.to(tDiv, 1.0, {transform:"scale(1)", overwrite:true, ease: Elastic.easeOut.config(1.0, .8), delay: dly+=0.3});
 				var tDiv = document.createElement("div");
 				base.appendChild(tDiv);
 				tDiv.className="loot_0"+gV.loot;
+				tDiv.id="recap_loot_00";
 				gV.recap_loot.push(tDiv);
 				tDiv.style.transform="scale(0.001)";
 				TweenLite.to(tDiv, 1.0, {transform:"scale(1)", overwrite:true, ease: Elastic.easeOut.config(1.0, .8), delay: dly+=0.3});
@@ -372,10 +379,10 @@ function changeGameState(tState) {
 function advanceGameState(nextState=-1) {
 	document.getElementById("headingText").style.visibility="hidden";
 	if (gV.recap_loot && gV.recap_loot.length>0) {
-		for (var idx=gV.recap_loot.length-1; idx>=0; idx--) {
-			gV.recap_loot.remove();
+		for (var idx=0; idx<gV.recap_loot.length; idx++) {
+			gV.recap_loot[idx].remove();
 		}
-		gV.recap_loot=null;
+		gV.recap_loot=[];
 	}
 	playSound("Jay_CoinCollect");
 	changeGameState(nextState);
@@ -484,7 +491,7 @@ function pauseButtonAction(event) {
 		resumeMusic=true;
 		stopMusic();
 	}
-	//stopAllSounds();
+	stopAllSounds();
 	if (gameState==2){
 		var tDiv = document.getElementById("pauseGameWindow");
 		tDiv.style.visibility = "visible";
