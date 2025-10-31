@@ -578,7 +578,7 @@ function stopAllSounds() {
 		return;
 	}
 	for (var idx=0; idx<soundList.length; idx++) {
-		soundList[idx].stop();
+		if (soundList[idx].isPlaying) soundList[idx].stop();
 	}
 }
 
