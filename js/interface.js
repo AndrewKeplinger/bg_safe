@@ -28,9 +28,9 @@ for (var idx = 0; idx<panelList.length; idx++) {
 document.getElementById("wrapper").style.visibility=oSTAGE.wrapper_ratio>1.6?"visible":"hidden";
 //doInitResizer();
 //doWindowResize();
+var resizer = document.createElement("div");
 function doInitResizer() {
 
-	var resizer = document.createElement("div");
 	resizer.id = "resizer";
 	resizer.w = null;
 	resizer.h = null;
@@ -60,19 +60,55 @@ function doInitResizer() {
 	});
 
 	//handle hidden window muting
-	window.addEventListener("blur", function (evt) {
+
+	doInitFocusManager(window_addEventListener_blur,window_addEventListener_focus);
+}
+
+function window_addEventListener_blur(evt) {
+	if(!document_blurred){
+		console.log("window_addEventListener_blur");
 		window.__snds.forceMute();
 		document_blurred = true;
-	});
+	}
+}
 
-	window.addEventListener("focus", function (evt) {
+function window_addEventListener_focus(evt) {
+	if(document_blurred){
+		//initAudio();
+		console.log("window_addEventListener_focus");
+		
 		window.__snds.unforceMute();
 		document_blurred = false;
 		resizer.w = 0;
 		resizer.h = 0;
-	});
-
+	}
 }
+function doInitFocusManager(a, b) {
+    var d = !1,
+      c = function () {
+        d || (a && a(), d = !0)
+      },
+      f = function () {
+        d && (b && b(), d = !1)
+      },
+      g = doGetHiddenProp();
+    if (g) {
+      var h = g.replace(/[H|h]idden/, "") + "visibilitychange";
+      document.addEventListener(h, function (a) {
+        document[g] ? c() : f()
+      })
+    }
+    window.addEventListener("blur", c);
+    window.addEventListener("focus", f)
+  };
+  function doGetHiddenProp() {
+    var a = ["webkit", "moz", "ms", "o"];
+    if ("hidden" in document) return "hidden";
+    for (var b = 0; b < a.length; b++)
+      if (a[b] + "Hidden" in document) return a[b] + "Hidden";
+    return null
+  };
+
 
 function doWindowResize() {
 

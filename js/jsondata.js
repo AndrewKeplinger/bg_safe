@@ -454,11 +454,17 @@ function setFrame(frameNum, model) {
 function shiftAudioButtons() {
 
 }
+var listener;
+var soundChanNum;
+var soundList;
 
 if (!audioFallback){
-	var listener = new THREE.AudioListener();
-	var soundChanNum = 0;
-	var soundList = [];//
+	initAudio();
+}
+function initAudio() {
+	listener = new THREE.AudioListener();
+	soundChanNum = 0;
+	soundList = [];//
 	for (var idx= 0; idx<2; idx++) {
 		soundList.push(new THREE.Audio( listener ));
 	}
@@ -481,6 +487,7 @@ function playSound(sndId) {
 		return false;
 	}
 	var sound = soundList[soundChanNum];
+	if (sound.context && (sound.context.state=="suspended" || sound.context.state=="interupted")) sound.context.resume();
 	if (sound!=undefined) {
 		var tBuf = sounds[sndId];
 		if (tBuf!==undefined){
@@ -495,6 +502,8 @@ function playSound(sndId) {
 			sound.setBuffer( tBuf );
 			sound.setLoop(false);
 			sound.play();
+			//console.log("sound");
+			//console.log(sound);
 		} else {
 			return true;
 		}
@@ -541,13 +550,17 @@ function playMusic(sndId) {
 		setTimeout(playMusic,5,sndId);
 		return;
 	}
+	//if (music) console.log(music.context.state);
 	music = new THREE.Audio( listener );
+	if (music && music.context && (music.context.state=="suspended" || music.context.state=="interupted")) music.context.resume();
 	var tBuf = sounds[sndId];
 	if (tBuf!==undefined){
 		music.setBuffer( tBuf );
 		music.setLoop(true);
 		music.setVolume(0.5);
 		music.play(); 
+			//console.log("music");
+			//console.log(music);
 		//trace(music);
 		music.isReallyPlaying = true;
 	} else {
@@ -582,8 +595,7 @@ function stopAllSounds() {
 	}
 }
 
-
-
+  
 
 
 
