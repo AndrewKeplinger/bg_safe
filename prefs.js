@@ -55,7 +55,6 @@ var oLANG = {
 var legal_billing = null;
 
 var legal_images = [
-  "Media/rating.png"
 ];
 
 var official_site_link = "https://tv.dreamworks.com/badguys/safecracker/";
