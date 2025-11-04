@@ -12,19 +12,15 @@ function LoadComplete() {
 	setFieldText("Pause_Menu_Heading", "pauseGameHeadingText");
 	setFieldText("Pause_Menu_Continue", "pauseGameOptions1");
 
-	if (oCONFIG.hideOfficialSite == 1) {
-		//document.getElementById("pauseGameOptions4").style.visibility = "hidden";
-		//document.getElementById("pauseGameOptions4").style.display = "none";
-	}
+	document.getElementById("title_date").src=oLANG_IMAGES["coming_soon"];
+	document.getElementById("inst_date").src=oLANG_IMAGES["coming_soon"];
+	document.getElementById("recap_date").src=oLANG_IMAGES["coming_soon"];
 	
 	setFieldText("recap_SCORE_Label", "recap_SCORE_Label");
 	setFieldText("recap_PLAY_MORE", "recap_PLAY_MORE");
 	setFieldText("recap_INSTRUCTIONS", "recap_INSTRUCTIONS");
 	setFieldText("recap_WATCH_TRAILER", "recap_WATCH_TRAILER");
-	setFieldText("recap_date", "recap_date");
-	//setFieldText("Title_copy", "Title_copy");
 	setFieldText("run_Title", "run_Title");
-	setFieldText("title_film_logo_date", "title_film_logo_date");
 	setFieldText("b_play", "b_play");
 	setFieldText("b_instructions", "b_instructions");
 	setFieldText("inst_b_PLAY", "inst_b_PLAY");

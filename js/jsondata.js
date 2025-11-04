@@ -60,9 +60,8 @@ function mergeLocalizedAudio(sourceArray) {
 	return sourceArray;
 }
 
-function setLocalizedImage ( elementId, imageId ) {
-	return;//AHK
-	var elm = document.getElementById(elementId).style.backgroundImage="url("+oLANG[imageId]+")";
+function setLocalizedImage ( elementId, imageId ) {	
+	var elm = document.getElementById(elementId).style.backgroundImage="url("+oLANG_IMAGES[imageId]+")";
 }
 function getLocalizedText( textId ) {
 	if (textAssets[textId].data) {
@@ -125,17 +124,6 @@ function loadSequence() {
 			switch (currentLoadingTexture.id) {	
 				case "DisplayLoadText":
 					setLegalText();
-					//setFieldText("Loading_Bar","loadingMessage");
-					//setFieldText("Title","titleGameName");
-					//setFieldText("Description","titleDescription");
-					//setFieldText("Action_Button","titlePlayText");
-					if (isMobile) {
-						//setFieldText("Loading_Mobile","loadingPrompt");
-						//setFieldText("IntroPrompt_Mobile","titleInstructions");
-					} else {
-						//setFieldText("Loading_PC","loadingPrompt");
-						//setFieldText("IntroPrompt_PC","titleInstructions");
-					}
 					
 					document.getElementById("blocker").style.visibility="hidden";
 					break;
@@ -394,9 +382,6 @@ function getLocalizedText( textId ) {
 }
 
 function setFieldText( sourceName, fieldName) {
-	
-	
-	
 	var tAsset = oLANG[sourceName];
 	if (tAsset==undefined) {
 		console.log("setFieldText( def "+sourceName+")");
@@ -417,31 +402,7 @@ function setFieldText( sourceName, fieldName) {
 		
 		__utils.doHTMLText(tField,tAsset);//element, o, append
 		
-		return;
-		/*
-		var itemText = tAsset.data;
-		if (itemText!==undefined) {
-			itemText = itemText.replace("![CDATA[","").replace("]]","");//![CDATA[Tap Anywhere to Start]]
-			tField.innerHTML = itemText;
-			tAsset.value = itemText;
-			__utils.doHTMLText(tField,tAsset);
-			if (tAsset.style) {
-				if (tAsset.style!=""){
-					tField.setAttribute("style",tAsset.style);
-					if (tAsset.style.indexOf("font-size:")>-1||tAsset.style.indexOf("fontSize:")>-1){
-						var tFontSize=tAsset.style.substr(1+tAsset.style.indexOf(":",Math.max(tAsset.style.indexOf("font-size"),tAsset.style.indexOf("fontSize"))));
-						tFontSize = tFontSize.substr(0,tFontSize.indexOf("px;"));
-						storedLocations[fieldName].fontOverride = parseInt(tFontSize);
-					}
-				}
-			}
-			if (tAsset.size && storedLocations!==undefined){
-				if (storedLocations[fieldName]) {
-					storedLocations[fieldName].textScale=tAsset.size;
-				}
-			}
-		}
-		*/
+		return;		
 	}
 }
 

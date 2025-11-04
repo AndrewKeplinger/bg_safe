@@ -232,16 +232,13 @@ div {
   z-index: 5;
 }
 .title_film_logo_date {
-  font-size: 27px; /* 60px */
-  font-family: "bebas-neue";
-  color: #ffffff;
-  font-weight: 800;
-  line-height: 1.2;
+	background-image:url("../Media/netflix_soon.png");
+	background-size: contain;
+	background-origin:content-box;
   position: absolute;
   left: 0px;
-  top: 149px;
+  top: 15px;
   width: 644px;
-  text-align: center;
   z-index:99;
 }
 
@@ -667,18 +664,19 @@ background-repeat:no-repeat;
   z-index: 11;
 }
 .recap_date {
-  font-size: 60px;
-  font-family: "bebas-neue";
-  color: rgb(255, 255, 255);
-  font-weight: bold;
-  line-height: 1.2;
   text-align: center;
-  position: absolute;
-  left: 0px;
-  top: 150px;
-	width: 644px;
-	height: 32px;
-  z-index: 8;
+  position: flex;
+	width: auto;
+	height: 70px;
+  z-index: 100;
+}
+.center_image {
+	position:absolute;
+	left:0px;
+	top:15px;
+	width:644px;
+	align-content: center;
+  z-index: 100;
 }
 .Title_rect {
 	

@@ -85,7 +85,7 @@ function doBrowserAlert(){
 	base_url = base_url.replace(regExp2, "");
 	base_url = base_url.split("?")[0].split("#")[0];
  
-  window.location.href = oCONFIG.browser_alert + "?logo=" + base_url + oLANG.ninjago_logo_browser + "&date=" + date_msg + "&msg=" + error_msg;
+  window.location.href = oCONFIG.browser_alert + "?date=" + date_msg + "&msg=" + error_msg;
 
 }
 

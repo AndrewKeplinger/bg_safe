@@ -3,6 +3,7 @@
 
     <!--images-->
     <img id="logo">Media/logo_en.png</img>
+	<img id="coming_soon">Media/netflix_soon.png</img>
  
     <txt id="legal"  font-family="bebas-neue" line-height="normal" font-size="14px">LEGAL</txt>
 	
@@ -34,9 +35,9 @@
 	<txt id="legal_terms_link">https://www.dreamworks.com/terms-of-use</txt>
 	<txt id="legal_ca_notice_link">https://www.nbcuniversalprivacy.com/privacy/california-consumer-privacy-act?intake=Dreamworks_Animation</txt>
 	<txt id="legal_parentalguide_link">https://www.dreamworks.com/kids-help</txt>
-
-	<txt id="watch_link">https://caughtstealing.movie/tickets/</txt>
-	<txt id="tickets_link">https://caughtstealing.movie/tickets/</txt>
+	<!-- Fill in links here, tickets not used -->
+	<txt id="watch_link"> </txt>
+	<txt id="tickets_link"> </txt>
 
 	<!-- GDRP text is controlled by the plugin -->
 	<!-- Add display="none" to disable any legal item -->
