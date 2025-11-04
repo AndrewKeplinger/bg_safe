@@ -667,13 +667,21 @@ background-repeat:no-repeat;
   text-align: center;
   position: flex;
 	width: auto;
-	height: 70px;
+	height: 40px;
   z-index: 100;
 }
 .center_image {
 	position:absolute;
 	left:0px;
-	top:15px;
+	top:25px;
+	width:644px;
+	align-content: center;
+  z-index: 100;
+}
+.alt_center_image {
+	position:absolute;
+	left:0px;
+	top:140px;
 	width:644px;
 	align-content: center;
   z-index: 100;
