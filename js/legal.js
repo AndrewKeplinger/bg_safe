@@ -206,7 +206,7 @@ function createLegalBlock() {
 	for (var i = 0; i < top_links.length; i++) {	
 		if (i>0) {
 			var divider = legal_button_holder.appendChild(document.createElement("a"));
-			divider.className = "b_legal";
+			divider.className = "c_legal";
 			divider.style.margin="0px";
 			divider.style.padding = "0px";
 			divider.innerHTML = "|";
@@ -231,7 +231,9 @@ function createLegalBlock() {
 		__utils.doHTMLText(legal_link, oLANG[legal_links[i].msg]);
 		if (i < legal_links.length - 1) {
 			var divider = links_block.appendChild(document.createElement("a"));
-			divider.className = "b_legal";
+			divider.className = "c_legal";
+			divider.style.margin="0px";
+			divider.style.padding = "0px";
 			divider.innerHTML = " | ";
 		}
 	}
