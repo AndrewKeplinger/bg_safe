@@ -66,7 +66,7 @@ function doInitResizer() {
 
 function window_addEventListener_blur(evt) {
 	if(!document_blurred){
-		console.log("window_addEventListener_blur");
+		//console.log("window_addEventListener_blur");
 		window.__snds.forceMute();
 		document_blurred = true;
 	}
@@ -75,7 +75,7 @@ function window_addEventListener_blur(evt) {
 function window_addEventListener_focus(evt) {
 	if(document_blurred){
 		//initAudio();
-		console.log("window_addEventListener_focus");
+		//console.log("window_addEventListener_focus");
 		
 		window.__snds.unforceMute();
 		document_blurred = false;
@@ -252,7 +252,7 @@ function changeGameState(tState) {
 			var character_mid=document.getElementById("character_title_mid");
 			var run_Title=document.getElementById("game_logo");
 			var b_play=document.getElementById("b_play");
-			var b_instructions=document.getElementById("b_instructions");
+			//var b_instructions=document.getElementById("b_instructions");
 			
 			//Title_bar.style.transform = "translateX(" + (oSTAGE.wrapper_width - Title_bar.offsetLeft) + "px)";
 			title_background.style.opacity = "translateX(" + (oSTAGE.wrapper_width - Title_bar.offsetLeft) + "px)";
@@ -260,7 +260,7 @@ function changeGameState(tState) {
 			character_mid.style.transform = "scale(0.001)";
 			run_Title.style.transform = "translateX(" + (oSTAGE.wrapper_width - run_Title.offsetLeft) + "px)";
 			b_play.style.transform = "translateY(" + (oSTAGE.wrapper_height - b_play.offsetTop) + "px)";
-			b_instructions.style.transform = "translateY(" + (oSTAGE.wrapper_height - b_instructions.offsetTop) + "px)";
+			//b_instructions.style.transform = "translateY(" + (oSTAGE.wrapper_height - b_instructions.offsetTop) + "px)";
 
 			var delay = 0.5;
 			//TweenLite.to(Title_bar, 1.0, {transform:"translateX(0px)", overwrite:true, ease: Elastic.easeOut.config(1.0, .8), delay: delay});
@@ -274,7 +274,7 @@ function changeGameState(tState) {
 			delay += 1.0;
 			TweenLite.to(b_play, .75, {transform:"translateY(0px)", overwrite:true, ease: Elastic.easeOut.config(1.0, .8), delay: delay});
 			delay += .25;
-			TweenLite.to(b_instructions, .75, {transform:"translateY(0px)", overwrite:true, ease: Elastic.easeOut.config(1.0, .8), delay: delay});
+			//TweenLite.to(b_instructions, .75, {transform:"translateY(0px)", overwrite:true, ease: Elastic.easeOut.config(1.0, .8), delay: delay});
 			if (!music.isReallyPlaying) playMusic("MenuLoop");
 			curScore = 0;
 			

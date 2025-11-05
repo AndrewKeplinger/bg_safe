@@ -332,7 +332,6 @@ div {
   z-index: 6;
 }
 .run_Title {
-  font-size: 65px;
   font-family: "bebas-neue";
   color: rgb(255, 255, 255);
   font-weight: bold;
@@ -373,7 +372,7 @@ div {
 .b_play {
   z-index: 1;
   position: absolute;
-  left: 39px;
+  left: 186px;
   top: 866px;
   width: 272px;
   height: 92px;
@@ -673,7 +672,7 @@ background-repeat:no-repeat;
 .center_image {
 	position:absolute;
 	left:0px;
-	top:25px;
+	top:10px;
 	width:644px;
 	align-content: center;
   z-index: 100;
@@ -681,7 +680,7 @@ background-repeat:no-repeat;
 .alt_center_image {
 	position:absolute;
 	left:0px;
-	top:140px;
+	top:145px;
 	width:644px;
 	align-content: center;
   z-index: 100;

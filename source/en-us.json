@@ -18,9 +18,6 @@
 	{"id": "date_msg_tomorrow", "value": "COMING SOON ON NETFLIX", "type": "text"},
 	{"id": "date_msg_nowplaying", "value": "NOW PLAYING", "type": "text"},
 
-	{"id": "ninjago_logo", "type": "image", "value": "Media/UI/UI_MovieLogo.png"},
-	{"id": "ninjago_logo_browser", "type": "image", "value": "Media/UI/UI_MovieLogo.png"},
-
 	{"id": "legal", "value": "LEGAL", "type":"text"},
 	{"id": "legal_terms", "value": "TERMS OF SERVICE", "type":"legal", "link":"https://www.dreamworks.com/terms-of-use", "top":0,"active":1},
 	{"id": "legal_privacy", "value": "PRIVACY POLICY", "type":"legal", "link":"https://www.nbcuniversal.com/privacy/pp-full-children#accordionheader4", "top":0,"active":1},
@@ -32,7 +29,7 @@
 
 	{"id": "error_webgl", "value": "Oops!<br>While your browser seems to support WebGL, it is disabled or unavailable. If possible, please ensure that you are running one of these latest browsers and the latest drivers for your video card.", "type":"text"},
 	{"id": "error_browser", "value": "Oops!<br>Your browser seems to be out of date. Please ensure that you are running one of these latest browsers.", "type":"text"},
-	{"id": "Title","type": "Text","style":"","size": 1,"target": "Intro","data": "![CDATA[FLIGHT OF THE NINJA]]"},
+	
 	{"id": "StartDate","type": "Text","style":"","size": 1,"target": "Intro","data": "![CDATA[COMING SOON ON NETFLIX]]"},
 	{"id": "WebLinkPrompt","type": "Text","style":"","size": 1,"target": "Intro","link": "","data": "![CDATA[OFFICIAL SITE]]"},
 	{"id": "Description","type": "Text","style":"","size": 0.99,"target": "Intro","data": "![CDATA[Use the launcher to fly through the sky, collecting as many coins as you can.]]"},

@@ -19,10 +19,10 @@ function LoadComplete() {
 	setFieldText("recap_SCORE_Label", "recap_SCORE_Label");
 	setFieldText("recap_PLAY_MORE", "recap_PLAY_MORE");
 	setFieldText("recap_INSTRUCTIONS", "recap_INSTRUCTIONS");
-	setFieldText("recap_WATCH_TRAILER", "recap_WATCH_TRAILER");
+	//setFieldText("recap_WATCH_TRAILER", "recap_WATCH_TRAILER");
 	setFieldText("run_Title", "run_Title");
 	setFieldText("b_play", "b_play");
-	setFieldText("b_instructions", "b_instructions");
+	//setFieldText("b_instructions", "b_instructions");
 	setFieldText("inst_b_PLAY", "inst_b_PLAY");
 	setFieldText("pauseGameHeadingText", "pauseGameHeadingText");
 	
@@ -319,7 +319,7 @@ function anim_step(deltaTime) {
 		if (Date.now() > gV.nextStep) {
 			gV.animStep++;
 			if (!game_parts[gV.anim][gV.animStep]) {
-				console.log("End Anim:"+gV.anim);
+				//console.log("End Anim:"+gV.anim);
 				gV.anim = null;
 			} else {				
 				renderAnim(gV.anim, gV.animStep);
@@ -556,7 +556,7 @@ function wait(seconds) {
     return new Promise(resolve => setTimeout(resolve, seconds * 1000));
 }
 async function restart_safe() {
-	console.log("miss");
+	//console.log("miss");
 	gobj(safecarrot_on,"off");
 	gobj(document.getElementById("safecarrot_missed"),"on");
 	if (gV.rotateTimeout) clearTimeout(gV.rotateTimeout);
