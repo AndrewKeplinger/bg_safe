@@ -457,7 +457,8 @@ function playSound(sndId) {
 				//setTimeout(playSound,10,sndId);
 				//return false;
 			//}
-				sound = new THREE.Audio( listener );
+			sound = new THREE.Audio( listener );
+			soundList[soundChanNum]=sound;
 			soundChanNum++;
 			if (soundChanNum>=soundList.length) soundChanNum=0;
 			sound.setBuffer( tBuf );
@@ -551,8 +552,21 @@ function stopAllSounds() {
 	if (isMuted) {
 		return;
 	}
-	for (var idx=0; idx<soundList.length; idx++) {
-		if (soundList[idx].isPlaying) soundList[idx].stop();
+	if (audioFallback) {
+		var snd_keys=Object.keys(sounds);
+		for (var idx=0; idx<snd_keys.length; idx++) {
+			if (!sounds[snd_keys[idx]].paused){
+				sounds[snd_keys[idx]].stop();
+			}
+		}
+		
+	} else {
+		for (var idx=0; idx<soundList.length; idx++) {
+			//if (soundList[idx].isPlaying) 
+			if (soundList[idx].source) {			
+				soundList[idx].pause();
+			}
+		}
 	}
 }
 

@@ -284,6 +284,10 @@ function changeGameState(tState) {
 			center_block = document.getElementById("instructionPanel").style;
 			center_block.visibility = "visible";
 			center_block.display = "block";
+			tDiv=document.getElementById("instructionPanel_gif");
+			var flip=tDiv.style.backgroundImage;
+			tDiv.style.backgroundImage = null;
+			tDiv.style.backgroundImage = flip;
 			
 			tDiv = document.getElementById("titleScreen").style;
 			tDiv.visibility = "hidden";

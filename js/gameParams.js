@@ -88,6 +88,7 @@ function setMuteParam( tUrl ) {
 }
 var resetGame = function(){};
 function playAgainButtonAction(showTitle) {
+	stopAllSounds();
 	console.log("playAgainButton");
 	resetGame(showTitle);
 	//var loc = setMuteParam(window.location.href);
