@@ -55,7 +55,7 @@
 
 	<txt id="recap_INSTRUCTIONS" font-family="bebas-neue" line-height="90px" font-size="45px">HOW TO PLAY</txt>
 	<txt id="recap_WATCH_TRAILER" font-family="bebas-neue" line-height="88px" font-size="45px">WATCH TRAILER</txt>
-	<txt id="recap_PLAY_MORE" font-family="bebas-neue" line-height="1.5" font-size="58px">PLAY AGAIN</txt>
+	<txt id="recap_PLAY_MORE" font-family="bebas-neue" line-height="1.55" font-size="58px">PLAY AGAIN</txt>
 
 	<txt id="recap_date" font-family="bebas-neue" line-height="88px" font-size="32px">EXCLUSIVELY ON NETFLIX</txt>
 	<txt id="Title_copy" font-family="bebas-neue" line-height="88px" font-size="75px"> </txt>
